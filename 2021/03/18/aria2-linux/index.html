@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>长鸿的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="长鸿的博客">
+  <title>Linux下Aria2完整安装及使用教程 | 长鸿的博客</title>
+  <meta name="keywords" content=" aria2 ">
+  <meta name="description" content="Linux下Aria2完整安装及使用教程 | 长鸿的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于博主（一个无所求的人）回想自己，90后，一个五线都算不上的城市跌落者。 那会儿，一直向往自由，曾想游览天下，却是在家每天重复着两点一线的生活。 曾是那么的开朗，阳光，在体制的压力下，变得更暴躁，总会无故生气默然，为此，老婆孩子没少受气，想想真是无聊。 兴趣众多，总想什么都会，什么都了解，却一无所成，总是半途而废，对IT数码科技有着极大的兴趣，一个问题总要将之弄清才罢休。 孤独患者，懒癌中期，无">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -814,12 +814,71 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-aria2-linux" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BB%8F%E5%8E%86"><span class="toc-text">我的博客经历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E5%A5%87%E9%98%B6%E6%AE%B5"><span class="toc-text">好奇阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8D%9A%E4%B8%BB"><span class="toc-text">关于博主</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">Linux下Aria2完整安装及使用教程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="教程技巧">教程技巧</a> > 
+            
+            <a  data-rel="教程技巧&lt;---&gt;aria2">aria2</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">aria2</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-03-24 11:33:31'>2021-03-18 21:22</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Aria2-Linux-%E5%AE%8C%E6%95%B4%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-text">Aria2 Linux 完整安装及使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%BB%8B%E7%BB%8D"><span class="toc-text">1、介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">2、安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81-%E9%85%8D%E7%BD%AE-Aria2"><span class="toc-text">3、 配置 Aria2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA%E5%BF%85%E9%A1%BB%E7%9A%84%E6%96%87%E4%BB%B6%E5%8F%8A%E6%96%87%E4%BB%B6%E5%A4%B9%E3%80%82"><span class="toc-text">3.1 创建必须的文件及文件夹。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%9B%E5%BB%BA-aria2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-text">3.2 创建 aria2 配置文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%90%AF%E5%8A%A8-Aria2"><span class="toc-text">3.3 启动 Aria2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-text">4、下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E4%B8%8B%E8%BD%BD%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text">4.2 下载多个文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E8%BE%93%E5%85%A5"><span class="toc-text">4.3  从文件获取输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E4%B8%8B%E8%BD%BD-BitTorrent-%E7%A7%8D%E5%AD%90%E6%96%87%E4%BB%B6"><span class="toc-text">4.4 下载 BitTorrent 种子文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E4%B8%8B%E8%BD%BD-BitTorrent-%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5"><span class="toc-text">4.5 下载 BitTorrent 磁力链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E4%BB%8E%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%8B%E8%BD%BD%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text">4.6 从密码保护的网站下载一个文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7-%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">4.7 下载速度限制</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -832,37 +891,87 @@
     }
 </style>
 </div>
-            <h1 id="我的博客经历"><a href="#我的博客经历" class="headerlink" title="我的博客经历"></a>我的博客经历</h1><h2 id="好奇阶段"><a href="#好奇阶段" class="headerlink" title="好奇阶段"></a>好奇阶段</h2><p>第一次接触电脑，那是2001年，至今已是20年时间，对一切与电脑有关的东西都有着极大的兴趣，后来看到了中央广播电台的“温馨夜话”主持人 ”清音“ 开了博客，那是一个羡慕，所以想方设法自己搜索找了免费的二级域名和免费空间，自己学着做主页，曾记得，毕业时将主页地址写给老师后才觉得主页那粗糙，没法看。</p>
-<p>后来在163，搜狐、新浪等开通个人博客，写了许多文章，转了许多。再后来觉得要自己组建，所以申请注册了这个域名：coolxy.cn，沿用至今。</p>
-<p>开始时主要用z-blg,免费asp空间。访问太慢，放下了很长时间，再后来就购买空 间，但没钱哪。最近才放入github，这也是下面说的几个阶段了：</p>
-<p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<p>其实只想有感时写写自己感兴趣的东西。</p>
-<h2 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h2><p><strong>本博客</strong> 是阁主（coolxy）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> </p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Aria2-Linux-完整安装及使用教程"><a href="#Aria2-Linux-完整安装及使用教程" class="headerlink" title="Aria2 Linux 完整安装及使用教程"></a>Aria2 Linux 完整安装及使用教程</h1><p>一般在deepin下使用xdm，但有时候会用到aria2，这是全平台的下载器，在linux中也可使用，可下载BT、电驴等连接。</p>
+<h2 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h2><p>Aria2 嘛，主要是用来离线下载，功能强大，支持 http/https 直链、ftp、电驴、磁力链接等等，且可以跨平台使用，配合网页端操作，简直是一代下载神器。</p>
+<h2 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h2><p>Debian/Ubuntu：</p>
+<p>可以直接使用命令安装：</p>
+<pre><code>apt-get -y install aria2
+</code></pre>
+<p>CentOS 7+：</p>
+<p>安装 epel 源：</p>
+<pre><code>yum install epel-release
+</code></pre>
+<p>然后直接安装：</p>
+<pre><code>yum install aria2 -y
+</code></pre>
+<h2 id="3、-配置-Aria2"><a href="#3、-配置-Aria2" class="headerlink" title="3、 配置 Aria2"></a>3、 配置 Aria2</h2><h3 id="3-1-创建必须的文件及文件夹。"><a href="#3-1-创建必须的文件及文件夹。" class="headerlink" title="3.1 创建必须的文件及文件夹。"></a>3.1 创建必须的文件及文件夹。</h3><p># 创建 .aria2 目录。</p>
+<pre><code>mkdir /root/.aria2
+</code></pre>
+<p># 创建 aria2.session 文件。</p>
+<pre><code>touch /root/.aria2/aria2.session
+</code></pre>
+<p># 创建 aria2.log</p>
+<pre><code>touch /root/.aria2/aria2.log
+</code></pre>
+<h3 id="3-2-创建-aria2-配置文件："><a href="#3-2-创建-aria2-配置文件：" class="headerlink" title="3.2 创建 aria2 配置文件："></a>3.2 创建 aria2 配置文件：</h3><p>示例配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##</span><br><span class="line">## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##</span><br><span class="line"> </span><br><span class="line">## 文件保存相关 ##</span><br><span class="line"> </span><br><span class="line"># 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置</span><br><span class="line">dir&#x3D;&#x2F;data&#x2F;wwwroot&#x2F;domain.com&#x2F;yourfolder&#x2F;</span><br><span class="line"># 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M</span><br><span class="line">disk-cache&#x3D;32M</span><br><span class="line"># 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc</span><br><span class="line"># 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc</span><br><span class="line"># falloc和trunc则需要文件系统和内核支持</span><br><span class="line"># NTFS建议使用falloc, EXT3&#x2F;4建议trunc, MAC 下需要注释此项</span><br><span class="line">file-allocation&#x3D;none</span><br><span class="line"># 断点续传</span><br><span class="line">continue&#x3D;true</span><br><span class="line"> </span><br><span class="line">## 下载连接相关 ##</span><br><span class="line"> </span><br><span class="line"># 最大同时下载任务数, 运行时可修改, 默认:5</span><br><span class="line">max-concurrent-downloads&#x3D;10</span><br><span class="line"># 同一服务器连接数, 添加时可指定, 默认:1</span><br><span class="line">max-connection-per-server&#x3D;5</span><br><span class="line"># 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M</span><br><span class="line"># 假定size&#x3D;10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载</span><br><span class="line">min-split-size&#x3D;10M</span><br><span class="line"># 单个任务最大线程数, 添加时可指定, 默认:5</span><br><span class="line">split&#x3D;20</span><br><span class="line"># 整体下载速度限制, 运行时可修改, 默认:0</span><br><span class="line">#max-overall-download-limit&#x3D;0</span><br><span class="line"># 单个任务下载速度限制, 默认:0</span><br><span class="line">#max-download-limit&#x3D;0</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+<p>将其保存为 aria2.conf，放在 /root/.aria2/ 目录下。</p>
+<h3 id="3-3-启动-Aria2"><a href="#3-3-启动-Aria2" class="headerlink" title="3.3 启动 Aria2"></a>3.3 启动 Aria2</h3><p>在这里为了方便，只介绍新开守护进程。</p>
+<p>新开名为 aria2 的 screen，不开机启动。</p>
+<pre><code>apt-get -y install screen
+screen -dmS aria2 aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c
+</code></pre>
+<p>好啦，Aria2 在 linux 下配置完成了，可以使用了。</p>
+<p>如果需要 Web 端，可以参考接下来的文章使用 AriaNg，比较强大，包含了 Yaaw 和 Aria2 Web UI 的所有功能。</p>
+<h2 id="4、下载"><a href="#4、下载" class="headerlink" title="4、下载"></a>4、下载</h2><ul>
+<li><p>可直接命令下载：</p>
+<p>用法：aria2c [OPTIONS] [URI | MAGNET | TORRENTFILEILE | METALINK_FILE]…</p>
+<p>查看帮助：aria2c -h</p>
+</li>
+<li><p>webui:</p>
+<p><a target="_blank" rel="noopener" href="https://dy.ghostry.cn/">https://dy.ghostry.cn/</a></p>
+</li>
+<li><p>配置：</p>
+<p>主机：127.0.0.1（localhost）</p>
+<p>端口：6800</p>
+</li>
+<li><p>使用自定义名称保存：</p>
+<p>使用 -o（小写）选项 接保存文件名，-d 加入保存路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c -o qq.exe -d &#x2F;d&#x2F; https:&#x2F;&#x2F;down.qq.com&#x2F;qqweb&#x2F;PCQQ&#x2F;PCQQ_EXE&#x2F;PCQQ2021.exe</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-2-下载多个文件"><a href="#4-2-下载多个文件" class="headerlink" title="4.2 下载多个文件"></a>4.2 下载多个文件</h3><p>下面的命令将会从指定位置下载超过一个的文件并保存到当前目录，在下载文件的过程中，我们可以看到文件的（日期、时间、下载速度和下载进度）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># aria2c -Z https:&#x2F;&#x2F;download.owncloud.org&#x2F;community&#x2F;owncloud-9.0.0.tar.bz2 ftp:&#x2F;&#x2F;ftp.gnu.org&#x2F;gnu&#x2F;wget&#x2F;wget-1.17.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-从文件获取输入"><a href="#4-3-从文件获取输入" class="headerlink" title="4.3  从文件获取输入"></a><strong>4.3  从文件获取输入</strong></h3><p>就像 wget 可以从一个文件获取输入的 URL 列表来下载一样。我们需要创建一个文件，将每一个 URL 存储在单独的行中。ara2 命令行可以添加 -i 选项来执行此操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># aria2c -i test-aria2.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-下载-BitTorrent-种子文件"><a href="#4-4-下载-BitTorrent-种子文件" class="headerlink" title="4.4 下载 BitTorrent 种子文件"></a><strong>4.4 下载 BitTorrent 种子文件</strong></h3><p>我们可以使用 aria2 命令行直接下载一个 BitTorrent 种子文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># aria2c https:&#x2F;&#x2F;torcache.net&#x2F;torrent&#x2F;C86F4E743253E0EBF3090CCFFCC9B56FA38451A3.torrent?title&#x3D;[kat.cr]irudhi.suttru.2015.official.teaser.full.hd.1080p.pathi.team.sr</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5-下载-BitTorrent-磁力链接"><a href="#4-5-下载-BitTorrent-磁力链接" class="headerlink" title="4.5 下载 BitTorrent 磁力链接"></a><strong>4.5 下载 BitTorrent 磁力链接</strong></h3><p>使用 aria2 我们也可以通过 BitTorrent 磁力链接直接下载一个种子文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># aria2c &#39;magnet:?xt&#x3D;urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-6-从密码保护的网站下载一个文件"><a href="#4-6-从密码保护的网站下载一个文件" class="headerlink" title="4.6 从密码保护的网站下载一个文件"></a><strong>4.6 从密码保护的网站下载一个文件</strong></h3><p>或者，我们也可以从一个密码保护网站下载一个文件。下面的命令行将会从一个密码保护网站中下载文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># aria2c --http-user&#x3D;xxx --http-password&#x3D;xxx https:&#x2F;&#x2F;download.owncloud.org&#x2F;community&#x2F;owncloud-9.0.0.tar.bz2</span><br><span class="line"></span><br><span class="line"># aria2c --ftp-user&#x3D;xxx --ftp-password&#x3D;xxx ftp:&#x2F;&#x2F;ftp.gnu.org&#x2F;gnu&#x2F;wget&#x2F;wget-1.17.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-7-下载速度限制"><a href="#4-7-下载速度限制" class="headerlink" title="4.7 下载速度限制"></a><strong>4.7 下载速度限制</strong></h3><p>默认情况下，aria2 会利用全部带宽来下载文件，在文件下载完成之前，我们在服务器就什么也做不了（这将会影响其他服务访问带宽）。所以在下载大文件时最好使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c –max-download-limit&#x3D;500k url</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 910009183@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -884,6 +993,13 @@
 </script>
 
 
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -892,11 +1008,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
