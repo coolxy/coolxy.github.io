@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>openwrt软路由iStore的安装使用手记 | 长鸿的博客</title>
+  <meta name="keywords" content=" openwrt , iStore ">
+  <meta name="description" content="openwrt软路由iStore的安装使用手记 | 长鸿的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="auto-blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="长鸿的博客">
+<meta property="og:url" content="https://coolxy.cn/README.html">
+<meta property="og:site_name" content="长鸿的博客">
+<meta property="og:description" content="auto-blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-22T07:33:04.797Z">
+<meta property="article:modified_time" content="2021-10-18T09:14:40.437Z">
+<meta property="article:author" content="coolxy">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/ico.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>coolxy</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/coolxy"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:910009183@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=910009183&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(86)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="生活随笔">
+                        
+                        生活随笔
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="教程技巧">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        教程技巧
+                        <small>(19)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->路由器">
+                                        
+                                        路由器
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->内网穿透">
+                                        
+                                        内网穿透
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->视频下载">
+                                        
+                                        视频下载
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->正则表达式">
+                                        
+                                        正则表达式
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->aria2">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        aria2
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="教程技巧<--->aria2Linux">
+                                                        
+                                                        Linux
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->frp内网穿透">
+                                        
+                                        frp内网穿透
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->git">
+                                        
+                                        git
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->mariadb入门知识">
+                                        
+                                        mariadb入门知识
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->markdown">
+                                        
+                                        markdown
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->md博客语法">
+                                        
+                                        md博客语法
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->openwrt">
+                                        
+                                        openwrt
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->php">
+                                        
+                                        php
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->python">
+                                        
+                                        python
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->vray">
+                                        
+                                        vray
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="游戏人生">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        游戏人生
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="游戏人生<--->天龙八部">
+                                        
+                                        天龙八部
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="共享">
+                        
+                        共享
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="诗词">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        诗词
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="诗词<--->纳兰容若">
+                                        
+                                        纳兰容若
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="alist">
+                        
+                        alist
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="alltube">
+                        
+                        alltube
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="armbian">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        armbian
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="armbian<--->time">
+                                        
+                                        time
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="docker">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        docker
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="docker<--->bitwarden">
+                                        
+                                        bitwarden
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->music">
+                                        
+                                        music
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->portainer">
+                                        
+                                        portainer
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->reader">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        reader
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="docker<--->readerwebserver">
+                                                        
+                                                        webserver
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="fileshare">
+                        
+                        fileshare
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="hexo">
+                        
+                        hexo
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="kms">
+                        
+                        kms
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="linux<--->aria2">
+                                        
+                                        aria2
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->clash">
+                                        
+                                        clash
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->rc.local">
+                                        
+                                        rc.local
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->transmission">
+                                        
+                                        transmission
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->v2ray">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        v2ray
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="linux<--->v2rayhide">
+                                                        
+                                                        hide
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->v2raya">
+                                        
+                                        v2raya
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->video">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        video
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="linux<--->videoplayer">
+                                                        
+                                                        player
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->webdav">
+                                        
+                                        webdav
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="nginx">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        nginx
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="nginx<--->php-fpm">
+                                        
+                                        php-fpm
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="NGrok">
+                        
+                        NGrok
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="openwrt">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        openwrt
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="openwrt<--->iStore">
+                                        
+                                        iStore
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="pichome">
+                        
+                        pichome
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        python
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="python<--->函数">
+                                        
+                                        函数
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="python<--->you-get">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        you-get
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="python<--->you-getvideo">
+                                                        
+                                                        video
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="rsync">
+                        
+                        rsync
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="rustdesk">
+                        
+                        rustdesk
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="script">
+                        
+                        script
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="systemd">
+                        
+                        systemd
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="teamspeak">
+                        
+                        teamspeak
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="webdav">
+                        
+                        webdav
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="wikijs">
+                        
+                        wikijs
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="windows">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        windows
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="windows<--->linux">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        linux
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="windows<--->linuxdownload">
+                                                        
+                                                        download
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="86">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2021</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2022</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工作效率</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>机场</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活密钥</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由器梅林固件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令大全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>纳兰容若</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内容穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>人生与哲学</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>生活随笔</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>视频下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>天龙八部,架设教程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>相册</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>新冠肺炎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>序列号</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>游戏分享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则表达式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alist</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alltube</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>aria2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>armbian</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bitwarden</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>clash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>codingbat</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fileshare</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hide</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iStore</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>keys</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kms</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mariadb</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>merlin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>music</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mylove</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>navidrome</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NGrok</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openwrt</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>password</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php-fpm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>player</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>portainer</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rc.local</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>reader</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rsync</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rustdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>soft</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SSR</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>systemd</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>teamspeak</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>time</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transmission</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>user-agent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>v2ray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>V2Ray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>v2raya</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video download</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webdav</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>wikijs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>windows</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>x-ui</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>xray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>you-get</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 linux "
+           href="/2021/01/01/study-linux/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 学习笔记-以deepin为例(持续更新)">Linux 学习笔记-以deepin为例(持续更新)</span>
+            <span class="post-date" title="2021-01-01 14:18:45">2021/01/01</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 "
+           href="/2021/03/22/pc-soft/"
+           data-tag="soft,工作效率"
+           data-author="" >
+            <span class="post-title" title="必备电脑软件，提高工作效率">必备电脑软件，提高工作效率</span>
+            <span class="post-date" title="2021-03-22 22:15:46">2021/03/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2022/12/22/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2022-12-22 15:15:24">2022/12/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 openwrt "
+           href="/2022/11/22/docker-install-openwrt/"
+           data-tag="openwrt"
+           data-author="" >
+            <span class="post-title" title="Docker版OpenWrt旁路由安装设置教程">Docker版OpenWrt旁路由安装设置教程</span>
+            <span class="post-date" title="2022-11-22 22:33:55">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 NGrok "
+           href="/2022/11/11/ngrok/"
+           data-tag="NGrok"
+           data-author="" >
+            <span class="post-title" title="NGrok服务器搭建IT TUN">NGrok服务器搭建IT TUN</span>
+            <span class="post-date" title="2022-11-11 22:33:55">2022/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 rustdesk "
+           href="/2022/10/15/rustdesk/"
+           data-tag="rustdesk"
+           data-author="" >
+            <span class="post-title" title="docker搭建远程桌面控制中继rustdesk">docker搭建远程桌面控制中继rustdesk</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 alltube "
+           href="/2022/10/15/alltube-4kdownlowd/"
+           data-tag="alltube"
+           data-author="" >
+            <span class="post-title" title="视频下载服务搭建—AllTube">视频下载服务搭建—AllTube</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 kms "
+           href="/2022/09/15/kms-server/"
+           data-tag="kms"
+           data-author="" >
+            <span class="post-title" title="OpenWrt 搭建 KMS 服务器激活windows、Office">OpenWrt 搭建 KMS 服务器激活windows、Office</span>
+            <span class="post-date" title="2022-09-15 22:33:55">2022/09/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 systemd "
+           href="/2022/09/12/linux-systemd-service/"
+           data-tag="systemd"
+           data-author="" >
+            <span class="post-title" title="linux中系统服务管理学习手记">linux中系统服务管理学习手记</span>
+            <span class="post-date" title="2022-09-12 22:33:55">2022/09/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 teamspeak "
+           href="/2022/09/10/my-teamspeek/"
+           data-tag="teamspeak"
+           data-author="" >
+            <span class="post-title" title="语音服务器搭建,教你自建团队语音服务器">语音服务器搭建,教你自建团队语音服务器</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 rsync "
+           href="/2022/09/10/rsync-no-password-sync/"
+           data-tag="rsync"
+           data-author="" >
+            <span class="post-title" title="简单两步实现 RSYNC 自动同步文件免密">简单两步实现 RSYNC 自动同步文件免密</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 armbian time "
+           href="/2022/09/01/armbian-update-time/"
+           data-tag="armbian,time"
+           data-author="" >
+            <span class="post-title" title="armbian修改时间和时区">armbian修改时间和时区</span>
+            <span class="post-date" title="2022-09-01 22:33:55">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 openwrt iStore "
+           href="/2022/08/29/install-openwrt-istore/"
+           data-tag="openwrt,iStore"
+           data-author="" >
+            <span class="post-title" title="openwrt软路由iStore的安装使用手记">openwrt软路由iStore的安装使用手记</span>
+            <span class="post-date" title="2022-08-29 22:33:55">2022/08/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 alist "
+           href="/2022/08/23/docker-alist/"
+           data-tag="alist"
+           data-author="" >
+            <span class="post-title" title="网盘直链程序—AList，支持市面上几乎所有网盘">网盘直链程序—AList，支持市面上几乎所有网盘</span>
+            <span class="post-date" title="2022-08-23 22:33:55">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 pichome "
+           href="/2022/08/08/pichome/"
+           data-tag="相册"
+           data-author="" >
+            <span class="post-title" title="PicHome开源炫酷相册系统">PicHome开源炫酷相册系统</span>
+            <span class="post-date" title="2022-08-08 21:33:55">2022/08/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 wikijs "
+           href="/2022/08/04/creat-wikijs/"
+           data-tag="wikijs"
+           data-author="" >
+            <span class="post-title" title="基于 Wiki.js 搭建知识库系统">基于 Wiki.js 搭建知识库系统</span>
+            <span class="post-date" title="2022-08-04 00:33:55">2022/08/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 fileshare "
+           href="/2022/08/04/file_photo_video-share/"
+           data-tag="fileshare"
+           data-author="" >
+            <span class="post-title" title="Files—单文件 PHP文件、相册管理器files.photo.gallery">Files—单文件 PHP文件、相册管理器files.photo.gallery</span>
+            <span class="post-date" title="2022-08-04 00:33:55">2022/08/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker music "
+           href="/2022/07/31/free-music-/"
+           data-tag="docker,music,navidrome"
+           data-author="" >
+            <span class="post-title" title="Docker搭建自由音乐播放软件—Navidrome">Docker搭建自由音乐播放软件—Navidrome</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker portainer "
+           href="/2022/07/31/use-docker-portainer/"
+           data-tag="docker,portainer"
+           data-author="" >
+            <span class="post-title" title="安装使用Docker和portainer面板">安装使用Docker和portainer面板</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux transmission "
+           href="/2022/07/30/linux-transmission/"
+           data-tag="linux,transmission"
+           data-author="" >
+            <span class="post-title" title="linux安装使用transmission下载器">linux安装使用transmission下载器</span>
+            <span class="post-date" title="2022-07-30 20:22:33">2022/07/30</span>
+        </a>
+        
+        
+        
+        
+        
+        <a  class="全部文章 linux clash "
+           href="/2022/07/26/ubuntu-clash/"
+           data-tag="linux,clash"
+           data-author="" >
+            <span class="post-title" title="Ubuntu中安装使用clash">Ubuntu中安装使用clash</span>
+            <span class="post-date" title="2022-07-26 20:33:55">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux rc.local "
+           href="/2022/07/26/linux-rc.local/"
+           data-tag="linux,rc.local"
+           data-author="" >
+            <span class="post-title" title="Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)">Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)</span>
+            <span class="post-date" title="2022-07-26 20:22:33">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux rc.local "
+           href="/2022/07/26/ubuntu-rc.local/"
+           data-tag="linux,rc.local"
+           data-author="" >
+            <span class="post-title" title="Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)">Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)</span>
+            <span class="post-date" title="2022-07-26 20:22:33">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux aria2 "
+           href="/2022/07/25/linux-aria2/"
+           data-tag="linux,aria2"
+           data-author="" >
+            <span class="post-title" title="ubuntu服务器下安装使用aria2下载器">ubuntu服务器下安装使用aria2下载器</span>
+            <span class="post-date" title="2022-07-25 20:22:33">2022/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux aria2 "
+           href="/2022/07/25/ubuntu-aria2/"
+           data-tag="linux,aria2"
+           data-author="" >
+            <span class="post-title" title="ubuntu服务器下安装使用aria2下载器">ubuntu服务器下安装使用aria2下载器</span>
+            <span class="post-date" title="2022-07-25 20:22:33">2022/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 诗词 纳兰容若 "
+           href="/2022/07/17/shi-nalanrongro/"
+           data-tag="纳兰容若"
+           data-author="" >
+            <span class="post-title" title="纳兰容若典藏诗词">纳兰容若典藏诗词</span>
+            <span class="post-date" title="2022-07-17 20:22:22">2022/07/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 webdav "
+           href="/2022/07/16/mount-webdav/"
+           data-tag="webdav"
+           data-author="" >
+            <span class="post-title" title="Linux和windows系统挂载 WebDAV 为本地磁盘">Linux和windows系统挂载 WebDAV 为本地磁盘</span>
+            <span class="post-date" title="2022-07-16 20:22:22">2022/07/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 nginx "
+           href="/2022/07/11/ubuntu-install-nginx/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="ubuntu 源码编译安装nginx">ubuntu 源码编译安装nginx</span>
+            <span class="post-date" title="2022-07-11 20:22:22">2022/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux webdav "
+           href="/2022/07/05/webdav/"
+           data-tag="linux,webdav"
+           data-author="" >
+            <span class="post-title" title="Linux文件共享服务之webdav服务器">Linux文件共享服务之webdav服务器</span>
+            <span class="post-date" title="2022-07-05 20:22:33">2022/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 php "
+           href="/2022/06/28/study-php/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="业余学习PHP手记">业余学习PHP手记</span>
+            <span class="post-date" title="2022-06-28 20:13:33">2022/06/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 内网穿透 "
+           href="/2022/06/21/nat-chuantou/"
+           data-tag="内容穿透"
+           data-author="" >
+            <span class="post-title" title="推荐5款最好用的内网穿透工具">推荐5款最好用的内网穿透工具</span>
+            <span class="post-date" title="2022-06-21 20:13:33">2022/06/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker bitwarden "
+           href="/2022/06/15/docker-bitwarden/"
+           data-tag="docker,bitwarden"
+           data-author="" >
+            <span class="post-title" title="Docker中部署bitwarden服务器">Docker中部署bitwarden服务器</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 script "
+           href="/2022/06/15/script-getdomain/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="html中用JS获取页面域名、端口等信息">html中用JS获取页面域名、端口等信息</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 nginx php-fpm "
+           href="/2022/06/12/use-nginx/"
+           data-tag="nginx,php-fpm"
+           data-author="" >
+            <span class="post-title" title="Ubuntu-中安装Nginx+php-fpm填坑日记">Ubuntu-中安装Nginx+php-fpm填坑日记</span>
+            <span class="post-date" title="2022-06-12 20:22:22">2022/06/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker reader webserver "
+           href="/2022/06/10/web-reader/"
+           data-tag="reader,docker"
+           data-author="" >
+            <span class="post-title" title="自己的网文阅读器 安卓的“阅读”APP网页版">自己的网文阅读器 安卓的“阅读”APP网页版</span>
+            <span class="post-date" title="2022-06-10 20:22:33">2022/06/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 python you-get video "
+           href="/2022/06/09/youget-down-video/"
+           data-tag="python,you-get"
+           data-author="" >
+            <span class="post-title" title="you-get下载各网站视频方法（python库亦可用）">you-get下载各网站视频方法（python库亦可用）</span>
+            <span class="post-date" title="2022-06-09 20:22:33">2022/06/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 python 函数 "
+           href="/2022/06/05/python-def/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python各个库的使用方法">Python各个库的使用方法</span>
+            <span class="post-date" title="2022-06-05 20:22:33">2022/06/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 windows linux download "
+           href="/2022/05/31/system-down/"
+           data-tag="linux,windows"
+           data-author="" >
+            <span class="post-title" title="PC系统（windows、Linux）下载地址收集">PC系统（windows、Linux）下载地址收集</span>
+            <span class="post-date" title="2022-05-31 20:13:33">2022/05/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 hexo "
+           href="/2022/05/26/hexo-password/"
+           data-tag="hexo,password"
+           data-author="" >
+            <span class="post-title" title="Hexo博客中给文章加密码访问">Hexo博客中给文章加密码访问</span>
+            <span class="post-date" title="2022-05-26 20:13:33">2022/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux video player "
+           href="/2022/05/22/linux-video-players/"
+           data-tag="linux,video,player"
+           data-author="" >
+            <span class="post-title" title="16个Linux最佳开源视频播放器">16个Linux最佳开源视频播放器</span>
+            <span class="post-date" title="2022-05-22 22:13:33">2022/05/22</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 教程技巧 mariadb入门知识 "
+           href="/2022/01/09/mariadb-use/"
+           data-tag="mariadb,mysql,数据库"
+           data-author="" >
+            <span class="post-title" title="MySQL[mariadb]数据库入门知识">MySQL[mariadb]数据库入门知识</span>
+            <span class="post-date" title="2022-01-09 22:13:33">2022/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 frp内网穿透 "
+           href="/2021/12/19/use-frp/"
+           data-tag="frp,内网穿透"
+           data-author="" >
+            <span class="post-title" title="FRP内网穿透使用简明教程">FRP内网穿透使用简明教程</span>
+            <span class="post-date" title="2021-12-19 22:13:33">2021/12/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 视频下载 "
+           href="/2021/12/12/download-web-video/"
+           data-tag="视频下载,video download"
+           data-author="" >
+            <span class="post-title" title="web在线视频下载方法">web在线视频下载方法</span>
+            <span class="post-date" title="2021-12-12 22:13:33">2021/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 hexo "
+           href="/2021/12/09/linux-hexo-github-blog/"
+           data-tag="linux,hexo,github"
+           data-author="" >
+            <span class="post-title" title="Linux下Hexo+GitHub搭建个人博客">Linux下Hexo+GitHub搭建个人博客</span>
+            <span class="post-date" title="2021-12-09 18:25:36">2021/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2021/11/26/to-2022-year/"
+           data-tag="2022"
+           data-author="" >
+            <span class="post-title" title="致即将到来的2022年">致即将到来的2022年</span>
+            <span class="post-date" title="2021-11-26 21:13:33">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 openwrt "
+           href="/2021/11/25/openwrt-router/"
+           data-tag="openwrt,软路由"
+           data-author="" >
+            <span class="post-title" title="软路由openwrt使用基本教程">软路由openwrt使用基本教程</span>
+            <span class="post-date" title="2021-11-25 21:13:33">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 路由器 "
+           href="/2021/11/24/merlin-router/"
+           data-tag="路由器梅林固件,merlin"
+           data-author="" >
+            <span class="post-title" title="梅林固件使用手记">梅林固件使用手记</span>
+            <span class="post-date" title="2021-11-24 23:13:33">2021/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/2021/11/22/linux-shell-all/"
+           data-tag="linux,shell,命令大全"
+           data-author="" >
+            <span class="post-title" title="Linux 命令大全">Linux 命令大全</span>
+            <span class="post-date" title="2021-11-22 22:15:46">2021/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/10/17/net/"
+           data-tag="SSR,机场,V2Ray"
+           data-author="" >
+            <span class="post-title" title="2021最新高速稳定SS/SSR/Trojan/V2Ray机场">2021最新高速稳定SS/SSR/Trojan/V2Ray机场</span>
+            <span class="post-date" title="2021-10-17 22:15:46">2021/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2021/10/11/dark-live/"
+           data-tag="2021"
+           data-author="" >
+            <span class="post-title" title="灯火辉煌下的黑暗角落">灯火辉煌下的黑暗角落</span>
+            <span class="post-date" title="2021-10-11 22:58:58">2021/10/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 md博客语法 "
+           href="/2021/03/18/md-blog-grammar/"
+           data-tag="md博客,md语法"
+           data-author="" >
+            <span class="post-title" title="md博客文章用到的markdown语法">md博客文章用到的markdown语法</span>
+            <span class="post-date" title="2021-03-18 22:11:02">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 aria2 Linux "
+           href="/2021/03/18/aria2-linux/"
+           data-tag="aria2"
+           data-author="" >
+            <span class="post-title" title="Linux下Aria2完整安装及使用教程">Linux下Aria2完整安装及使用教程</span>
+            <span class="post-date" title="2021-03-18 21:22:23">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 正则表达式 "
+           href="/2021/03/15/regular/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="超级强大且好用的正则表达式">超级强大且好用的正则表达式</span>
+            <span class="post-date" title="2021-03-15 14:18:45">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/2021/03/15/win-linux-share/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）">Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）</span>
+            <span class="post-date" title="2021-03-15 01:30:25">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2021/03/12/2000games-source/"
+           data-tag="游戏分享"
+           data-author="" >
+            <span class="post-title" title="2000套游戏私服源码分享">2000套游戏私服源码分享</span>
+            <span class="post-date" title="2021-03-12 14:18:45">2021/03/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/03/11/tlbb-server-settings/"
+           data-tag="天龙八部,架设教程"
+           data-author="" >
+            <span class="post-title" title="天龙八部外网开设+登陆器设置+网页注册">天龙八部外网开设+登陆器设置+网页注册</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/03/11/tlbb-teach/"
+           data-tag="天龙八部,架设教程"
+           data-author="" >
+            <span class="post-title" title="天龙八部私服架设教程">天龙八部私服架设教程</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 git "
+           href="/2021/03/11/git-err/"
+           data-tag="git github"
+           data-author="" >
+            <span class="post-title" title="git 使用错误解决办法汇总">git 使用错误解决办法汇总</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 hexo "
+           href="/2021/03/09/hexo-create-blog/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="使用hexo+github搭建免费个人博客详细教程">使用hexo+github搭建免费个人博客详细教程</span>
+            <span class="post-date" title="2021-03-09 19:58:58">2021/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/03/03/3-hexo-used/"
+           data-tag="3-hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo主题使用说明">3-hexo主题使用说明</span>
+            <span class="post-date" title="2021-03-03 19:25:36">2021/03/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/02/26/tllist/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TLBB server LIST">TLBB server LIST</span>
+            <span class="post-date" title="2021-02-26 19:58:58">2021/02/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/01/26/tlbb/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="天龙八部版本库">天龙八部版本库</span>
+            <span class="post-date" title="2021-01-26 19:58:58">2021/01/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/26/love-live/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="热爱生活，抛弃过去">热爱生活，抛弃过去</span>
+            <span class="post-date" title="2020-11-26 19:58:58">2020/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/05/to-2021/"
+           data-tag="2021"
+           data-author="" >
+            <span class="post-title" title="致2021年">致2021年</span>
+            <span class="post-date" title="2020-11-05 18:58:58">2020/11/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 共享 "
+           href="/2020/07/28/soft-Keys/"
+           data-tag="keys,激活密钥,序列号,激活码"
+           data-author="" >
+            <span class="post-title" title="精心收集的软件激活密钥">精心收集的软件激活密钥</span>
+            <span class="post-date" title="2020-07-28 08:08:38">2020/07/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/07/05/coding-logic/"
+           data-tag="python,codingbat"
+           data-author="" >
+            <span class="post-title" title="python练习园地（三）——Logic篇">python练习园地（三）——Logic篇</span>
+            <span class="post-date" title="2020-07-05 19:03:25">2020/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/07/01/codingbat-string/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（二）——string篇">python练习园地（二）——string篇</span>
+            <span class="post-date" title="2020-07-01 21:03:25">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/07/01/to-latter-half-year/"
+           data-tag="新冠肺炎"
+           data-author="" >
+            <span class="post-title" title="致2020年下半年">致2020年下半年</span>
+            <span class="post-date" title="2020-07-01 08:08:28">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/06/21/codingbat-warmup/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（一）——Warmup篇">python练习园地（一）——Warmup篇</span>
+            <span class="post-date" title="2020-06-21 22:03:25">2020/06/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 共享 "
+           href="/2020/06/19/user-agent/"
+           data-tag="user-agent"
+           data-author="" >
+            <span class="post-title" title="浏览器user-agent大全">浏览器user-agent大全</span>
+            <span class="post-date" title="2020-06-19 21:03:25">2020/06/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/06/18/python-exercise/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python经典习题代码">Python经典习题代码</span>
+            <span class="post-date" title="2020-06-18 13:03:25">2020/06/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 markdown "
+           href="/2020/06/17/markdown-usage/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown使用方法">Markdown使用方法</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/one/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="保持童心">保持童心</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/restart-blog/"
+           data-tag="人生与哲学"
+           data-author="" >
+            <span class="post-title" title="重开博客，重启人生">重开博客，重启人生</span>
+            <span class="post-date" title="2020-06-17 15:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2020/06/06/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-06-06 20:20:55">2020/06/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2011/11/11/find-four-peple/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人生要找到的四个人">人生要找到的四个人</span>
+            <span class="post-date" title="2011-11-11 20:20:20">2011/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2009/11/11/test-access/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="考试成功以后">考试成功以后</span>
+            <span class="post-date" title="2009-11-11 20:20:20">2009/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/02/12/life-like-travel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人生就像一次旅行">人生就像一次旅行</span>
+            <span class="post-date" title="2008-02-12 22:03:25">2008/02/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/01/12/to-mylove/"
+           data-tag="mylove"
+           data-author="" >
+            <span class="post-title" title="致秋">致秋</span>
+            <span class="post-date" title="2008-01-12 13:03:25">2008/01/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2007/02/04/miss-autumn/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="秋思">秋思</span>
+            <span class="post-date" title="2007-02-04 18:58:58">2007/02/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2007/02/04/I-don't-know/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="心碎了不知疲惫">心碎了不知疲惫</span>
+            <span class="post-date" title="2007-02-04 08:08:28">2007/02/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2006/04/24/informal1/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="偶题">偶题</span>
+            <span class="post-date" title="2006-04-24 18:33:25">2006/04/24</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-install-openwrt-istore" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">openwrt软路由iStore的安装使用手记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="openwrt">openwrt</a> > 
+            
+            <a  data-rel="openwrt&lt;---&gt;iStore">iStore</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">openwrt</a>
+            
+            <a class="color2">iStore</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-12-22 10:50:29'>2022-08-29 22:33</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#openwrt%E8%BD%AF%E8%B7%AF%E7%94%B1iStoreOS%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%89%8B%E8%AE%B0"><span class="toc-text">openwrt软路由iStoreOS的安装使用手记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81iStoreOS%E7%AE%80%E4%BB%8B"><span class="toc-text">一、iStoreOS简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-text">二、下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">三、安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-U%E7%9B%98%E5%AE%89%E8%A3%85"><span class="toc-text">1.U盘安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81PE%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85"><span class="toc-text">2、PE直接安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81linux-liveCD%E4%B8%8B%E7%9B%B4%E6%8E%A5%E5%86%99%E5%85%A5"><span class="toc-text">3、linux-liveCD下直接写入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%89%A9%E5%AE%B9"><span class="toc-text">四、扩容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%8F%92%E4%BB%B6"><span class="toc-text">五、插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%BD%91%E7%BB%9C"><span class="toc-text">六、网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81DDNS"><span class="toc-text">七、DDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="toc-text">八、远程访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81Docker"><span class="toc-text">九、Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD"><span class="toc-text">十、其他功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-text">1、下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81FRPS%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">2、FRPS穿透服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E7%BD%91%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">3、网站服务器</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="openwrt软路由iStoreOS的安装使用手记"><a href="#openwrt软路由iStoreOS的安装使用手记" class="headerlink" title="openwrt软路由iStoreOS的安装使用手记"></a>openwrt软路由iStoreOS的安装使用手记</h1><p>家里的路由华为ws880，刷了梅林系统，用了有5、6年，最新老是出现连接网络，但手机、平板等终端无法联网的情况，估计是路由问题，另外买华为智慧屏送的AX3路由做主路由又有很多限制，如DDNS、端口转发、远程唤醒等功能等，于是在海鲜市场淘了一个J1900小主机做软路由，两个无线路由来做AP，考虑用iStoreOS作为软路由系统。</p>
+<h2 id="一、iStoreOS简介"><a href="#一、iStoreOS简介" class="headerlink" title="一、iStoreOS简介"></a>一、iStoreOS简介</h2><p>iStoreOS 是提供给入门级 OpenWRT 爱好者使用的固件，主要是为了简化操作，避免入门用户走进太多坑。其中包括：</p>
+<ul>
+<li>提供拨号向导，简化拨号流程</li>
+<li>简化 DNS 配置</li>
+<li>简化硬盘格式化流程（坑最多）</li>
+<li>提供 Samba 设置向导（原始的 OpenWRT 没提供 Samba 密码设置的功能）</li>
+<li>Docker 配置向导</li>
+<li>远程下载设置向导</li>
+</ul>
+<h2 id="二、下载"><a href="#二、下载" class="headerlink" title="二、下载"></a>二、下载</h2><p><a target="_blank" rel="noopener" href="https://fw.koolcenter.com/iStoreOS/x86_64/">https://fw.koolcenter.com/iStoreOS/x86_64/</a></p>
+<p>镜像地址：<a target="_blank" rel="noopener" href="https://fw.koolcenter.com/iStoreOS/x86_64/openwrt-21.02.2-2022071510-x86-64-squashfs-combined.img.gz">https://fw.koolcenter.com/iStoreOS/x86_64/openwrt-21.02.2-2022071510-x86-64-squashfs-combined.img.gz</a></p>
+<h2 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h2><h3 id="1-U盘安装"><a href="#1-U盘安装" class="headerlink" title="1.U盘安装"></a>1.U盘安装</h3><ul>
+<li>电脑上用 rufus 做 USB 启动盘</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://rufus.ie/zh/">Rufus下载(opens new window)</a></p>
+<ul>
+<li>电脑插入U盘，打开rufus工具，选择下载好的固件，把固件写入到U盘</li>
+</ul>
+<p><img src="https://doc.linkease.com/assets/img/install_x86.45efb3b5.png" alt="install.png"></p>
+<ul>
+<li>把 U盘&#x2F;键盘&#x2F;显示器 接入X86机器</li>
+</ul>
+<p>选择从U盘启动，一般按 F11 (x86机器太多，范围太广，可能不一定所有的机器都是F11快捷启动，具体自行查看)，选择接入的U盘，就可以启动。</p>
+<p>如果找不到U盘，那么可能你的U盘不兼容，需要换一个U盘。</p>
+<ul>
+<li>把固件从U盘安装到系统</li>
+</ul>
+<p>登录U盘系统，登录成功之后，输入：</p>
+<p><code>quickstart</code> (或者 qu + tab 自动补全)</p>
+<p>选择 Install X86，一直按确定，就行了。具体如下图所示：</p>
+<p><img src="data:image/png;base64,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" alt="install.png"></p>
+<ul>
+<li>用 <code>Show Interfaces</code> 查看网线插入到了哪个网口，以及查看当前LAN口的IP</li>
+</ul>
+<h3 id="2、PE直接安装"><a href="#2、PE直接安装" class="headerlink" title="2、PE直接安装"></a>2、PE直接安装</h3><p>可直接在PE系统下用工具将IMG镜像写入硬盘，省去了U盘启动盘的制作，如果仅想通过U盘运行，可省略。</p>
+<p><strong>img写盘工具(roadkil’s diskimage)</strong> </p>
+<p><a target="_blank" rel="noopener" href="http://www.bkill.com/u/upload/2014/08/08/1(2).png">img</a></p>
+<h3 id="3、linux-liveCD下直接写入"><a href="#3、linux-liveCD下直接写入" class="headerlink" title="3、linux-liveCD下直接写入"></a>3、linux-liveCD下直接写入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=XXXXX.img of=/dev/sda</span><br></pre></td></tr></table></figure>
+
+<p>注意把xxx.img换成你自己下载后的img路径，sda换成你系统内的硬盘，可用fdisk -l查看</p>
+<h2 id="四、扩容"><a href="#四、扩容" class="headerlink" title="四、扩容"></a>四、扩容</h2><p>新安装的系统空间较小，因为是软路由，性能要用尽，后期要安装各类插件，docker之类的，所以要把空间扩容。</p>
+<p>扩容方式：</p>
+<blockquote>
+<p>新安装系统后，不要启动，直接在PE内用diskgiun 把2G的分区调整空间大小，调整到你希望的空间后重启即可，</p>
+<p>注：如果启动进入过软路由系统，就无法扩容。</p>
+</blockquote>
+<h2 id="五、插件"><a href="#五、插件" class="headerlink" title="五、插件"></a>五、插件</h2><h2 id="六、网络"><a href="#六、网络" class="headerlink" title="六、网络"></a>六、网络</h2><h2 id="七、DDNS"><a href="#七、DDNS" class="headerlink" title="七、DDNS"></a>七、DDNS</h2><h2 id="八、远程访问"><a href="#八、远程访问" class="headerlink" title="八、远程访问"></a>八、远程访问</h2><h2 id="九、Docker"><a href="#九、Docker" class="headerlink" title="九、Docker"></a>九、Docker</h2><h2 id="十、其他功能"><a href="#十、其他功能" class="headerlink" title="十、其他功能"></a>十、其他功能</h2><h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><h3 id="2、FRPS穿透服务器"><a href="#2、FRPS穿透服务器" class="headerlink" title="2、FRPS穿透服务器"></a>2、FRPS穿透服务器</h3><h3 id="3、网站服务器"><a href="#3、网站服务器" class="headerlink" title="3、网站服务器"></a>3、网站服务器</h3><p>4、</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 910009183@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '0d19446c27fd076b906b',
+            clientSecret: 'b6f0fb5c86fbb82dcb8756e043dc1e759e320b93',
+            repo: 'coolxy.github.io',
+            owner: 'coolxy',
+            admin: ['coolxy'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2006-2022 coolxy
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
