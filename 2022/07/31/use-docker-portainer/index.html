@@ -2447,7 +2447,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-12-22 17:52:29'>2022-07-31 00:33</time>
+            发布时间 : <time class="date" title='最后更新: 2022-12-22 18:28:59'>2022-07-31 00:33</time>
         
     </div>
     <div class="article-meta">
@@ -2497,26 +2497,42 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="安装使用Docker和portainer面板"><a href="#安装使用Docker和portainer面板" class="headerlink" title="安装使用Docker和portainer面板"></a>安装使用Docker和portainer面板</h1><h2 id="一、安装docker"><a href="#一、安装docker" class="headerlink" title="一、安装docker"></a>一、安装docker</h2><h3 id="脚本安装"><a href="#脚本安装" class="headerlink" title="脚本安装"></a>脚本安装</h3><p>使用官方安装脚本自动安装，安装命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br></pre></td></tr></table></figure>
+<pre><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+</code></pre>
 <p>也可以使用国内 daocloud 一键安装命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br></pre></td></tr></table></figure>
-<h3 id="手动命令安装："><a href="#手动命令安装：" class="headerlink" title="手动命令安装："></a>手动命令安装：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
-
-
+<pre><code>curl -sSL https://get.daocloud.io/docker | sh
+</code></pre>
+<h3 id="手动命令安装："><a href="#手动命令安装：" class="headerlink" title="手动命令安装："></a>手动命令安装：</h3><pre><code class="shell">sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre>
 <h2 id="二、docker基本命令"><a href="#二、docker基本命令" class="headerlink" title="二、docker基本命令"></a>二、docker基本命令</h2><h3 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h3><p>docker run ：创建一个新的容器并运行一个命令，详见<a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-run-command.html">https://www.runoob.com/docker/docker-run-command.html</a></p>
 <p>语法:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br></pre></td></tr></table></figure>
-
+<pre><code class="shell">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+</code></pre>
+<p>查看容器：</p>
+<pre><code>sudo docker ps
+</code></pre>
 <p>启动、停止、重启容器：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker start myrunoob   #启动已停止的容器</span><br><span class="line"></span><br><span class="line">docker stop myrunoob    #停止容器</span><br><span class="line"></span><br><span class="line">docker restart myrunoob     #重启运行中的容器</span><br></pre></td></tr></table></figure>
+<pre><code class="shell">sudo docker start myrunoob   #启动已停止的容器
+
+sudo docker stop myrunoob    #停止容器
+
+sudo docker restart myrunoob     #重启运行中的容器
+</code></pre>
 <p>重命名容器：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rename 原容器名  新容器名</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="三、安装portainer"><a href="#三、安装portainer" class="headerlink" title="三、安装portainer"></a>三、安装portainer</h2><p>汉化：<a target="_blank" rel="noopener" href="https://imnks.com/usr/uploads/2022/07/portainer-ce-public-cn-20220728.zip">https://imnks.com/usr/uploads/2022/07/portainer-ce-public-cn-20220728.zip</a></p>
+<pre><code class="shell">sudo docker rename 原容器名  新容器名
+</code></pre>
+<h2 id="三、安装portainer"><a href="#三、安装portainer" class="headerlink" title="三、安装portainer"></a>三、安装portainer</h2><p>第二步：拉取镜像</p>
+<pre><code>sudo docker pull portainer/portainer
+</code></pre>
+<p>运行：</p>
+<pre><code class="shell">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /home/docker_data/portainer/public:/public portainer/portainer-ce
+</code></pre>
+<p>汉化：<a target="_blank" rel="noopener" href="https://imnks.com/usr/uploads/2022/07/portainer-ce-public-cn-20220728.zip">https://imnks.com/usr/uploads/2022/07/portainer-ce-public-cn-20220728.zip</a></p>
 <p>下载后，将public文件夹放自己的目录内：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /home/docker_data/portainer/public:/public portainer/portainer-ce</span><br></pre></td></tr></table></figure>
+<pre><code>sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /home/docker_data/portainer/public:/public portainer/portainer-ce
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 910009183@qq.com </span>
     </div>
