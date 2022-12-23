@@ -2443,7 +2443,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-12-22 10:50:37'>2022-10-15 22:33</time>
+            发布时间 : <time class="date" title='最后更新: 2022-12-23 08:41:41'>2022-10-15 22:33</time>
         
     </div>
     <div class="article-meta">
@@ -2494,16 +2494,81 @@
       
         <h2 id="一、alltube简要说明"><a href="#一、alltube简要说明" class="headerlink" title="一、alltube简要说明"></a>一、alltube简要说明</h2><h3 id="相关地址"><a href="#相关地址" class="headerlink" title="相关地址"></a>相关地址</h3><p>官方Demo地址：<a target="_blank" rel="noopener" href="https://alltubedownload.net/">https://alltubedownload.net/</a><br>GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/Rudloff/alltube">https://github.com/Rudloff/alltube</a> （2.5k star）</p>
 <h2 id="二、手动搭建"><a href="#二、手动搭建" class="headerlink" title="二、手动搭建"></a>二、手动搭建</h2><p>从项目主页下载后解压：<br><a target="_blank" rel="noopener" href="https://github.com/Rudloff/alltube/releases/download/3.1.0/alltube-3.1.0.zip">AllTube服务器下载</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/Rudloff/alltube/releases/download/3.1.0/alltube-3.1.0.zip</span><br><span class="line">unzip alltube-3.1.0.zip</span><br><span class="line"><span class="built_in">mv</span> alltube /www/wwwroot/</span><br><span class="line"><span class="built_in">chmod</span> 777 -R /www/wwwroot/alltube</span><br><span class="line"><span class="built_in">chown</span> www-data -R /www/wwwroot/alltube</span><br><span class="line"><span class="built_in">chgrp</span> www-data -R /www/wwwroot/alltube</span><br></pre></td></tr></table></figure>
-<p>将解压后的目录复制到web服务目录，然后nginx反代，这里要注意，用http模式是无法解析视频的，一定要用https模式方可。<br>附：nginx:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name xx.xxx.xx;</span><br><span class="line">    rewrite ^(.*) https://xx.xxx.xx$1 permanent;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">	server_name xx.xxx.xx;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line"></span><br><span class="line">        root /www/wwwroot/alltube;</span><br><span class="line">        index index.php;</span><br><span class="line"></span><br><span class="line">        access_log  /var/log/nginx/alltube.access.log;</span><br><span class="line">        error_log   /var/log/nginx/alltube.error.log;</span><br><span class="line"></span><br><span class="line">        types &#123;</span><br><span class="line">                text/html   html htm shtml;</span><br><span class="line">                text/css    css;</span><br><span class="line">                text/xml    xml;</span><br><span class="line">                application/x-web-app-manifest+json   webapp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        # Deny access to dotfiles</span><br><span class="line">        location ~ /\. &#123;</span><br><span class="line">                deny all;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                try_files $uri /index.php?$args;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">                try_files $uri /index.php?$args;</span><br><span class="line"></span><br><span class="line">                fastcgi_param     PATH_INFO $fastcgi_path_info;</span><br><span class="line">                fastcgi_param     PATH_TRANSLATED $document_root$fastcgi_path_info;</span><br><span class="line">                fastcgi_param     SCRIPT_FILENAME $document_root$fastcgi_script_name;</span><br><span class="line"></span><br><span class="line">                fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;</span><br><span class="line">                fastcgi_index index.php;</span><br><span class="line">                fastcgi_split_path_info ^(.+\.php)(/.+)$;</span><br><span class="line">                fastcgi_intercept_errors off;</span><br><span class="line"></span><br><span class="line">                fastcgi_buffer_size 16k;</span><br><span class="line">                fastcgi_buffers 4 16k;</span><br><span class="line"></span><br><span class="line">                include fastcgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">wget https://github.com/Rudloff/alltube/releases/download/3.1.0/alltube-3.1.0.zip
+unzip alltube-3.1.0.zip
+mv alltube /www/wwwroot/
+chmod 777 -R /www/wwwroot/alltube
+chown www-data -R /www/wwwroot/alltube
+chgrp www-data -R /www/wwwroot/alltube
+</code></pre>
+<p>将解压后的目录复制到web服务目录，然后nginx反代，这里要注意，用http模式是无法解析视频的，一定要用https模式（需要证书）方可。<br>附：nginx:</p>
+<pre><code>server &#123;
+    listen 80;
+    server_name xx.xxx.xx;
+    rewrite ^(.*) https://xx.xxx.xx$1 permanent;
+    &#125;
+
+server &#123;
+    server_name xx.xxx.xx;
+        listen 443 ssl;
+
+        root /www/wwwroot/alltube;
+        index index.php;
+
+        access_log  /var/log/nginx/alltube.access.log;
+        error_log   /var/log/nginx/alltube.error.log;
+
+        types &#123;
+                text/html   html htm shtml;
+                text/css    css;
+                text/xml    xml;
+                application/x-web-app-manifest+json   webapp;
+        &#125;
+
+        # Deny access to dotfiles
+        location ~ /\. &#123;
+                deny all;
+        &#125;
+
+        location / &#123;
+                try_files $uri /index.php?$args;
+        &#125;
+
+        location ~ \.php$ &#123;
+                try_files $uri /index.php?$args;
+
+                fastcgi_param     PATH_INFO $fastcgi_path_info;
+                fastcgi_param     PATH_TRANSLATED $document_root$fastcgi_path_info;
+                fastcgi_param     SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+                fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_intercept_errors off;
+
+                fastcgi_buffer_size 16k;
+                fastcgi_buffers 4 16k;
+
+                include fastcgi_params;
+        &#125;
+&#125;
+</code></pre>
 <p>重启nginx应用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、docker搭建"><a href="#三、docker搭建" class="headerlink" title="三、docker搭建"></a>三、docker搭建</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">    <span class="attr">alltube:</span></span><br><span class="line">        <span class="attr">container_name:</span> <span class="string">alltube</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">&#x27;5993:80&#x27;</span>   <span class="comment"># 5993可以改成任意vps上未使用过的端口，80不要改</span></span><br><span class="line">        <span class="attr">environment:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">PUID=0</span>    <span class="comment"># 稍后在终端输入id可以查看当前用户的id</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">PGID=0</span>    <span class="comment"># 同上</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">        <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">rudloff/alltube</span></span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="bash">sudo systemctl restart nginx
+</code></pre>
+<h2 id="三、docker搭建"><a href="#三、docker搭建" class="headerlink" title="三、docker搭建"></a>三、docker搭建</h2><pre><code class="yaml">version: &#39;3.3&#39;
+services:
+    alltube:
+        container_name: alltube
+        ports:
+            - &#39;5993:80&#39;   # 5993可以改成任意vps上未使用过的端口，80不要改
+        environment:
+            - PUID=0    # 稍后在终端输入id可以查看当前用户的id
+            - PGID=0    # 同上
+            - TZ=Asia/Shanghai
+        restart: always
+        image: rudloff/alltube
+</code></pre>
 <h2 id="四、其他视频下载站"><a href="#四、其他视频下载站" class="headerlink" title="四、其他视频下载站"></a>四、其他视频下载站</h2><p><a target="_blank" rel="noopener" href="https://alltubedownload.com/">https://alltubedownload.com/</a></p>
 
       
