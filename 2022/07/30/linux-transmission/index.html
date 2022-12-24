@@ -2438,7 +2438,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-12-22 10:50:18'>2022-07-30 20:22</time>
+            发布时间 : <time class="date" title='最后更新: 2022-12-24 11:55:09'>2022-07-30 20:22</time>
         
     </div>
     <div class="article-meta">
@@ -2471,7 +2471,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8transmission%E4%B8%8B%E8%BD%BD%E5%99%A8"><span class="toc-text">linux安装使用transmission下载器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Transmission%E7%AE%80%E4%BB%8B"><span class="toc-text">1. Transmission简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Transmission%E5%AE%89%E8%A3%85"><span class="toc-text">2. Transmission安装</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8transmission%E4%B8%8B%E8%BD%BD%E5%99%A8"><span class="toc-text">linux安装使用transmission下载器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Transmission%E7%AE%80%E4%BB%8B"><span class="toc-text">1. Transmission简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Transmission%E5%AE%89%E8%A3%85"><span class="toc-text">2. Transmission安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Transmission%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">3.Transmission出现403的解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%9B%B4%E6%8D%A2%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF"><span class="toc-text">4.更换管理面板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">5、配置文件</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2489,7 +2489,110 @@
       
         <h1 id="linux安装使用transmission下载器"><a href="#linux安装使用transmission下载器" class="headerlink" title="linux安装使用transmission下载器"></a>linux安装使用transmission下载器</h1><h2 id="1-Transmission简介"><a href="#1-Transmission简介" class="headerlink" title="1. Transmission简介"></a>1. Transmission简介</h2><p>Transmission是一个强大的BT工具，懂的自然懂哈。目前官网发布了多个版本可供下载使用，包括：Mac、GTK+、QT版本，还有Daemon版本。<br>Transmission支持DHT、Magnet Link、uTP以及PEX等特性。尤其是支持Magnet Link磁力链接下载十分重要，因为目前网上很多资源都是采用这种方式来分享的，而不是传统的.torrent文件，例如TPB、BTDigg。<br>linux下，Transmission软件包下面包含多个套件：</p>
 <p>transmission-gtk: GTK+界面客户端。<br>transmission-qt: QT界面客户端。<br>transmission-cli: 命令行BT客户端。<br>transmission-daemon: 是一个Transmission的后台守护程序，本身不具备操作指令，只能通过Web客户端或者transmission-remote-cli来进行控制。这个程序特别适合安装在服务器上或者嵌入式系统中，以及一些没有显示器的设备上。<br>transmission-remote-cli: 用来控制transmission-daemon的命令套件，本身不具备下载BT的功能，只能够配合daemon使用。<br>根据需求只需要安装transmission-daemon即可。</p>
-<h2 id="2-Transmission安装"><a href="#2-Transmission安装" class="headerlink" title="2. Transmission安装"></a>2. Transmission安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install transmission-daemon</span><br></pre></td></tr></table></figure>
+<h2 id="2-Transmission安装"><a href="#2-Transmission安装" class="headerlink" title="2. Transmission安装"></a>2. Transmission安装</h2><pre><code class="bash">sudo apt-get install transmission-daemon
+</code></pre>
+<h2 id="3-Transmission出现403的解决办法"><a href="#3-Transmission出现403的解决办法" class="headerlink" title="3.Transmission出现403的解决办法"></a>3.Transmission出现403的解决办法</h2><pre><code>403: Forbidden
+Unauthorized IP Address.
+
+Either disable the IP address whitelist or add your address to it.
+
+If you&#39;re editing settings.json, see the &#39;rpc-whitelist&#39; and &#39;rpc-whitelist-enabled&#39; entries.
+
+If you&#39;re still using ACLs, use a whitelist instead. See the transmission-daemon manpage for details.
+</code></pre>
+<p>编辑：&#x2F;&#x2F;etc&#x2F;transmission-daemon&#x2F;setting.json</p>
+<p>rpc-whitelist</p>
+<pre><code>    &quot;rpc-authentication-required&quot;: true,
+    &quot;rpc-bind-address&quot;: &quot;0.0.0.0&quot;,
+    &quot;rpc-enabled&quot;: true,
+    &quot;rpc-host-whitelist&quot;: &quot;*.*.*.*&quot;,	//白名单列表，英文逗号分隔
+    &quot;rpc-host-whitelist-enabled&quot;: false,	//白名单，禁用
+</code></pre>
+<p>要在进程停止情况下编辑保存才可用。</p>
+<h2 id="4-更换管理面板"><a href="#4-更换管理面板" class="headerlink" title="4.更换管理面板"></a>4.更换管理面板</h2><p>下载第三方webUI:<a target="_blank" rel="noopener" href="https://github.com/ronggang/transmission-web-control/releases">https://github.com/ronggang/transmission-web-control/releases</a></p>
+<pre><code>tar -zxvf XXX.tar.gz
+sudo mv /usr/share/transmission/web /usr/share/transmission/web2
+sudo cp ./src /usr/share/transmission/web
+</code></pre>
+<p>登陆：</p>
+<p>192.168.1.*：9091</p>
+<p>默认用户名密码：transmission	transmission</p>
+<p>用户名可在 &#x2F;etc&#x2F;transmission-daemon&#x2F;setting.json中改名，当然也是要在进程停止情况下改</p>
+<h2 id="5、配置文件"><a href="#5、配置文件" class="headerlink" title="5、配置文件"></a>5、配置文件</h2><pre><code class="json">&#123;
+    &quot;alt-speed-down&quot;: 50,
+    &quot;alt-speed-enabled&quot;: false,
+    &quot;alt-speed-time-begin&quot;: 540,
+    &quot;alt-speed-time-day&quot;: 127,
+    &quot;alt-speed-time-enabled&quot;: false,
+    &quot;alt-speed-time-end&quot;: 1020,
+    &quot;alt-speed-up&quot;: 50,
+    &quot;bind-address-ipv4&quot;: &quot;0.0.0.0&quot;,
+    &quot;bind-address-ipv6&quot;: &quot;::&quot;,
+    &quot;blocklist-enabled&quot;: false,
+    &quot;blocklist-url&quot;: &quot;http://www.example.com/blocklist&quot;,
+    &quot;cache-size-mb&quot;: 4,
+    &quot;dht-enabled&quot;: true,
+    &quot;download-dir&quot;: &quot;/D&quot;,	//下载目录
+    &quot;download-limit&quot;: 100,
+    &quot;download-limit-enabled&quot;: 0,
+    &quot;download-queue-enabled&quot;: true,
+    &quot;download-queue-size&quot;: 10,	//下载线程数
+    &quot;encryption&quot;: 1,
+    &quot;idle-seeding-limit&quot;: 30,
+    &quot;idle-seeding-limit-enabled&quot;: false,
+    &quot;incomplete-dir&quot;: &quot;/var/lib/transmission-daemon/Downloads&quot;,		//下载临时目录
+    &quot;incomplete-dir-enabled&quot;: false,
+    &quot;lpd-enabled&quot;: false,
+    &quot;max-peers-global&quot;: 200,
+    &quot;message-level&quot;: 1,
+    &quot;peer-congestion-algorithm&quot;: &quot;&quot;,
+    &quot;peer-id-ttl-hours&quot;: 6,
+    &quot;peer-limit-global&quot;: 200,
+    &quot;peer-limit-per-torrent&quot;: 50,
+    &quot;peer-port&quot;: 51413,
+    &quot;peer-port-random-high&quot;: 65535,
+    &quot;peer-port-random-low&quot;: 49152,
+    &quot;peer-port-random-on-start&quot;: false,
+    &quot;peer-socket-tos&quot;: &quot;default&quot;,
+    &quot;pex-enabled&quot;: true,
+    &quot;port-forwarding-enabled&quot;: false,
+    &quot;preallocation&quot;: 1,
+    &quot;prefetch-enabled&quot;: true,
+    &quot;queue-stalled-enabled&quot;: true,
+    &quot;queue-stalled-minutes&quot;: 30,
+    &quot;ratio-limit&quot;: 2,
+    &quot;ratio-limit-enabled&quot;: false,
+    &quot;rename-partial-files&quot;: true,
+    &quot;rpc-authentication-required&quot;: true,
+    &quot;rpc-bind-address&quot;: &quot;127.0.0.1&quot;,
+    &quot;rpc-enabled&quot;: true,
+    &quot;rpc-host-whitelist&quot;: &quot;*.*.*.*&quot;,	//rpc主机白名单
+    &quot;rpc-host-whitelist-enabled&quot;: false,	//是否启用白名单
+    &quot;rpc-password&quot;: &quot;&#123;7d79385f96477153e710580b1b990feec26786c3unVUt30h&quot;,	//webUI密码，可以是名文
+    &quot;rpc-port&quot;: 9091,
+    &quot;rpc-url&quot;: &quot;/transmission/&quot;,
+    &quot;rpc-username&quot;: &quot;admin&quot;,	//webUI用户名
+    &quot;rpc-whitelist&quot;: &quot;127.0.0.1&quot;,	//白名单
+    &quot;rpc-whitelist-enabled&quot;: false,	//是否启用白名单
+    &quot;scrape-paused-torrents-enabled&quot;: true,
+    &quot;script-torrent-done-enabled&quot;: false,
+    &quot;script-torrent-done-filename&quot;: &quot;&quot;,
+    &quot;seed-queue-enabled&quot;: false,
+    &quot;seed-queue-size&quot;: 10,
+    &quot;speed-limit-down&quot;: 100,
+    &quot;speed-limit-down-enabled&quot;: false,
+    &quot;speed-limit-up&quot;: 100,
+    &quot;speed-limit-up-enabled&quot;: false,
+    &quot;start-added-torrents&quot;: true,
+    &quot;trash-original-torrent-files&quot;: false,
+    &quot;umask&quot;: 18,
+    &quot;upload-limit&quot;: 100,
+    &quot;upload-limit-enabled&quot;: 0,
+    &quot;upload-slots-per-torrent&quot;: 14,
+    &quot;utp-enabled&quot;: true
+&#125;
+</code></pre>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 910009183@qq.com </span>
     </div>
