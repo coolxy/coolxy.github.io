@@ -2508,7 +2508,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-01-29 14:41:37'>2023-01-28 19:58</time>
+            发布时间 : <time class="date" title='最后更新: 2023-01-30 11:16:41'>2023-01-28 19:58</time>
         
     </div>
     <div class="article-meta">
@@ -2567,7 +2567,7 @@
 <p>再往下有个Name框中寻找到</p>
 <p>gethttpvideoinfo.do&#x2F;?pid&#x3D;3d0eae7275bd49c8bf9977b6720a9e99&amp;client&#x3D;flash&amp;im&#x3D;0&amp;tsp&#x3D;1649666127&amp;vn&#x3D;2049&amp;vc&#x3D;E8099DE6B57EE0D16C6E3A75FC739DDF&amp;uid&#x3D;E1FAF8C29DC6DC0813367DBD7F431596&amp;wlan&#x3D;<br>如图：<br><img src="/./images/cctv1.png" alt="img"><br>打开连接，可看到本视频由15个mp4组成，分别下载这15个视频：<br><img src="/./images/cctv2.png" alt="img"></p>
 <p><img src="/./images/cctv3.png" alt="video list"><br>可用下载软件批量下载：<br><img src="/./images/cctv4.png" alt="download video"></p>
-<h2 id="合并视频"><a href="#合并视频" class="headerlink" title="合并视频"></a>合并视频</h2><p>可用ffmpeg 命令合并，前提是要先安装好ffmpeg，自行安装。</p>
+<h2 id="合并视频"><a href="#合并视频" class="headerlink" title="合并视频"></a>合并视频</h2><p>因为这些文件是一个视频文件分割出来的，可用ffmpeg 命令合并，前提是要先安装好ffmpeg，自行安装。</p>
 <h3 id="1-先编辑成一个视频列表文件，格式如下："><a href="#1-先编辑成一个视频列表文件，格式如下：" class="headerlink" title="1.先编辑成一个视频列表文件，格式如下："></a>1.先编辑成一个视频列表文件，格式如下：</h3><p>filelist.txt</p>
 <pre><code>file charAt1.mp4
 file charAt2.mp4
@@ -2575,6 +2575,9 @@ file charAt2.mp4
 <h3 id="2-ffmpeg-命令合并："><a href="#2-ffmpeg-命令合并：" class="headerlink" title="2.ffmpeg 命令合并："></a>2.ffmpeg 命令合并：</h3><pre><code class="shell">ffmpeg -f concat -i filelist.txt -c copy new.mp4
 </code></pre>
 <p>这个就合并完成了。</p>
+<p>在windows下也可用cmd的copy命令合并：</p>
+<pre><code>copy /b *.mp4 hebing.mp4
+</code></pre>
 <h1 id="第二种下载方式："><a href="#第二种下载方式：" class="headerlink" title="第二种下载方式："></a>第二种下载方式：</h1><p><a target="_blank" rel="noopener" href="https://youtube4kdownloader.com/zh60/">https://youtube4kdownloader.com/zh60/</a></p>
 
       
