@@ -1,0 +1,4506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>you-get、yt-dlp下载各网站视频方法 | 长鸿的博客</title>
+  <meta name="keywords" content=" python , you-get , yt-dlp ">
+  <meta name="description" content="you-get、yt-dlp下载各网站视频方法 | 长鸿的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="auto-blogThis is a blog of Hexo!The theme is 3-hexo Visit:https:&#x2F;&#x2F;coolxy.cn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="长鸿的博客">
+<meta property="og:url" content="https://coolxy.cn/README.html">
+<meta property="og:site_name" content="长鸿的博客">
+<meta property="og:description" content="auto-blogThis is a blog of Hexo!The theme is 3-hexo Visit:https:&#x2F;&#x2F;coolxy.cn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-25T11:57:09.795Z">
+<meta property="article:modified_time" content="2022-12-25T11:57:09.795Z">
+<meta property="article:author" content="coolxy">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/ico.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-dark.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>coolxy</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/coolxy"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:910009183@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=910009183&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(91)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="生活随笔">
+                        
+                        生活随笔
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="教程技巧">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        教程技巧
+                        <small>(21)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->路由器">
+                                        
+                                        路由器
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->内网穿透">
+                                        
+                                        内网穿透
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->视频下载">
+                                        
+                                        视频下载
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->正则表达式">
+                                        
+                                        正则表达式
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->aria2">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        aria2
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="教程技巧<--->aria2Linux">
+                                                        
+                                                        Linux
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->cloudflare">
+                                        
+                                        cloudflare
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->frp内网穿透">
+                                        
+                                        frp内网穿透
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->git">
+                                        
+                                        git
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->mariadb入门知识">
+                                        
+                                        mariadb入门知识
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->markdown">
+                                        
+                                        markdown
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->md博客语法">
+                                        
+                                        md博客语法
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->nemo">
+                                        
+                                        nemo
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->openwrt">
+                                        
+                                        openwrt
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->php">
+                                        
+                                        php
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->python">
+                                        
+                                        python
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="教程技巧<--->vray">
+                                        
+                                        vray
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Linux">
+                        
+                        Linux
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="游戏人生">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        游戏人生
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="游戏人生<--->天龙八部">
+                                        
+                                        天龙八部
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="智能家居">
+                        
+                        智能家居
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="共享">
+                        
+                        共享
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="传奇私服">
+                        
+                        传奇私服
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="诗词">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        诗词
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="诗词<--->纳兰容若">
+                                        
+                                        纳兰容若
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="alist">
+                        
+                        alist
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="alltube">
+                        
+                        alltube
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="armbian">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        armbian
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="armbian<--->time">
+                                        
+                                        time
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="cctv视频">
+                        
+                        cctv视频
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="docker">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        docker
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="docker<--->图书管理系统">
+                                        
+                                        图书管理系统
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->bitwarden">
+                                        
+                                        bitwarden
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->music">
+                                        
+                                        music
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->portainer">
+                                        
+                                        portainer
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="docker<--->reader">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        reader
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="docker<--->readerwebserver">
+                                                        
+                                                        webserver
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="fileshare">
+                        
+                        fileshare
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="hexo">
+                        
+                        hexo
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="kms">
+                        
+                        kms
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        linux
+                        <small>(9)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="linux<--->aria2">
+                                        
+                                        aria2
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->clash">
+                                        
+                                        clash
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->rc.local">
+                                        
+                                        rc.local
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->transmission">
+                                        
+                                        transmission
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->v2ray">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        v2ray
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="linux<--->v2rayhide">
+                                                        
+                                                        hide
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->v2raya">
+                                        
+                                        v2raya
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->video">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        video
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="linux<--->videoplayer">
+                                                        
+                                                        player
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="linux<--->webdav">
+                                        
+                                        webdav
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="nginx">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        nginx
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="nginx<--->php-fpm">
+                                        
+                                        php-fpm
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="NGrok">
+                        
+                        NGrok
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="openwrt">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        openwrt
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="openwrt<--->iStore">
+                                        
+                                        iStore
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="pichome">
+                        
+                        pichome
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        python
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="python<--->函数">
+                                        
+                                        函数
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="python<--->you-get">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        you-get
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="python<--->you-getyt-dlp">
+                                                        <i
+                                                                class="fold iconfont icon-right"></i>
+                                                        
+                                                        yt-dlp
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="python3">
+                        
+                        python3
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="rsync">
+                        
+                        rsync
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="rustdesk">
+                        
+                        rustdesk
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="script">
+                        
+                        script
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="systemd">
+                        
+                        systemd
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="teamspeak">
+                        
+                        teamspeak
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="webdav">
+                        
+                        webdav
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="wikijs">
+                        
+                        wikijs
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="windows">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        windows
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="windows<--->linux">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        linux
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="windows<--->linuxdownload">
+                                                        
+                                                        download
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="91">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2021</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2022</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工作效率</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活密钥</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由器梅林固件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令大全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>纳兰容若</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内容穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>人生与哲学</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>设备接入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>生活随笔</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>视频下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>天龙八部,架设教程</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>相册</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>新冠肺炎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>序列号</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>游戏分享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则表达式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alist</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alltube</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>aria2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>armbian</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bitwarden</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cctv</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>clash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cloudflare</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>codingbat</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ddns</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fileshare</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>games</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hide</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Home-Assistant</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iStore</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>keys</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kms</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mariadb</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>merlin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>music</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mylove</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>navidrome</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nemo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NGrok</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nodered</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openwrt</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>password</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php-fpm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>player</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>portainer</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python3</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rc.local</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>reader</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rsync</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rustdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>soft</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>systemd</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>teamspeak</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>time</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>transmission</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>user-agent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>v2ray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>v2raya</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video download</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webdav</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>wikijs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>windows</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>x-ui</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>xray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>you-get</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yt-dlp</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 linux "
+           href="/2021/01/01/study-linux/"
+           data-tag="linux"
+           data-author="" >
+            <span class="post-title" title="Linux 学习笔记-以deepin为例(持续更新)">Linux 学习笔记-以deepin为例(持续更新)</span>
+            <span class="post-date" title="2021-01-01 14:18:45">2021/01/01</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 "
+           href="/2021/03/22/pc-soft/"
+           data-tag="soft,工作效率"
+           data-author="" >
+            <span class="post-title" title="必备电脑软件，提高工作效率">必备电脑软件，提高工作效率</span>
+            <span class="post-date" title="2021-03-22 22:15:46">2021/03/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 python3 "
+           href="/2023/03/20/install-python3/"
+           data-tag="python3"
+           data-author="" >
+            <span class="post-title" title="linux下安装python3.10">linux下安装python3.10</span>
+            <span class="post-date" title="2023-03-20 19:58:58">2023/03/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2023/02/20/Panorama/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2023-02-20 00:00:00">2023/02/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2023/02/15/nodered/"
+           data-tag="nodered"
+           data-author="" >
+            <span class="post-title" title="自动化系统NodeRed安装使用">自动化系统NodeRed安装使用</span>
+            <span class="post-date" title="2023-02-15 19:58:58">2023/02/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2023/02/14/home-assistant-device/"
+           data-tag="设备接入"
+           data-author="" >
+            <span class="post-title" title="Home-Assistant接入智能设备">Home-Assistant接入智能设备</span>
+            <span class="post-date" title="2023-02-14 19:58:58">2023/02/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2023/02/14/home-assistant/"
+           data-tag="Home-Assistant"
+           data-author="" >
+            <span class="post-title" title="开源智能家居控制系统Home-Assistant">开源智能家居控制系统Home-Assistant</span>
+            <span class="post-date" title="2023-02-14 19:58:58">2023/02/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 传奇私服 "
+           href="/2023/02/09/mir-setup/"
+           data-tag="games"
+           data-author="" >
+            <span class="post-title" title="传奇私服架设教程（自用，缅怀青春）">传奇私服架设教程（自用，缅怀青春）</span>
+            <span class="post-date" title="2023-02-09 19:58:58">2023/02/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 cctv视频 "
+           href="/2023/01/28/download-cctv-video/"
+           data-tag="cctv"
+           data-author="" >
+            <span class="post-title" title="CCTV视频下载方法">CCTV视频下载方法</span>
+            <span class="post-date" title="2023-01-28 19:58:58">2023/01/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker 图书管理系统 "
+           href="/2023/01/15/talebook/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="简单好用的图书管理系统">简单好用的图书管理系统</span>
+            <span class="post-date" title="2023-01-15 19:58:58">2023/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 cloudflare "
+           href="/2023/01/10/cloudflare-dns/"
+           data-tag="cloudflare,ddns"
+           data-author="" >
+            <span class="post-title" title="openwrt用cloudflare进行ddns解析">openwrt用cloudflare进行ddns解析</span>
+            <span class="post-date" title="2023-01-10 19:58:58">2023/01/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 nemo "
+           href="/2023/01/09/use-nemo/"
+           data-tag="nemo"
+           data-author="" >
+            <span class="post-title" title="linux下安装使用Nemo文件管理器">linux下安装使用Nemo文件管理器</span>
+            <span class="post-date" title="2023-01-09 19:58:58">2023/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 openwrt "
+           href="/2022/11/22/docker-install-openwrt/"
+           data-tag="openwrt"
+           data-author="" >
+            <span class="post-title" title="Docker版OpenWrt旁路由安装设置教程">Docker版OpenWrt旁路由安装设置教程</span>
+            <span class="post-date" title="2022-11-22 22:33:55">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 NGrok "
+           href="/2022/11/11/ngrok/"
+           data-tag="NGrok"
+           data-author="" >
+            <span class="post-title" title="NGrok服务器搭建IT TUN">NGrok服务器搭建IT TUN</span>
+            <span class="post-date" title="2022-11-11 22:33:55">2022/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 rustdesk "
+           href="/2022/10/15/rustdesk/"
+           data-tag="rustdesk"
+           data-author="" >
+            <span class="post-title" title="docker搭建远程桌面控制中继rustdesk">docker搭建远程桌面控制中继rustdesk</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 alltube "
+           href="/2022/10/15/alltube-4kdownlowd/"
+           data-tag="alltube"
+           data-author="" >
+            <span class="post-title" title="视频下载服务搭建—AllTube">视频下载服务搭建—AllTube</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 kms "
+           href="/2022/09/15/kms-server/"
+           data-tag="kms"
+           data-author="" >
+            <span class="post-title" title="OpenWrt 搭建 KMS 服务器激活windows、Office">OpenWrt 搭建 KMS 服务器激活windows、Office</span>
+            <span class="post-date" title="2022-09-15 22:33:55">2022/09/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 systemd "
+           href="/2022/09/12/linux-systemd-service/"
+           data-tag="systemd"
+           data-author="" >
+            <span class="post-title" title="linux中系统服务管理学习手记">linux中系统服务管理学习手记</span>
+            <span class="post-date" title="2022-09-12 22:33:55">2022/09/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 teamspeak "
+           href="/2022/09/10/my-teamspeek/"
+           data-tag="teamspeak"
+           data-author="" >
+            <span class="post-title" title="语音服务器搭建,教你自建团队语音服务器">语音服务器搭建,教你自建团队语音服务器</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 rsync "
+           href="/2022/09/10/rsync-no-password-sync/"
+           data-tag="rsync"
+           data-author="" >
+            <span class="post-title" title="简单两步实现 RSYNC 自动同步文件免密">简单两步实现 RSYNC 自动同步文件免密</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 armbian time "
+           href="/2022/09/01/armbian-update-time/"
+           data-tag="armbian,time"
+           data-author="" >
+            <span class="post-title" title="armbian修改时间和时区">armbian修改时间和时区</span>
+            <span class="post-date" title="2022-09-01 22:33:55">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 openwrt iStore "
+           href="/2022/08/29/install-openwrt-istore/"
+           data-tag="openwrt,iStore"
+           data-author="" >
+            <span class="post-title" title="openwrt软路由iStore的安装使用手记">openwrt软路由iStore的安装使用手记</span>
+            <span class="post-date" title="2022-08-29 22:33:55">2022/08/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 alist "
+           href="/2022/08/23/docker-alist/"
+           data-tag="alist"
+           data-author="" >
+            <span class="post-title" title="网盘直链程序—AList，支持市面上几乎所有网盘">网盘直链程序—AList，支持市面上几乎所有网盘</span>
+            <span class="post-date" title="2022-08-23 22:33:55">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 pichome "
+           href="/2022/08/08/pichome/"
+           data-tag="相册"
+           data-author="" >
+            <span class="post-title" title="PicHome开源炫酷相册系统">PicHome开源炫酷相册系统</span>
+            <span class="post-date" title="2022-08-08 21:33:55">2022/08/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 fileshare "
+           href="/2022/08/07/file_photo_video-share/"
+           data-tag="fileshare"
+           data-author="" >
+            <span class="post-title" title="Files—单文件 PHP文件、相册管理器files.photo.gallery">Files—单文件 PHP文件、相册管理器files.photo.gallery</span>
+            <span class="post-date" title="2022-08-07 00:33:55">2022/08/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 wikijs "
+           href="/2022/08/04/creat-wikijs/"
+           data-tag="wikijs"
+           data-author="" >
+            <span class="post-title" title="基于 Wiki.js 搭建知识库系统">基于 Wiki.js 搭建知识库系统</span>
+            <span class="post-date" title="2022-08-04 00:33:55">2022/08/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker music "
+           href="/2022/07/31/free-music-/"
+           data-tag="docker,music,navidrome"
+           data-author="" >
+            <span class="post-title" title="Docker搭建自由音乐播放软件—Navidrome">Docker搭建自由音乐播放软件—Navidrome</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker portainer "
+           href="/2022/07/31/use-docker-portainer/"
+           data-tag="docker,portainer"
+           data-author="" >
+            <span class="post-title" title="安装使用Docker和portainer面板">安装使用Docker和portainer面板</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux transmission "
+           href="/2022/07/30/linux-transmission/"
+           data-tag="linux,transmission"
+           data-author="" >
+            <span class="post-title" title="linux安装使用transmission下载器">linux安装使用transmission下载器</span>
+            <span class="post-date" title="2022-07-30 20:22:33">2022/07/30</span>
+        </a>
+        
+        
+        
+        
+        <a  class="全部文章 linux clash "
+           href="/2022/07/26/ubuntu-clash/"
+           data-tag="linux,clash"
+           data-author="" >
+            <span class="post-title" title="Ubuntu中安装使用clash">Ubuntu中安装使用clash</span>
+            <span class="post-date" title="2022-07-26 20:33:55">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux rc.local "
+           href="/2022/07/26/ubuntu-rc.local/"
+           data-tag="linux,rc.local"
+           data-author="" >
+            <span class="post-title" title="Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)">Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)</span>
+            <span class="post-date" title="2022-07-26 20:22:33">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux aria2 "
+           href="/2022/07/25/linux-aria2/"
+           data-tag="linux,aria2"
+           data-author="" >
+            <span class="post-title" title="ubuntu服务器下安装使用aria2下载器">ubuntu服务器下安装使用aria2下载器</span>
+            <span class="post-date" title="2022-07-25 20:22:33">2022/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 诗词 纳兰容若 "
+           href="/2022/07/17/shi-nalanrongro/"
+           data-tag="纳兰容若"
+           data-author="" >
+            <span class="post-title" title="纳兰容若典藏诗词">纳兰容若典藏诗词</span>
+            <span class="post-date" title="2022-07-17 20:22:22">2022/07/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 webdav "
+           href="/2022/07/16/mount-webdav/"
+           data-tag="webdav"
+           data-author="" >
+            <span class="post-title" title="Linux和windows系统挂载 WebDAV 为本地磁盘">Linux和windows系统挂载 WebDAV 为本地磁盘</span>
+            <span class="post-date" title="2022-07-16 20:22:22">2022/07/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 nginx "
+           href="/2022/07/11/ubuntu-install-nginx/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="ubuntu 源码编译安装nginx">ubuntu 源码编译安装nginx</span>
+            <span class="post-date" title="2022-07-11 20:22:22">2022/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux webdav "
+           href="/2022/07/05/webdav/"
+           data-tag="linux,webdav"
+           data-author="" >
+            <span class="post-title" title="Linux文件共享服务之webdav服务器">Linux文件共享服务之webdav服务器</span>
+            <span class="post-date" title="2022-07-05 20:22:33">2022/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 php "
+           href="/2022/06/28/study-php/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="业余学习PHP手记">业余学习PHP手记</span>
+            <span class="post-date" title="2022-06-28 20:13:33">2022/06/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 内网穿透 "
+           href="/2022/06/21/nat-chuantou/"
+           data-tag="内容穿透"
+           data-author="" >
+            <span class="post-title" title="推荐5款最好用的内网穿透工具">推荐5款最好用的内网穿透工具</span>
+            <span class="post-date" title="2022-06-21 20:13:33">2022/06/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker bitwarden "
+           href="/2022/06/15/docker-bitwarden/"
+           data-tag="docker,bitwarden"
+           data-author="" >
+            <span class="post-title" title="Docker中部署bitwarden服务器">Docker中部署bitwarden服务器</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 script "
+           href="/2022/06/15/script-getdomain/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="html中用JS获取页面域名、端口等信息">html中用JS获取页面域名、端口等信息</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 nginx php-fpm "
+           href="/2022/06/12/use-nginx/"
+           data-tag="nginx,php-fpm"
+           data-author="" >
+            <span class="post-title" title="Ubuntu-中安装Nginx+php-fpm填坑日记">Ubuntu-中安装Nginx+php-fpm填坑日记</span>
+            <span class="post-date" title="2022-06-12 20:22:22">2022/06/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker reader webserver "
+           href="/2022/06/10/web-reader/"
+           data-tag="reader,docker"
+           data-author="" >
+            <span class="post-title" title="自己的网文阅读器 安卓的“阅读”APP网页版">自己的网文阅读器 安卓的“阅读”APP网页版</span>
+            <span class="post-date" title="2022-06-10 20:22:33">2022/06/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 python you-get yt-dlp video "
+           href="/2022/06/09/youget-ytdlp-down-video/"
+           data-tag="python,you-get,yt-dlp"
+           data-author="" >
+            <span class="post-title" title="you-get、yt-dlp下载各网站视频方法">you-get、yt-dlp下载各网站视频方法</span>
+            <span class="post-date" title="2022-06-09 20:22:33">2022/06/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 python 函数 "
+           href="/2022/06/05/python-def/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python各个库的使用方法">Python各个库的使用方法</span>
+            <span class="post-date" title="2022-06-05 20:22:33">2022/06/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 windows linux download "
+           href="/2022/05/31/system-down/"
+           data-tag="linux,windows"
+           data-author="" >
+            <span class="post-title" title="PC系统（windows、Linux）下载地址收集">PC系统（windows、Linux）下载地址收集</span>
+            <span class="post-date" title="2022-05-31 20:13:33">2022/05/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 hexo "
+           href="/2022/05/26/hexo-password/"
+           data-tag="hexo,password"
+           data-author="" >
+            <span class="post-title" title="Hexo博客中给文章加密码访问">Hexo博客中给文章加密码访问</span>
+            <span class="post-date" title="2022-05-26 20:13:33">2022/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux video player "
+           href="/2022/05/22/linux-video-players/"
+           data-tag="linux,video,player"
+           data-author="" >
+            <span class="post-title" title="16个Linux最佳开源视频播放器">16个Linux最佳开源视频播放器</span>
+            <span class="post-date" title="2022-05-22 22:13:33">2022/05/22</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 教程技巧 mariadb入门知识 "
+           href="/2022/01/09/mariadb-use/"
+           data-tag="mariadb,mysql,数据库"
+           data-author="" >
+            <span class="post-title" title="MySQL[mariadb]数据库入门知识">MySQL[mariadb]数据库入门知识</span>
+            <span class="post-date" title="2022-01-09 22:13:33">2022/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 frp内网穿透 "
+           href="/2021/12/19/use-frp/"
+           data-tag="frp,内网穿透"
+           data-author="" >
+            <span class="post-title" title="FRP内网穿透使用简明教程">FRP内网穿透使用简明教程</span>
+            <span class="post-date" title="2021-12-19 22:13:33">2021/12/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 视频下载 "
+           href="/2021/12/12/download-web-video/"
+           data-tag="视频下载,video download"
+           data-author="" >
+            <span class="post-title" title="web在线视频下载方法">web在线视频下载方法</span>
+            <span class="post-date" title="2021-12-12 22:13:33">2021/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 hexo "
+           href="/2021/12/09/linux-hexo-github-blog/"
+           data-tag="linux,hexo,github"
+           data-author="" >
+            <span class="post-title" title="Linux下Hexo+GitHub搭建个人博客">Linux下Hexo+GitHub搭建个人博客</span>
+            <span class="post-date" title="2021-12-09 18:25:36">2021/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2021/11/26/to-2022-year/"
+           data-tag="2022"
+           data-author="" >
+            <span class="post-title" title="致即将到来的2022年">致即将到来的2022年</span>
+            <span class="post-date" title="2021-11-26 21:13:33">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 openwrt "
+           href="/2021/11/25/openwrt-router/"
+           data-tag="openwrt,软路由"
+           data-author="" >
+            <span class="post-title" title="软路由openwrt使用基本教程">软路由openwrt使用基本教程</span>
+            <span class="post-date" title="2021-11-25 21:13:33">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 路由器 "
+           href="/2021/11/24/merlin-router/"
+           data-tag="路由器梅林固件,merlin"
+           data-author="" >
+            <span class="post-title" title="梅林固件使用手记">梅林固件使用手记</span>
+            <span class="post-date" title="2021-11-24 23:13:33">2021/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/2021/11/22/linux-shell-all/"
+           data-tag="linux,shell,命令大全"
+           data-author="" >
+            <span class="post-title" title="Linux 命令大全">Linux 命令大全</span>
+            <span class="post-date" title="2021-11-22 22:15:46">2021/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2021/10/11/dark-live/"
+           data-tag="2021"
+           data-author="" >
+            <span class="post-title" title="灯火辉煌下的黑暗角落">灯火辉煌下的黑暗角落</span>
+            <span class="post-date" title="2021-10-11 22:58:58">2021/10/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 md博客语法 "
+           href="/2021/03/18/md-blog-grammar/"
+           data-tag="md博客,md语法"
+           data-author="" >
+            <span class="post-title" title="md博客文章用到的markdown语法">md博客文章用到的markdown语法</span>
+            <span class="post-date" title="2021-03-18 22:11:02">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 aria2 Linux "
+           href="/2021/03/18/aria2-linux/"
+           data-tag="aria2"
+           data-author="" >
+            <span class="post-title" title="Linux下Aria2完整安装及使用教程">Linux下Aria2完整安装及使用教程</span>
+            <span class="post-date" title="2021-03-18 21:22:23">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 正则表达式 "
+           href="/2021/03/15/regular/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="超级强大且好用的正则表达式">超级强大且好用的正则表达式</span>
+            <span class="post-date" title="2021-03-15 14:18:45">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 Linux "
+           href="/2021/03/15/win-linux-share/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）">Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）</span>
+            <span class="post-date" title="2021-03-15 01:30:25">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2021/03/12/2000games-source/"
+           data-tag="游戏分享"
+           data-author="" >
+            <span class="post-title" title="2000套游戏私服源码分享">2000套游戏私服源码分享</span>
+            <span class="post-date" title="2021-03-12 14:18:45">2021/03/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/03/11/tlbb-server-settings/"
+           data-tag="天龙八部,架设教程"
+           data-author="" >
+            <span class="post-title" title="天龙八部外网开设+登陆器设置+网页注册">天龙八部外网开设+登陆器设置+网页注册</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/03/11/tlbb-teach/"
+           data-tag="天龙八部,架设教程"
+           data-author="" >
+            <span class="post-title" title="天龙八部私服架设教程">天龙八部私服架设教程</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 git "
+           href="/2021/03/11/git-err/"
+           data-tag="git github"
+           data-author="" >
+            <span class="post-title" title="git 使用错误解决办法汇总">git 使用错误解决办法汇总</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 hexo "
+           href="/2021/03/09/hexo-create-blog/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="使用hexo+github搭建免费个人博客详细教程">使用hexo+github搭建免费个人博客详细教程</span>
+            <span class="post-date" title="2021-03-09 19:58:58">2021/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/03/03/3-hexo-used/"
+           data-tag="3-hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo主题使用说明">3-hexo主题使用说明</span>
+            <span class="post-date" title="2021-03-03 19:25:36">2021/03/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/02/26/tllist/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TLBB server LIST">TLBB server LIST</span>
+            <span class="post-date" title="2021-02-26 19:58:58">2021/02/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 天龙八部 "
+           href="/2021/01/26/tlbb/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="天龙八部版本库">天龙八部版本库</span>
+            <span class="post-date" title="2021-01-26 19:58:58">2021/01/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/26/love-live/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="热爱生活，抛弃过去">热爱生活，抛弃过去</span>
+            <span class="post-date" title="2020-11-26 19:58:58">2020/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/05/to-2021/"
+           data-tag="2021"
+           data-author="" >
+            <span class="post-title" title="致2021年">致2021年</span>
+            <span class="post-date" title="2020-11-05 18:58:58">2020/11/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 共享 "
+           href="/2020/07/28/soft-Keys/"
+           data-tag="keys,激活密钥,序列号,激活码"
+           data-author="" >
+            <span class="post-title" title="精心收集的软件激活密钥">精心收集的软件激活密钥</span>
+            <span class="post-date" title="2020-07-28 08:08:38">2020/07/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/07/05/coding-logic/"
+           data-tag="python,codingbat"
+           data-author="" >
+            <span class="post-title" title="python练习园地（三）——Logic篇">python练习园地（三）——Logic篇</span>
+            <span class="post-date" title="2020-07-05 19:03:25">2020/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/07/01/codingbat-string/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（二）——string篇">python练习园地（二）——string篇</span>
+            <span class="post-date" title="2020-07-01 21:03:25">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/07/01/to-latter-half-year/"
+           data-tag="新冠肺炎"
+           data-author="" >
+            <span class="post-title" title="致2020年下半年">致2020年下半年</span>
+            <span class="post-date" title="2020-07-01 08:08:28">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/06/21/codingbat-warmup/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（一）——Warmup篇">python练习园地（一）——Warmup篇</span>
+            <span class="post-date" title="2020-06-21 22:03:25">2020/06/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 共享 "
+           href="/2020/06/19/user-agent/"
+           data-tag="user-agent"
+           data-author="" >
+            <span class="post-title" title="浏览器user-agent大全">浏览器user-agent大全</span>
+            <span class="post-date" title="2020-06-19 21:03:25">2020/06/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 python "
+           href="/2020/06/18/python-exercise/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python经典习题代码">Python经典习题代码</span>
+            <span class="post-date" title="2020-06-18 13:03:25">2020/06/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 markdown "
+           href="/2020/06/17/markdown-usage/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown使用方法">Markdown使用方法</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/one/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="保持童心">保持童心</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/restart-blog/"
+           data-tag="人生与哲学"
+           data-author="" >
+            <span class="post-title" title="重开博客，重启人生">重开博客，重启人生</span>
+            <span class="post-date" title="2020-06-17 15:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2020/06/06/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-06-06 20:20:55">2020/06/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2011/11/11/find-four-peple/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人生要找到的四个人">人生要找到的四个人</span>
+            <span class="post-date" title="2011-11-11 20:20:20">2011/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2009/11/11/test-access/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="考试成功以后">考试成功以后</span>
+            <span class="post-date" title="2009-11-11 20:20:20">2009/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/02/12/life-like-travel/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人生就像一次旅行">人生就像一次旅行</span>
+            <span class="post-date" title="2008-02-12 22:03:25">2008/02/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/01/12/to-mylove/"
+           data-tag="mylove"
+           data-author="" >
+            <span class="post-title" title="致秋">致秋</span>
+            <span class="post-date" title="2008-01-12 13:03:25">2008/01/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2007/02/04/miss-autumn/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="秋思">秋思</span>
+            <span class="post-date" title="2007-02-04 18:58:58">2007/02/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2007/02/04/I-don't-know/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="心碎了不知疲惫">心碎了不知疲惫</span>
+            <span class="post-date" title="2007-02-04 08:08:28">2007/02/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2006/04/24/informal1/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="偶题">偶题</span>
+            <span class="post-date" title="2006-04-24 18:33:25">2006/04/24</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-youget-ytdlp-down-video" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">you-get、yt-dlp下载各网站视频方法</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="python">python</a> > 
+            
+            <a  data-rel="python&lt;---&gt;you-get">you-get</a> > 
+            
+            <a  data-rel="python&lt;---&gt;you-get&lt;---&gt;yt-dlp">yt-dlp</a> > 
+            
+            <a  data-rel="python&lt;---&gt;you-get&lt;---&gt;yt-dlp&lt;---&gt;video">video</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">python</a>
+            
+            <a class="color3">you-get</a>
+            
+            <a class="color2">yt-dlp</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2023-03-23 09:26:12'>2022-06-09 20:22</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#you-get%E4%B8%8B%E8%BD%BD%E5%90%84%E7%BD%91%E7%AB%99%E8%A7%86%E9%A2%91%E6%96%B9%E6%B3%95%EF%BC%88python%E5%BA%93%E4%BA%A6%E5%8F%AF%E7%94%A8%EF%BC%89"><span class="toc-text">you-get下载各网站视频方法（python库亦可用）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Supported-Sites-%E6%94%AF%E6%8C%81%E7%BD%91%E7%AB%99%EF%BC%88%E5%AE%98%E6%96%B9%EF%BC%89%EF%BC%9A"><span class="toc-text">Supported Sites 支持网站（官方）：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#you-get%E4%BD%BF%E7%94%A8%E5%8F%82%E6%95%B0%E9%80%89%E9%A1%B9%EF%BC%9A"><span class="toc-text">you-get使用参数选项：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%EF%BC%8C%E5%9C%A8cmd%E7%95%8C%E9%9D%A2%E8%BE%93%E5%85%A5%EF%BC%9A"><span class="toc-text">安装方法，在cmd界面输入：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%A7%86%E9%A2%91"><span class="toc-text">下载视频</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#o%EF%BC%9A%E8%AE%BE%E7%BD%AE%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E5%90%8D%E6%88%96%E8%B7%AF%E5%BE%84"><span class="toc-text">-o：设置输出文件名或路径</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#yt-dlp%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="toc-text">yt-dlp下载方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDyt-dlp"><span class="toc-text">下载yt-dlp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ffmpeg"><span class="toc-text">安装ffmpeg</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PIP%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-text">PIP安装方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">命令行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#options-%E5%8F%AF%E7%94%A8%E9%80%89%E9%A1%B9"><span class="toc-text">[options]可用选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#General-Options%EF%BC%88%E5%85%A8%E5%B1%80%E9%80%89%E9%A1%B9%EF%BC%89"><span class="toc-text">General Options（全局选项）:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-Options%EF%BC%88%E7%BD%91%E7%BB%9C%E9%80%89%E9%A1%B9%EF%BC%89"><span class="toc-text">Network Options（网络选项）:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Geo-restriction"><span class="toc-text">Geo-restriction:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video-Selection"><span class="toc-text">Video Selection:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Download-Options"><span class="toc-text">Download Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filesystem-Options"><span class="toc-text">Filesystem Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Thumbnail-Options"><span class="toc-text">Thumbnail Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-Shortcut-Options"><span class="toc-text">Internet Shortcut Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verbosity-and-Simulation-Options"><span class="toc-text">Verbosity and Simulation Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Workarounds"><span class="toc-text">Workarounds:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Video-Format-Options"><span class="toc-text">Video Format Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subtitle-Options"><span class="toc-text">Subtitle Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Authentication-Options"><span class="toc-text">Authentication Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post-Processing-Options"><span class="toc-text">Post-Processing Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SponsorBlock-Options"><span class="toc-text">SponsorBlock Options:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extractor-Options"><span class="toc-text">Extractor Options:</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="you-get下载各网站视频方法（python库亦可用）"><a href="#you-get下载各网站视频方法（python库亦可用）" class="headerlink" title="you-get下载各网站视频方法（python库亦可用）"></a><center>you-get下载各网站视频方法（python库亦可用）</center></h1><p>我们许多时候想下载网络上的视频下来使用，但方法多样，如：<a href="2021/12/12/download-web-video/"><strong>web在线视频下载方法</strong></a>，但有时候如油管、B站的视频不好下载，这里有就一个小方法，即：you-get，这是一个python库，也可直接运行下载，<a target="_blank" rel="noopener" href="https://github.com/soimort/you-get">Github主页：</a>，</p>
+<h2 id="Supported-Sites-支持网站（官方）："><a href="#Supported-Sites-支持网站（官方）：" class="headerlink" title="Supported Sites 支持网站（官方）："></a>Supported Sites 支持网站（官方）：</h2><table>
+<thead>
+<tr>
+<th>Site</th>
+<th>URL</th>
+<th>Videos?</th>
+<th>Images?</th>
+<th>Audios?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>YouTube</strong></td>
+<td><a target="_blank" rel="noopener" href="https://www.youtube.com/">https://www.youtube.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Twitter</strong></td>
+<td><a target="_blank" rel="noopener" href="https://twitter.com/">https://twitter.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>VK</td>
+<td><a target="_blank" rel="noopener" href="http://vk.com/">http://vk.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>Vine</td>
+<td><a target="_blank" rel="noopener" href="https://vine.co/">https://vine.co/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Vimeo</td>
+<td><a target="_blank" rel="noopener" href="https://vimeo.com/">https://vimeo.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Veoh</td>
+<td><a target="_blank" rel="noopener" href="http://www.veoh.com/">http://www.veoh.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tumblr</strong></td>
+<td><a target="_blank" rel="noopener" href="https://www.tumblr.com/">https://www.tumblr.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>TED</td>
+<td><a target="_blank" rel="noopener" href="http://www.ted.com/">http://www.ted.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SoundCloud</td>
+<td><a target="_blank" rel="noopener" href="https://soundcloud.com/">https://soundcloud.com/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>SHOWROOM</td>
+<td><a target="_blank" rel="noopener" href="https://www.showroom-live.com/">https://www.showroom-live.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pinterest</td>
+<td><a target="_blank" rel="noopener" href="https://www.pinterest.com/">https://www.pinterest.com/</a></td>
+<td></td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>MTV81</td>
+<td><a target="_blank" rel="noopener" href="http://www.mtv81.com/">http://www.mtv81.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Mixcloud</td>
+<td><a target="_blank" rel="noopener" href="https://www.mixcloud.com/">https://www.mixcloud.com/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Metacafe</td>
+<td><a target="_blank" rel="noopener" href="http://www.metacafe.com/">http://www.metacafe.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Magisto</td>
+<td><a target="_blank" rel="noopener" href="http://www.magisto.com/">http://www.magisto.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Khan Academy</td>
+<td><a target="_blank" rel="noopener" href="https://www.khanacademy.org/">https://www.khanacademy.org/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Internet Archive</td>
+<td><a target="_blank" rel="noopener" href="https://archive.org/">https://archive.org/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Instagram</strong></td>
+<td><a target="_blank" rel="noopener" href="https://instagram.com/">https://instagram.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>InfoQ</td>
+<td><a target="_blank" rel="noopener" href="http://www.infoq.com/presentations/">http://www.infoq.com/presentations/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Imgur</td>
+<td><a target="_blank" rel="noopener" href="http://imgur.com/">http://imgur.com/</a></td>
+<td></td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>Heavy Music Archive</td>
+<td><a target="_blank" rel="noopener" href="http://www.heavy-music.ru/">http://www.heavy-music.ru/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Freesound</td>
+<td><a target="_blank" rel="noopener" href="http://www.freesound.org/">http://www.freesound.org/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Flickr</td>
+<td><a target="_blank" rel="noopener" href="https://www.flickr.com/">https://www.flickr.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>FC2 Video</td>
+<td><a target="_blank" rel="noopener" href="http://video.fc2.com/">http://video.fc2.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><a target="_blank" rel="noopener" href="https://www.facebook.com/">https://www.facebook.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>eHow</td>
+<td><a target="_blank" rel="noopener" href="http://www.ehow.com/">http://www.ehow.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Dailymotion</td>
+<td><a target="_blank" rel="noopener" href="http://www.dailymotion.com/">http://www.dailymotion.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Coub</td>
+<td><a target="_blank" rel="noopener" href="http://coub.com/">http://coub.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CBS</td>
+<td><a target="_blank" rel="noopener" href="http://www.cbs.com/">http://www.cbs.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bandcamp</td>
+<td><a target="_blank" rel="noopener" href="http://bandcamp.com/">http://bandcamp.com/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>AliveThai</td>
+<td><a target="_blank" rel="noopener" href="http://alive.in.th/">http://alive.in.th/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>interest.me</td>
+<td><a target="_blank" rel="noopener" href="http://ch.interest.me/tvn">http://ch.interest.me/tvn</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>755 ナナゴーゴー</strong></td>
+<td><a target="_blank" rel="noopener" href="http://7gogo.jp/">http://7gogo.jp/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>niconico ニコニコ動画</strong></td>
+<td><a target="_blank" rel="noopener" href="http://www.nicovideo.jp/">http://www.nicovideo.jp/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>163 网易视频 网易云音乐</strong></td>
+<td><a target="_blank" rel="noopener" href="http://v.163.com/">http://v.163.com/</a> <a target="_blank" rel="noopener" href="http://music.163.com/">http://music.163.com/</a></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>56网</td>
+<td><a target="_blank" rel="noopener" href="http://www.56.com/">http://www.56.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>AcFun</strong></td>
+<td><a target="_blank" rel="noopener" href="http://www.acfun.cn/">http://www.acfun.cn/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Baidu 百度贴吧</strong></td>
+<td><a target="_blank" rel="noopener" href="http://tieba.baidu.com/">http://tieba.baidu.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>爆米花网</td>
+<td><a target="_blank" rel="noopener" href="http://www.baomihua.com/">http://www.baomihua.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>bilibili 哔哩哔哩</strong></td>
+<td><a target="_blank" rel="noopener" href="http://www.bilibili.com/">http://www.bilibili.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>豆瓣</td>
+<td><a target="_blank" rel="noopener" href="http://www.douban.com/">http://www.douban.com/</a></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>斗鱼</td>
+<td><a target="_blank" rel="noopener" href="http://www.douyutv.com/">http://www.douyutv.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>凤凰视频</td>
+<td><a target="_blank" rel="noopener" href="http://v.ifeng.com/">http://v.ifeng.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>风行网</td>
+<td><a target="_blank" rel="noopener" href="http://www.fun.tv/">http://www.fun.tv/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>iQIYI 爱奇艺</td>
+<td><a target="_blank" rel="noopener" href="http://www.iqiyi.com/">http://www.iqiyi.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>激动网</td>
+<td><a target="_blank" rel="noopener" href="http://www.joy.cn/">http://www.joy.cn/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>酷6网</td>
+<td><a target="_blank" rel="noopener" href="http://www.ku6.com/">http://www.ku6.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>酷狗音乐</td>
+<td><a target="_blank" rel="noopener" href="http://www.kugou.com/">http://www.kugou.com/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>酷我音乐</td>
+<td><a target="_blank" rel="noopener" href="http://www.kuwo.cn/">http://www.kuwo.cn/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>乐视网</td>
+<td><a target="_blank" rel="noopener" href="http://www.le.com/">http://www.le.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>荔枝FM</td>
+<td><a target="_blank" rel="noopener" href="http://www.lizhi.fm/">http://www.lizhi.fm/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>懒人听书</td>
+<td><a target="_blank" rel="noopener" href="http://www.lrts.me/">http://www.lrts.me/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>秒拍</td>
+<td><a target="_blank" rel="noopener" href="http://www.miaopai.com/">http://www.miaopai.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MioMio弹幕网</td>
+<td><a target="_blank" rel="noopener" href="http://www.miomio.tv/">http://www.miomio.tv/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MissEvan 猫耳FM</td>
+<td><a target="_blank" rel="noopener" href="http://www.missevan.com/">http://www.missevan.com/</a></td>
+<td></td>
+<td></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>痞客邦</td>
+<td><a target="_blank" rel="noopener" href="https://www.pixnet.net/">https://www.pixnet.net/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PPTV聚力</td>
+<td><a target="_blank" rel="noopener" href="http://www.pptv.com/">http://www.pptv.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>齐鲁网</td>
+<td><a target="_blank" rel="noopener" href="http://v.iqilu.com/">http://v.iqilu.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>QQ 腾讯视频</td>
+<td><a target="_blank" rel="noopener" href="http://v.qq.com/">http://v.qq.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>企鹅直播</td>
+<td><a target="_blank" rel="noopener" href="http://live.qq.com/">http://live.qq.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sina 新浪视频 微博秒拍视频</td>
+<td><a target="_blank" rel="noopener" href="http://video.sina.com.cn/">http://video.sina.com.cn/</a> <a target="_blank" rel="noopener" href="http://video.weibo.com/">http://video.weibo.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sohu 搜狐视频</td>
+<td><a target="_blank" rel="noopener" href="http://tv.sohu.com/">http://tv.sohu.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tudou 土豆</strong></td>
+<td><a target="_blank" rel="noopener" href="http://www.tudou.com/">http://www.tudou.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>阳光卫视</td>
+<td><a target="_blank" rel="noopener" href="http://www.isuntv.com/">http://www.isuntv.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Youku 优酷</strong></td>
+<td><a target="_blank" rel="noopener" href="http://www.youku.com/">http://www.youku.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>战旗TV</td>
+<td><a target="_blank" rel="noopener" href="http://www.zhanqi.tv/lives">http://www.zhanqi.tv/lives</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>央视网</td>
+<td><a target="_blank" rel="noopener" href="http://www.cntv.cn/">http://www.cntv.cn/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Naver 네이버</td>
+<td><a target="_blank" rel="noopener" href="http://tvcast.naver.com/">http://tvcast.naver.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>芒果TV</td>
+<td><a target="_blank" rel="noopener" href="http://www.mgtv.com/">http://www.mgtv.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>火猫TV</td>
+<td><a target="_blank" rel="noopener" href="http://www.huomao.com/">http://www.huomao.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>阳光宽频网</td>
+<td><a target="_blank" rel="noopener" href="http://www.365yg.com/">http://www.365yg.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>西瓜视频</td>
+<td><a target="_blank" rel="noopener" href="https://www.ixigua.com/">https://www.ixigua.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>新片场</td>
+<td><a target="_blank" rel="noopener" href="https://www.xinpianchang.com/">https://www.xinpianchang.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>快手</td>
+<td><a target="_blank" rel="noopener" href="https://www.kuaishou.com/">https://www.kuaishou.com/</a></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+</tr>
+<tr>
+<td>抖音</td>
+<td><a target="_blank" rel="noopener" href="https://www.douyin.com/">https://www.douyin.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td><a target="_blank" rel="noopener" href="https://www.tiktok.com/">https://www.tiktok.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>中国体育(TV)</td>
+<td><a target="_blank" rel="noopener" href="http://v.zhibo.tv/">http://v.zhibo.tv/</a> <a target="_blank" rel="noopener" href="http://video.zhibo.tv/">http://video.zhibo.tv/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>知乎</td>
+<td><a target="_blank" rel="noopener" href="https://www.zhihu.com/">https://www.zhihu.com/</a></td>
+<td>✓</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="you-get使用参数选项："><a href="#you-get使用参数选项：" class="headerlink" title="you-get使用参数选项："></a>you-get使用参数选项：</h3><table>
+<thead>
+<tr>
+<th><strong>you-get使用手册</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>可选参数:</td>
+<td></td>
+</tr>
+<tr>
+<td>-V, –version</td>
+<td>查看版本并退出</td>
+</tr>
+<tr>
+<td>-h, –help</td>
+<td>查看帮助信息</td>
+</tr>
+<tr>
+<td>不影响使用的选项:</td>
+<td></td>
+</tr>
+<tr>
+<td>-i, –info</td>
+<td>查看页面视频信息</td>
+</tr>
+<tr>
+<td>-u, –url</td>
+<td>查看页面视频信息包括解析的url地址</td>
+</tr>
+<tr>
+<td>–json</td>
+<td>以json格式查看页面视频信息</td>
+</tr>
+<tr>
+<td>下载选项:</td>
+<td></td>
+</tr>
+<tr>
+<td>-n, –no-merge</td>
+<td>不合并视频</td>
+</tr>
+<tr>
+<td>–no-caption</td>
+<td>不下载字幕</td>
+</tr>
+<tr>
+<td>-f, –force</td>
+<td>强制覆盖现有文件</td>
+</tr>
+<tr>
+<td>-F STREAM_ID, –format STREAM_ID</td>
+<td>指定视频的格式</td>
+</tr>
+<tr>
+<td>-O FILE, –output-filename FILE</td>
+<td>指定下载的文件名称</td>
+</tr>
+<tr>
+<td>-o DIR, –output-dir DIR</td>
+<td>指定下载文件的目录</td>
+</tr>
+<tr>
+<td>-p PLAYER, –player PLAYER</td>
+<td>把视频流输出到指定的播放器</td>
+</tr>
+<tr>
+<td>-c COOKIES_FILE, –cookies COOKIES_FILE</td>
+<td>加载cookie文件</td>
+</tr>
+<tr>
+<td>-t SECONDS, –timeout SECONDS</td>
+<td>设置超时时间</td>
+</tr>
+<tr>
+<td>-d, –debug</td>
+<td>显示跟踪、调试信息</td>
+</tr>
+<tr>
+<td>-I FILE, –input-file FILE</td>
+<td>从文件读取url列表</td>
+</tr>
+<tr>
+<td>-P PASSWORD, –password PASSWORD</td>
+<td>指定加密视频的密码</td>
+</tr>
+<tr>
+<td>-l, –playlist</td>
+<td>显示可以下载的列表</td>
+</tr>
+<tr>
+<td>-a, –auto-rename</td>
+<td>自动重命名相同的名称不同的文件</td>
+</tr>
+<tr>
+<td>代理选项:</td>
+<td></td>
+</tr>
+<tr>
+<td>-x HOST:PORT, –http-proxy HOST:PORT</td>
+<td>使用http代理下载</td>
+</tr>
+<tr>
+<td>-y HOST:PORT, –extractor-proxy HOST:PORT</td>
+<td>仅抓取数据时使用http代理</td>
+</tr>
+<tr>
+<td>–no-proxy</td>
+<td>关闭代理</td>
+</tr>
+<tr>
+<td>-s HOST:PORT, –socks-proxy HOST:PORT</td>
+<td>使用socks5代理进行下载</td>
+</tr>
+</tbody></table>
+<h3 id="安装方法，在cmd界面输入："><a href="#安装方法，在cmd界面输入：" class="headerlink" title="安装方法，在cmd界面输入："></a>安装方法，在cmd界面输入：</h3><pre><code>pip3 install you-get	#安装
+pip install --upgrade you-get	#更新
+</code></pre>
+<pre><code>pip install --upgrade you-get
+</code></pre>
+<h3 id="下载视频"><a href="#下载视频" class="headerlink" title="下载视频"></a>下载视频</h3><p>可用选项 -i&#x2F;–info：查看画质与格式<br>-以哔哩哔哩视频为例</p>
+<pre><code class="cmd">you-get -i https://www.bilibili.com/video/BV1eY411A7EE?spm_id_from=333.851.b_7265636f6d6d656e64.4&amp;vd_source=05a4a0f23a727dad53ebb6d10a217732
+site:                Bilibili
+title:               【觉醒年代】&quot;诸君 且听这龙吟&quot;
+streams:             # Available quality and codecs
+    [ DASH ] ____________________________________
+    - format:        dash-flv
+      container:     mp4
+      quality:       高清 1080P
+      size:          27.4 MiB (28752863 bytes)
+    # download-with: you-get --format=dash-flv [URL]
+
+    - format:        dash-flv720
+      container:     mp4
+      quality:       高清 720P
+      size:          15.6 MiB (16404880 bytes)
+    # download-with: you-get --format=dash-flv720 [URL]
+
+    - format:        dash-flv480
+      container:     mp4
+      quality:       清晰 480P
+      size:          12.5 MiB (13076398 bytes)
+    # download-with: you-get --format=dash-flv480 [URL]
+
+    - format:        dash-flv360
+      container:     mp4
+      quality:       流畅 360P
+      size:          8.8 MiB (9197124 bytes)
+    # download-with: you-get --format=dash-flv360 [URL]
+
+    [ DEFAULT ] _________________________________
+    - format:        flv
+      container:     flv
+      quality:       高清 1080P
+      size:          49.7 MiB (52066858 bytes)
+    # download-with: you-get --format=flv [URL]
+
+    - format:        flv720
+      container:     flv
+      quality:       高清 720P
+      size:          35.2 MiB (36934736 bytes)
+    # download-with: you-get --format=flv720 [URL]
+
+    - format:        flv480
+      container:     flv
+      quality:       清晰 480P
+      size:          17.5 MiB (18332900 bytes)
+    # download-with: you-get --format=flv480 [URL]
+
+    - format:        flv360
+      container:     flv
+      quality:       流畅 360P
+      size:          8.9 MiB (9372295 bytes)
+    # download-with: you-get --format=flv360 [URL]
+</code></pre>
+<p>提示信息中已提示下载方法：上述： # download-with: you-get –format&#x3D;flv360 [URL]</p>
+<h4 id="o：设置输出文件名或路径"><a href="#o：设置输出文件名或路径" class="headerlink" title="-o：设置输出文件名或路径"></a>-o：设置输出文件名或路径</h4><p><strong>you-get默认保存路径</strong>：C:\users\用户名</p>
+<pre><code>you-get -o E:\video\xx.mp4 --format=dash-flv https://www.bilibili.com/video/BV1eY411A7EE?spm_id_from=333.851.b_7265636f6d6d656e64.4&amp;vd_source=05a4a0f23a727dad53ebb6d10a217732
+</code></pre>
+<p>即可下载默认的1080P视频！</p>
+<h1 id="yt-dlp下载方式"><a href="#yt-dlp下载方式" class="headerlink" title="yt-dlp下载方式"></a>yt-dlp下载方式</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>yt-dlp是开源项目youtube-dl的一个分支，相当于是plus版，它的下载功能更加强大。</p>
+<p>其实youtube-dl的下载功能曾因触动了某些公司的利益而遭到投诉，声称该软件违反了千年数字法案，侵犯了他们的版权，因此GitHub曾经将该项目下架，但是GitHub的CEO得知了这件事后表示反对并表态支持开发者，马上要求重新评估该项目并在联系youtube-dl的原作者后恢复了项目仓库。</p>
+<p>受此事件影响，GitHub官方决定建立100万美元的“开发者防御基金”，以保护开发者免于受到“无理的版权投诉”。</p>
+<h2 id="下载yt-dlp"><a href="#下载yt-dlp" class="headerlink" title="下载yt-dlp"></a>下载yt-dlp</h2><p>yt-dlp项目地址：<a target="_blank" rel="noopener" href="https://github.com/yt-dlp/yt-dlp">https://github.com/yt-dlp/yt-dlp</a></p>
+<p>进入后点击右侧的Releases，然后下载对应平台的软件，我下载Linux版，</p>
+<h3 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h3><p>yt-dlp有许多功能需要依赖于ffmpeg，安装方法可以看我的这篇文章：<a target="_blank" rel="noopener" href="https://www.hash070.top/archives/ffmpeg-install-win.html">https://www.hash070.top/archives/ffmpeg-install-win.html</a></p>
+<p>ffmpeg使用方法<br>找到你想要下载的Youtube视频，这里我以这个视频为例，先复制视频上方的链接<br>下载方法：</p>
+<pre><code>yt-dlp_ -F https://www.youtube.com/watch?v=SzwXWwXCscM
+</code></pre>
+<p>执行完该命令后会看到如下表格</p>
+<p>注意看VCODEC和ACODEC两列，如果某行的值为audio only或video only，则表示该行所代表的流是仅音频或仅视频的。</p>
+<p>挑选好你需要下载的音频流或视频流的ID，然后就可以下载了</p>
+<p>下载命令的格式如下：</p>
+<p>yt-dlp_x86.exe -f [ID] [视频地址]</p>
+<p>如果想下载音频格式为m4a纯音频文件，则应该输入命令</p>
+<pre><code>yt-dlp -f 140 https://www.youtube.com/watch?v=SzwXWwXCscM
+</code></pre>
+<p>如果想下载格式为mp4的纯视频文件，则应该输入命令</p>
+<pre><code>yt-dlp -f 137 https://www.youtube.com/watch?v=SzwXWwXCscM
+</code></pre>
+<p>如果想同时下载音频和视频并在下载后将它们合并，则应输入命令</p>
+<p>可以在命令中通过 音频id+视频id 的方式时实现</p>
+<pre><code>yt-dlp -f 140+137 https://www.youtube.com/watch?v=SzwXWwXCscM
+</code></pre>
+<h2 id="PIP安装方式"><a href="#PIP安装方式" class="headerlink" title="PIP安装方式"></a>PIP安装方式</h2><pre><code>#安装依赖
+apt update -y &amp;&amp; apt install -y ffmpeg
+#二进制包安装
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+#pip安装
+sudo apt update -y
+sudo apt install -y python3-venv python3-pip
+python3 -m pip install -U yt-dlp
+#更新
+yt-dlp -U
+</code></pre>
+<h2 id="命令行方式"><a href="#命令行方式" class="headerlink" title="命令行方式"></a>命令行方式</h2><pre><code>yt-dlp [OPTIONS] URL [URL...]
+</code></pre>
+<p>1、简单用法（一个参数URL） yt-dlp.exe 视频URL </p>
+<pre><code>yt-dlp https://www.youtube.com/watch?v=u3LJVu8jNfM
+</code></pre>
+<p>选择格式：</p>
+<pre><code>yt-dlp --merge-output-format mp4 https://www.youtube.com/watch?v=u3LJVu8jNfM
+</code></pre>
+<h3 id="options-可用选项"><a href="#options-可用选项" class="headerlink" title="[options]可用选项"></a>[options]可用选项</h3><pre><code>
+</code></pre>
+<h2 id="General-Options（全局选项）"><a href="#General-Options（全局选项）" class="headerlink" title="General Options（全局选项）:"></a>General Options（全局选项）:</h2><pre><code>-h, --help                      Print this help text and exit
+--version                       Print program version and exit
+-U, --update                    Update this program to the latest version
+--no-update                     Do not check for updates (default)
+--update-to [CHANNEL]@[TAG]     Upgrade/downgrade to a specific version.
+                                CHANNEL and TAG defaults to &quot;stable&quot; and
+                                &quot;latest&quot; respectively if omitted; See
+                                &quot;UPDATE&quot; for details. Supported channels:
+                                stable, nightly
+-i, --ignore-errors             Ignore download and postprocessing errors.
+                                The download will be considered successful
+                                even if the postprocessing fails
+--no-abort-on-error             Continue with next video on download errors;
+                                e.g. to skip unavailable videos in a
+                                playlist (default)
+--abort-on-error                Abort downloading of further videos if an
+                                error occurs (Alias: --no-ignore-errors)
+--dump-user-agent               Display the current user-agent and exit
+--list-extractors               List all supported extractors and exit
+--extractor-descriptions        Output descriptions of all supported
+                                extractors and exit
+--use-extractors NAMES          Extractor names to use separated by commas.
+                                You can also use regexes, &quot;all&quot;, &quot;default&quot;
+                                and &quot;end&quot; (end URL matching); e.g. --ies
+                                &quot;holodex.*,end,youtube&quot;. Prefix the name
+                                with a &quot;-&quot; to exclude it, e.g. --ies
+                                default,-generic. Use --list-extractors for
+                                a list of extractor names. (Alias: --ies)
+--default-search PREFIX         Use this prefix for unqualified URLs. E.g.
+                                &quot;gvsearch2:python&quot; downloads two videos from
+                                google videos for the search term &quot;python&quot;.
+                                Use the value &quot;auto&quot; to let yt-dlp guess
+                                (&quot;auto_warning&quot; to emit a warning when
+                                guessing). &quot;error&quot; just throws an error. The
+                                default value &quot;fixup_error&quot; repairs broken
+                                URLs, but emits an error if this is not
+                                possible instead of searching
+--ignore-config                 Don&#39;t load any more configuration files
+                                except those given by --config-locations.
+                                For backward compatibility, if this option
+                                is found inside the system configuration
+                                file, the user configuration is not loaded.
+                                (Alias: --no-config)
+--no-config-locations           Do not load any custom configuration files
+                                (default). When given inside a configuration
+                                file, ignore all previous --config-locations
+                                defined in the current file
+--config-locations PATH         Location of the main configuration file;
+                                either the path to the config or its
+                                containing directory (&quot;-&quot; for stdin). Can be
+                                used multiple times and inside other
+                                configuration files
+--flat-playlist                 Do not extract the videos of a playlist,
+                                only list them
+--no-flat-playlist              Extract the videos of a playlist
+--live-from-start               Download livestreams from the start.
+                                Currently only supported for YouTube
+                                (Experimental)
+--no-live-from-start            Download livestreams from the current time
+                                (default)
+--wait-for-video MIN[-MAX]      Wait for scheduled streams to become
+                                available. Pass the minimum number of
+                                seconds (or range) to wait between retries
+--no-wait-for-video             Do not wait for scheduled streams (default)
+--mark-watched                  Mark videos watched (even with --simulate)
+--no-mark-watched               Do not mark videos watched (default)
+--no-colors                     Do not emit color codes in output (Alias:
+                                --no-colours)
+--compat-options OPTS           Options that can help keep compatibility
+                                with youtube-dl or youtube-dlc
+                                configurations by reverting some of the
+                                changes made in yt-dlp. See &quot;Differences in
+                                default behavior&quot; for details
+--alias ALIASES OPTIONS         Create aliases for an option string. Unless
+                                an alias starts with a dash &quot;-&quot;, it is
+                                prefixed with &quot;--&quot;. Arguments are parsed
+                                according to the Python string formatting
+                                mini-language. E.g. --alias get-audio,-X
+                                &quot;-S=aext:&#123;0&#125;,abr -x --audio-format &#123;0&#125;&quot;
+                                creates options &quot;--get-audio&quot; and &quot;-X&quot; that
+                                takes an argument (ARG0) and expands to
+                                &quot;-S=aext:ARG0,abr -x --audio-format ARG0&quot;.
+                                All defined aliases are listed in the --help
+                                output. Alias options can trigger more
+                                aliases; so be careful to avoid defining
+                                recursive options. As a safety measure, each
+                                alias may be triggered a maximum of 100
+                                times. This option can be used multiple times
+</code></pre>
+<h2 id="Network-Options（网络选项）"><a href="#Network-Options（网络选项）" class="headerlink" title="Network Options（网络选项）:"></a>Network Options（网络选项）:</h2><pre><code>--proxy URL                     Use the specified HTTP/HTTPS/SOCKS proxy. To
+                                enable SOCKS proxy, specify a proper scheme,
+                                e.g. socks5://user:pass@127.0.0.1:1080/.
+                                Pass in an empty string (--proxy &quot;&quot;) for
+                                direct connection（网络代理）
+--socket-timeout SECONDS        Time to wait before giving up, in seconds
+--source-address IP             Client-side IP address to bind to
+-4, --force-ipv4                Make all connections via IPv4
+-6, --force-ipv6                Make all connections via IPv6
+--enable-file-urls              Enable file:// URLs. This is disabled by
+                                default for security reasons.
+</code></pre>
+<h2 id="Geo-restriction"><a href="#Geo-restriction" class="headerlink" title="Geo-restriction:"></a>Geo-restriction:</h2><pre><code>--geo-verification-proxy URL    Use this proxy to verify the IP address for
+                                some geo-restricted sites. The default proxy
+                                specified by --proxy (or none, if the option
+                                is not present) is used for the actual
+                                downloading
+--geo-bypass                    Bypass geographic restriction via faking
+                                X-Forwarded-For HTTP header (default)
+--no-geo-bypass                 Do not bypass geographic restriction via
+                                faking X-Forwarded-For HTTP header
+--geo-bypass-country CODE       Force bypass geographic restriction with
+                                explicitly provided two-letter ISO 3166-2
+                                country code
+--geo-bypass-ip-block IP_BLOCK  Force bypass geographic restriction with
+                                explicitly provided IP block in CIDR notation
+</code></pre>
+<h2 id="Video-Selection"><a href="#Video-Selection" class="headerlink" title="Video Selection:"></a>Video Selection:</h2><pre><code>-I, --playlist-items ITEM_SPEC  Comma separated playlist_index of the items
+                                to download. You can specify a range using
+                                &quot;[START]:[STOP][:STEP]&quot;. For backward
+                                compatibility, START-STOP is also supported.
+                                Use negative indices to count from the right
+                                and negative STEP to download in reverse
+                                order. E.g. &quot;-I 1:3,7,-5::2&quot; used on a
+                                playlist of size 15 will download the items
+                                at index 1,2,3,7,11,13,15
+--min-filesize SIZE             Abort download if filesize is smaller than
+                                SIZE, e.g. 50k or 44.6M
+--max-filesize SIZE             Abort download if filesize is larger than
+                                SIZE, e.g. 50k or 44.6M
+--date DATE                     Download only videos uploaded on this date.
+                                The date can be &quot;YYYYMMDD&quot; or in the format 
+                                [now|today|yesterday][-N[day|week|month|year]].
+                                E.g. &quot;--date today-2weeks&quot; downloads only
+                                videos uploaded on the same day two weeks ago
+--datebefore DATE               Download only videos uploaded on or before
+                                this date. The date formats accepted is the
+                                same as --date
+--dateafter DATE                Download only videos uploaded on or after
+                                this date. The date formats accepted is the
+                                same as --date
+--match-filters FILTER          Generic video filter. Any &quot;OUTPUT TEMPLATE&quot;
+                                field can be compared with a number or a
+                                string using the operators defined in
+                                &quot;Filtering Formats&quot;. You can also simply
+                                specify a field to match if the field is
+                                present, use &quot;!field&quot; to check if the field
+                                is not present, and &quot;&amp;&quot; to check multiple
+                                conditions. Use a &quot;\&quot; to escape &quot;&amp;&quot; or
+                                quotes if needed. If used multiple times,
+                                the filter matches if atleast one of the
+                                conditions are met. E.g. --match-filter
+                                !is_live --match-filter &quot;like_count&gt;?100 &amp;
+                                description~=&#39;(?i)\bcats \&amp; dogs\b&#39;&quot; matches
+                                only videos that are not live OR those that
+                                have a like count more than 100 (or the like
+                                field is not available) and also has a
+                                description that contains the phrase &quot;cats &amp;
+                                dogs&quot; (caseless). Use &quot;--match-filter -&quot; to
+                                interactively ask whether to download each
+                                video
+--no-match-filter               Do not use any --match-filter (default)
+--break-match-filters FILTER    Same as &quot;--match-filters&quot; but stops the
+                                download process when a video is rejected
+--no-break-match-filters        Do not use any --break-match-filters (default)
+--no-playlist                   Download only the video, if the URL refers
+                                to a video and a playlist
+--yes-playlist                  Download the playlist, if the URL refers to
+                                a video and a playlist
+--age-limit YEARS               Download only videos suitable for the given
+                                age
+--download-archive FILE         Download only videos not listed in the
+                                archive file. Record the IDs of all
+                                downloaded videos in it
+--no-download-archive           Do not use archive file (default)
+--max-downloads NUMBER          Abort after downloading NUMBER files
+--break-on-existing             Stop the download process when encountering
+                                a file that is in the archive
+--break-per-input               Alters --max-downloads, --break-on-existing,
+                                --break-match-filter, and autonumber to
+                                reset per input URL
+--no-break-per-input            --break-on-existing and similar options
+                                terminates the entire download queue
+--skip-playlist-after-errors N  Number of allowed failures until the rest of
+                                the playlist is skipped
+</code></pre>
+<h2 id="Download-Options"><a href="#Download-Options" class="headerlink" title="Download Options:"></a>Download Options:</h2><pre><code>-N, --concurrent-fragments N    Number of fragments of a dash/hlsnative
+                                video that should be downloaded concurrently
+                                (default is 1)
+-r, --limit-rate RATE           Maximum download rate in bytes per second,
+                                e.g. 50K or 4.2M
+--throttled-rate RATE           Minimum download rate in bytes per second
+                                below which throttling is assumed and the
+                                video data is re-extracted, e.g. 100K
+-R, --retries RETRIES           Number of retries (default is 10), or
+                                &quot;infinite&quot;
+--file-access-retries RETRIES   Number of times to retry on file access
+                                error (default is 3), or &quot;infinite&quot;
+--fragment-retries RETRIES      Number of retries for a fragment (default is
+                                10), or &quot;infinite&quot; (DASH, hlsnative and ISM)
+--retry-sleep [TYPE:]EXPR       Time to sleep between retries in seconds
+                                (optionally) prefixed by the type of retry
+                                (http (default), fragment, file_access,
+                                extractor) to apply the sleep to. EXPR can
+                                be a number, linear=START[:END[:STEP=1]] or
+                                exp=START[:END[:BASE=2]]. This option can be
+                                used multiple times to set the sleep for the
+                                different retry types, e.g. --retry-sleep
+                                linear=1::2 --retry-sleep fragment:exp=1:20
+--skip-unavailable-fragments    Skip unavailable fragments for DASH,
+                                hlsnative and ISM downloads (default)
+                                (Alias: --no-abort-on-unavailable-fragments)
+--abort-on-unavailable-fragments
+                                Abort download if a fragment is unavailable
+                                (Alias: --no-skip-unavailable-fragments)
+--keep-fragments                Keep downloaded fragments on disk after
+                                downloading is finished
+--no-keep-fragments             Delete downloaded fragments after
+                                downloading is finished (default)
+--buffer-size SIZE              Size of download buffer, e.g. 1024 or 16K
+                                (default is 1024)
+--resize-buffer                 The buffer size is automatically resized
+                                from an initial value of --buffer-size
+                                (default)
+--no-resize-buffer              Do not automatically adjust the buffer size
+--http-chunk-size SIZE          Size of a chunk for chunk-based HTTP
+                                downloading, e.g. 10485760 or 10M (default
+                                is disabled). May be useful for bypassing
+                                bandwidth throttling imposed by a webserver
+                                (experimental)
+--playlist-random               Download playlist videos in random order
+--lazy-playlist                 Process entries in the playlist as they are
+                                received. This disables n_entries,
+                                --playlist-random and --playlist-reverse
+--no-lazy-playlist              Process videos in the playlist only after
+                                the entire playlist is parsed (default)
+--xattr-set-filesize            Set file xattribute ytdl.filesize with
+                                expected file size
+--hls-use-mpegts                Use the mpegts container for HLS videos;
+                                allowing some players to play the video
+                                while downloading, and reducing the chance
+                                of file corruption if download is
+                                interrupted. This is enabled by default for
+                                live streams
+--no-hls-use-mpegts             Do not use the mpegts container for HLS
+                                videos. This is default when not downloading
+                                live streams
+--download-sections REGEX       Download only chapters whose title matches
+                                the given regular expression. Time ranges
+                                prefixed by a &quot;*&quot; can also be used in place
+                                of chapters to download the specified range.
+                                Needs ffmpeg. This option can be used
+                                multiple times to download multiple
+                                sections, e.g. --download-sections
+                                &quot;*10:15-inf&quot; --download-sections &quot;intro&quot;
+--downloader [PROTO:]NAME       Name or path of the external downloader to
+                                use (optionally) prefixed by the protocols
+                                (http, ftp, m3u8, dash, rstp, rtmp, mms) to
+                                use it for. Currently supports native,
+                                aria2c, avconv, axel, curl, ffmpeg, httpie,
+                                wget. You can use this option multiple times
+                                to set different downloaders for different
+                                protocols. E.g. --downloader aria2c
+                                --downloader &quot;dash,m3u8:native&quot; will use
+                                aria2c for http/ftp downloads, and the
+                                native downloader for dash/m3u8 downloads
+                                (Alias: --external-downloader)
+--downloader-args NAME:ARGS     Give these arguments to the external
+                                downloader. Specify the downloader name and
+                                the arguments separated by a colon &quot;:&quot;. For
+                                ffmpeg, arguments can be passed to different
+                                positions using the same syntax as
+                                --postprocessor-args. You can use this
+                                option multiple times to give different
+                                arguments to different downloaders (Alias:
+                                --external-downloader-args)
+</code></pre>
+<h2 id="Filesystem-Options"><a href="#Filesystem-Options" class="headerlink" title="Filesystem Options:"></a>Filesystem Options:</h2><pre><code>-a, --batch-file FILE           File containing URLs to download (&quot;-&quot; for
+                                stdin), one URL per line. Lines starting
+                                with &quot;#&quot;, &quot;;&quot; or &quot;]&quot; are considered as
+                                comments and ignored
+--no-batch-file                 Do not read URLs from batch file (default)
+-P, --paths [TYPES:]PATH        The paths where the files should be
+                                downloaded. Specify the type of file and the
+                                path separated by a colon &quot;:&quot;. All the same
+                                TYPES as --output are supported.
+                                Additionally, you can also provide &quot;home&quot;
+                                (default) and &quot;temp&quot; paths. All intermediary
+                                files are first downloaded to the temp path
+                                and then the final files are moved over to
+                                the home path after download is finished.
+                                This option is ignored if --output is an
+                                absolute path
+-o, --output [TYPES:]TEMPLATE   Output filename template; see &quot;OUTPUT
+                                TEMPLATE&quot; for details
+--output-na-placeholder TEXT    Placeholder for unavailable fields in
+                                &quot;OUTPUT TEMPLATE&quot; (default: &quot;NA&quot;)
+--restrict-filenames            Restrict filenames to only ASCII characters,
+                                and avoid &quot;&amp;&quot; and spaces in filenames
+--no-restrict-filenames         Allow Unicode characters, &quot;&amp;&quot; and spaces in
+                                filenames (default)
+--windows-filenames             Force filenames to be Windows-compatible
+--no-windows-filenames          Make filenames Windows-compatible only if
+                                using Windows (default)
+--trim-filenames LENGTH         Limit the filename length (excluding
+                                extension) to the specified number of
+                                characters
+-w, --no-overwrites             Do not overwrite any files
+--force-overwrites              Overwrite all video and metadata files. This
+                                option includes --no-continue
+--no-force-overwrites           Do not overwrite the video, but overwrite
+                                related files (default)
+-c, --continue                  Resume partially downloaded files/fragments
+                                (default)
+--no-continue                   Do not resume partially downloaded
+                                fragments. If the file is not fragmented,
+                                restart download of the entire file
+--part                          Use .part files instead of writing directly
+                                into output file (default)
+--no-part                       Do not use .part files - write directly into
+                                output file
+--mtime                         Use the Last-modified header to set the file
+                                modification time (default)
+--no-mtime                      Do not use the Last-modified header to set
+                                the file modification time
+--write-description             Write video description to a .description file
+--no-write-description          Do not write video description (default)
+--write-info-json               Write video metadata to a .info.json file
+                                (this may contain personal information)
+--no-write-info-json            Do not write video metadata (default)
+--write-playlist-metafiles      Write playlist metadata in addition to the
+                                video metadata when using --write-info-json,
+                                --write-description etc. (default)
+--no-write-playlist-metafiles   Do not write playlist metadata when using
+                                --write-info-json, --write-description etc.
+--clean-info-json               Remove some private fields such as filenames
+                                from the infojson. Note that it could still
+                                contain some personal information (default)
+--no-clean-info-json            Write all fields to the infojson
+--write-comments                Retrieve video comments to be placed in the
+                                infojson. The comments are fetched even
+                                without this option if the extraction is
+                                known to be quick (Alias: --get-comments)
+--no-write-comments             Do not retrieve video comments unless the
+                                extraction is known to be quick (Alias:
+                                --no-get-comments)
+--load-info-json FILE           JSON file containing the video information
+                                (created with the &quot;--write-info-json&quot; option)
+--cookies FILE                  Netscape formatted file to read cookies from
+                                and dump cookie jar in
+--no-cookies                    Do not read/dump cookies from/to file
+                                (default)
+--cookies-from-browser BROWSER[+KEYRING][:PROFILE][::CONTAINER]
+                                The name of the browser to load cookies
+                                from. Currently supported browsers are:
+                                brave, chrome, chromium, edge, firefox,
+                                opera, safari, vivaldi. Optionally, the
+                                KEYRING used for decrypting Chromium cookies
+                                on Linux, the name/path of the PROFILE to
+                                load cookies from, and the CONTAINER name
+                                (if Firefox) (&quot;none&quot; for no container) can
+                                be given with their respective seperators.
+                                By default, all containers of the most
+                                recently accessed profile are used.
+                                Currently supported keyrings are: basictext,
+                                gnomekeyring, kwallet
+--no-cookies-from-browser       Do not load cookies from browser (default)
+--cache-dir DIR                 Location in the filesystem where yt-dlp can
+                                store some downloaded information (such as
+                                client ids and signatures) permanently. By
+                                default $&#123;XDG_CACHE_HOME&#125;/yt-dlp
+--no-cache-dir                  Disable filesystem caching
+--rm-cache-dir                  Delete all filesystem cache files
+</code></pre>
+<h2 id="Thumbnail-Options"><a href="#Thumbnail-Options" class="headerlink" title="Thumbnail Options:"></a>Thumbnail Options:</h2><pre><code>--write-thumbnail               Write thumbnail image to disk
+--no-write-thumbnail            Do not write thumbnail image to disk (default)
+--write-all-thumbnails          Write all thumbnail image formats to disk
+--list-thumbnails               List available thumbnails of each video.
+                                Simulate unless --no-simulate is used
+</code></pre>
+<h2 id="Internet-Shortcut-Options"><a href="#Internet-Shortcut-Options" class="headerlink" title="Internet Shortcut Options:"></a>Internet Shortcut Options:</h2><pre><code>--write-link                    Write an internet shortcut file, depending
+                                on the current platform (.url, .webloc or
+                                .desktop). The URL may be cached by the OS
+--write-url-link                Write a .url Windows internet shortcut. The
+                                OS caches the URL based on the file path
+--write-webloc-link             Write a .webloc macOS internet shortcut
+--write-desktop-link            Write a .desktop Linux internet shortcut
+</code></pre>
+<h2 id="Verbosity-and-Simulation-Options"><a href="#Verbosity-and-Simulation-Options" class="headerlink" title="Verbosity and Simulation Options:"></a>Verbosity and Simulation Options:</h2><pre><code>-q, --quiet                     Activate quiet mode. If used with --verbose,
+                                print the log to stderr
+--no-warnings                   Ignore warnings
+-s, --simulate                  Do not download the video and do not write
+                                anything to disk
+--no-simulate                   Download the video even if printing/listing
+                                options are used
+--ignore-no-formats-error       Ignore &quot;No video formats&quot; error. Useful for
+                                extracting metadata even if the videos are
+                                not actually available for download
+                                (experimental)
+--no-ignore-no-formats-error    Throw error when no downloadable video
+                                formats are found (default)
+--skip-download                 Do not download the video but write all
+                                related files (Alias: --no-download)
+-O, --print [WHEN:]TEMPLATE     Field name or output template to print to
+                                screen, optionally prefixed with when to
+                                print it, separated by a &quot;:&quot;. Supported
+                                values of &quot;WHEN&quot; are the same as that of
+                                --use-postprocessor (default: video).
+                                Implies --quiet. Implies --simulate unless
+                                --no-simulate or later stages of WHEN are
+                                used. This option can be used multiple times
+--print-to-file [WHEN:]TEMPLATE FILE
+                                Append given template to the file. The
+                                values of WHEN and TEMPLATE are same as that
+                                of --print. FILE uses the same syntax as the
+                                output template. This option can be used
+                                multiple times
+-j, --dump-json                 Quiet, but print JSON information for each
+                                video. Simulate unless --no-simulate is
+                                used. See &quot;OUTPUT TEMPLATE&quot; for a
+                                description of available keys
+-J, --dump-single-json          Quiet, but print JSON information for each
+                                url or infojson passed. Simulate unless
+                                --no-simulate is used. If the URL refers to
+                                a playlist, the whole playlist information
+                                is dumped in a single line
+--force-write-archive           Force download archive entries to be written
+                                as far as no errors occur, even if -s or
+                                another simulation option is used (Alias:
+                                --force-download-archive)
+--newline                       Output progress bar as new lines
+--no-progress                   Do not print progress bar
+--progress                      Show progress bar, even if in quiet mode
+--console-title                 Display progress in console titlebar
+--progress-template [TYPES:]TEMPLATE
+                                Template for progress outputs, optionally
+                                prefixed with one of &quot;download:&quot; (default),
+                                &quot;download-title:&quot; (the console title),
+                                &quot;postprocess:&quot;,  or &quot;postprocess-title:&quot;.
+                                The video&#39;s fields are accessible under the
+                                &quot;info&quot; key and the progress attributes are
+                                accessible under &quot;progress&quot; key. E.g.
+                                --console-title --progress-template
+                                &quot;download-title:%(info.id)s-%(progress.eta)s&quot;
+-v, --verbose                   Print various debugging information
+--dump-pages                    Print downloaded pages encoded using base64
+                                to debug problems (very verbose)
+--write-pages                   Write downloaded intermediary pages to files
+                                in the current directory to debug problems
+--print-traffic                 Display sent and read HTTP traffic
+</code></pre>
+<h2 id="Workarounds"><a href="#Workarounds" class="headerlink" title="Workarounds:"></a>Workarounds:</h2><pre><code>--encoding ENCODING             Force the specified encoding (experimental)
+--legacy-server-connect         Explicitly allow HTTPS connection to servers
+                                that do not support RFC 5746 secure
+                                renegotiation
+--no-check-certificates         Suppress HTTPS certificate validation
+--prefer-insecure               Use an unencrypted connection to retrieve
+                                information about the video (Currently
+                                supported only for YouTube)
+--add-headers FIELD:VALUE       Specify a custom HTTP header and its value,
+                                separated by a colon &quot;:&quot;. You can use this
+                                option multiple times
+--bidi-workaround               Work around terminals that lack
+                                bidirectional text support. Requires bidiv
+                                or fribidi executable in PATH
+--sleep-requests SECONDS        Number of seconds to sleep between requests
+                                during data extraction
+--sleep-interval SECONDS        Number of seconds to sleep before each
+                                download. This is the minimum time to sleep
+                                when used along with --max-sleep-interval
+                                (Alias: --min-sleep-interval)
+--max-sleep-interval SECONDS    Maximum number of seconds to sleep. Can only
+                                be used along with --min-sleep-interval
+--sleep-subtitles SECONDS       Number of seconds to sleep before each
+                                subtitle download
+</code></pre>
+<h2 id="Video-Format-Options"><a href="#Video-Format-Options" class="headerlink" title="Video Format Options:"></a>Video Format Options:</h2><pre><code>-f, --format FORMAT             Video format code, see &quot;FORMAT SELECTION&quot;
+                                for more details
+-S, --format-sort SORTORDER     Sort the formats by the fields given, see
+                                &quot;Sorting Formats&quot; for more details
+--format-sort-force             Force user specified sort order to have
+                                precedence over all fields, see &quot;Sorting
+                                Formats&quot; for more details (Alias: --S-force)
+--no-format-sort-force          Some fields have precedence over the user
+                                specified sort order (default)
+--video-multistreams            Allow multiple video streams to be merged
+                                into a single file
+--no-video-multistreams         Only one video stream is downloaded for each
+                                output file (default)
+--audio-multistreams            Allow multiple audio streams to be merged
+                                into a single file
+--no-audio-multistreams         Only one audio stream is downloaded for each
+                                output file (default)
+--prefer-free-formats           Prefer video formats with free containers
+                                over non-free ones of same quality. Use with
+                                &quot;-S ext&quot; to strictly prefer free containers
+                                irrespective of quality
+--no-prefer-free-formats        Don&#39;t give any special preference to free
+                                containers (default)
+--check-formats                 Make sure formats are selected only from
+                                those that are actually downloadable
+--check-all-formats             Check all formats for whether they are
+                                actually downloadable
+--no-check-formats              Do not check that the formats are actually
+                                downloadable
+-F, --list-formats              List available formats of each video.
+                                Simulate unless --no-simulate is used
+--merge-output-format FORMAT    Containers that may be used when merging
+                                formats, separated by &quot;/&quot;, e.g. &quot;mp4/mkv&quot;.
+                                Ignored if no merge is required. (currently
+                                supported: avi, flv, mkv, mov, mp4, webm)
+</code></pre>
+<h2 id="Subtitle-Options"><a href="#Subtitle-Options" class="headerlink" title="Subtitle Options:"></a>Subtitle Options:</h2><pre><code>--write-subs                    Write subtitle file
+--no-write-subs                 Do not write subtitle file (default)
+--write-auto-subs               Write automatically generated subtitle file
+                                (Alias: --write-automatic-subs)
+--no-write-auto-subs            Do not write auto-generated subtitles
+                                (default) (Alias: --no-write-automatic-subs)
+--list-subs                     List available subtitles of each video.
+                                Simulate unless --no-simulate is used
+--sub-format FORMAT             Subtitle format; accepts formats preference,
+                                e.g. &quot;srt&quot; or &quot;ass/srt/best&quot;
+--sub-langs LANGS               Languages of the subtitles to download (can
+                                be regex) or &quot;all&quot; separated by commas, e.g.
+                                --sub-langs &quot;en.*,ja&quot;. You can prefix the
+                                language code with a &quot;-&quot; to exclude it from
+                                the requested languages, e.g. --sub-langs
+                                all,-live_chat. Use --list-subs for a list
+                                of available language tags
+</code></pre>
+<h2 id="Authentication-Options"><a href="#Authentication-Options" class="headerlink" title="Authentication Options:"></a>Authentication Options:</h2><pre><code>-u, --username USERNAME         Login with this account ID
+-p, --password PASSWORD         Account password. If this option is left
+                                out, yt-dlp will ask interactively
+-2, --twofactor TWOFACTOR       Two-factor authentication code
+-n, --netrc                     Use .netrc authentication data
+--netrc-location PATH           Location of .netrc authentication data;
+                                either the path or its containing directory.
+                                Defaults to ~/.netrc
+--video-password PASSWORD       Video password (vimeo, youku)
+--ap-mso MSO                    Adobe Pass multiple-system operator (TV
+                                provider) identifier, use --ap-list-mso for
+                                a list of available MSOs
+--ap-username USERNAME          Multiple-system operator account login
+--ap-password PASSWORD          Multiple-system operator account password.
+                                If this option is left out, yt-dlp will ask
+                                interactively
+--ap-list-mso                   List all supported multiple-system operators
+--client-certificate CERTFILE   Path to client certificate file in PEM
+                                format. May include the private key
+--client-certificate-key KEYFILE
+                                Path to private key file for client
+                                certificate
+--client-certificate-password PASSWORD
+                                Password for client certificate private key,
+                                if encrypted. If not provided, and the key
+                                is encrypted, yt-dlp will ask interactively
+</code></pre>
+<h2 id="Post-Processing-Options"><a href="#Post-Processing-Options" class="headerlink" title="Post-Processing Options:"></a>Post-Processing Options:</h2><pre><code>-x, --extract-audio             Convert video files to audio-only files
+                                (requires ffmpeg and ffprobe)
+--audio-format FORMAT           Format to convert the audio to when -x is
+                                used. (currently supported: best (default),
+                                aac, alac, flac, m4a, mp3, opus, vorbis,
+                                wav). You can specify multiple rules using
+                                similar syntax as --remux-video
+--audio-quality QUALITY         Specify ffmpeg audio quality to use when
+                                converting the audio with -x. Insert a value
+                                between 0 (best) and 10 (worst) for VBR or a
+                                specific bitrate like 128K (default 5)
+--remux-video FORMAT            Remux the video into another container if
+                                necessary (currently supported: avi, flv,
+                                gif, mkv, mov, mp4, webm, aac, aiff, alac,
+                                flac, m4a, mka, mp3, ogg, opus, vorbis,
+                                wav). If target container does not support
+                                the video/audio codec, remuxing will fail.
+                                You can specify multiple rules; e.g.
+                                &quot;aac&gt;m4a/mov&gt;mp4/mkv&quot; will remux aac to m4a,
+                                mov to mp4 and anything else to mkv
+--recode-video FORMAT           Re-encode the video into another format if
+                                necessary. The syntax and supported formats
+                                are the same as --remux-video
+--postprocessor-args NAME:ARGS  Give these arguments to the postprocessors.
+                                Specify the postprocessor/executable name
+                                and the arguments separated by a colon &quot;:&quot;
+                                to give the argument to the specified
+                                postprocessor/executable. Supported PP are:
+                                Merger, ModifyChapters, SplitChapters,
+                                ExtractAudio, VideoRemuxer, VideoConvertor,
+                                Metadata, EmbedSubtitle, EmbedThumbnail,
+                                SubtitlesConvertor, ThumbnailsConvertor,
+                                FixupStretched, FixupM4a, FixupM3u8,
+                                FixupTimestamp and FixupDuration. The
+                                supported executables are: AtomicParsley,
+                                FFmpeg and FFprobe. You can also specify
+                                &quot;PP+EXE:ARGS&quot; to give the arguments to the
+                                specified executable only when being used by
+                                the specified postprocessor. Additionally,
+                                for ffmpeg/ffprobe, &quot;_i&quot;/&quot;_o&quot; can be
+                                appended to the prefix optionally followed
+                                by a number to pass the argument before the
+                                specified input/output file, e.g. --ppa
+                                &quot;Merger+ffmpeg_i1:-v quiet&quot;. You can use
+                                this option multiple times to give different
+                                arguments to different postprocessors.
+                                (Alias: --ppa)
+-k, --keep-video                Keep the intermediate video file on disk
+                                after post-processing
+--no-keep-video                 Delete the intermediate video file after
+                                post-processing (default)
+--post-overwrites               Overwrite post-processed files (default)
+--no-post-overwrites            Do not overwrite post-processed files
+--embed-subs                    Embed subtitles in the video (only for mp4,
+                                webm and mkv videos)
+--no-embed-subs                 Do not embed subtitles (default)
+--embed-thumbnail               Embed thumbnail in the video as cover art
+--no-embed-thumbnail            Do not embed thumbnail (default)
+--embed-metadata                Embed metadata to the video file. Also
+                                embeds chapters/infojson if present unless
+                                --no-embed-chapters/--no-embed-info-json are
+                                used (Alias: --add-metadata)
+--no-embed-metadata             Do not add metadata to file (default)
+                                (Alias: --no-add-metadata)
+--embed-chapters                Add chapter markers to the video file
+                                (Alias: --add-chapters)
+--no-embed-chapters             Do not add chapter markers (default) (Alias:
+                                --no-add-chapters)
+--embed-info-json               Embed the infojson as an attachment to
+                                mkv/mka video files
+--no-embed-info-json            Do not embed the infojson as an attachment
+                                to the video file
+--parse-metadata [WHEN:]FROM:TO
+                                Parse additional metadata like title/artist
+                                from other fields; see &quot;MODIFYING METADATA&quot;
+                                for details. Supported values of &quot;WHEN&quot; are
+                                the same as that of --use-postprocessor
+                                (default: pre_process)
+--replace-in-metadata [WHEN:]FIELDS REGEX REPLACE
+                                Replace text in a metadata field using the
+                                given regex. This option can be used
+                                multiple times. Supported values of &quot;WHEN&quot;
+                                are the same as that of --use-postprocessor
+                                (default: pre_process)
+--xattrs                        Write metadata to the video file&#39;s xattrs
+                                (using dublin core and xdg standards)
+--concat-playlist POLICY        Concatenate videos in a playlist. One of
+                                &quot;never&quot;, &quot;always&quot;, or &quot;multi_video&quot;
+                                (default; only when the videos form a single
+                                show). All the video files must have same
+                                codecs and number of streams to be
+                                concatable. The &quot;pl_video:&quot; prefix can be
+                                used with &quot;--paths&quot; and &quot;--output&quot; to set
+                                the output filename for the concatenated
+                                files. See &quot;OUTPUT TEMPLATE&quot; for details
+--fixup POLICY                  Automatically correct known faults of the
+                                file. One of never (do nothing), warn (only
+                                emit a warning), detect_or_warn (the
+                                default; fix file if we can, warn
+                                otherwise), force (try fixing even if file
+                                already exists)
+--ffmpeg-location PATH          Location of the ffmpeg binary; either the
+                                path to the binary or its containing directory
+--exec [WHEN:]CMD               Execute a command, optionally prefixed with
+                                when to execute it, separated by a &quot;:&quot;.
+                                Supported values of &quot;WHEN&quot; are the same as
+                                that of --use-postprocessor (default:
+                                after_move). Same syntax as the output
+                                template can be used to pass any field as
+                                arguments to the command. After download, an
+                                additional field &quot;filepath&quot; that contains
+                                the final path of the downloaded file is
+                                also available, and if no fields are passed,
+                                %(filepath,_filename|)q is appended to the
+                                end of the command. This option can be used
+                                multiple times
+--no-exec                       Remove any previously defined --exec
+--convert-subs FORMAT           Convert the subtitles to another format
+                                (currently supported: ass, lrc, srt, vtt)
+                                (Alias: --convert-subtitles)
+--convert-thumbnails FORMAT     Convert the thumbnails to another format
+                                (currently supported: jpg, png, webp). You
+                                can specify multiple rules using similar
+                                syntax as --remux-video
+--split-chapters                Split video into multiple files based on
+                                internal chapters. The &quot;chapter:&quot; prefix can
+                                be used with &quot;--paths&quot; and &quot;--output&quot; to set
+                                the output filename for the split files. See
+                                &quot;OUTPUT TEMPLATE&quot; for details
+--no-split-chapters             Do not split video based on chapters (default)
+--remove-chapters REGEX         Remove chapters whose title matches the
+                                given regular expression. The syntax is the
+                                same as --download-sections. This option can
+                                be used multiple times
+--no-remove-chapters            Do not remove any chapters from the file
+                                (default)
+--force-keyframes-at-cuts       Force keyframes at cuts when
+                                downloading/splitting/removing sections.
+                                This is slow due to needing a re-encode, but
+                                the resulting video may have fewer artifacts
+                                around the cuts
+--no-force-keyframes-at-cuts    Do not force keyframes around the chapters
+                                when cutting/splitting (default)
+--use-postprocessor NAME[:ARGS]
+                                The (case sensitive) name of plugin
+                                postprocessors to be enabled, and
+                                (optionally) arguments to be passed to it,
+                                separated by a colon &quot;:&quot;. ARGS are a
+                                semicolon &quot;;&quot; delimited list of NAME=VALUE.
+                                The &quot;when&quot; argument determines when the
+                                postprocessor is invoked. It can be one of
+                                &quot;pre_process&quot; (after video extraction),
+                                &quot;after_filter&quot; (after video passes filter),
+                                &quot;video&quot; (after --format; before
+                                --print/--output), &quot;before_dl&quot; (before each
+                                video download), &quot;post_process&quot; (after each
+                                video download; default), &quot;after_move&quot;
+                                (after moving video file to it&#39;s final
+                                locations), &quot;after_video&quot; (after downloading
+                                and processing all formats of a video), or
+                                &quot;playlist&quot; (at end of playlist). This option
+                                can be used multiple times to add different
+                                postprocessors
+</code></pre>
+<h2 id="SponsorBlock-Options"><a href="#SponsorBlock-Options" class="headerlink" title="SponsorBlock Options:"></a>SponsorBlock Options:</h2><p>Make chapter entries for, or remove various segments (sponsor, introductions, etc.) from downloaded YouTube videos using the <a target="_blank" rel="noopener" href="https://sponsor.ajay.app/">SponsorBlock API</a></p>
+<pre><code>--sponsorblock-mark CATS        SponsorBlock categories to create chapters
+                                for, separated by commas. Available
+                                categories are sponsor, intro, outro,
+                                selfpromo, preview, filler, interaction,
+                                music_offtopic, poi_highlight, chapter, all
+                                and default (=all). You can prefix the
+                                category with a &quot;-&quot; to exclude it. See [1]
+                                for description of the categories. E.g.
+                                --sponsorblock-mark all,-preview
+                                [1] https://wiki.sponsor.ajay.app/w/Segment_Categories
+--sponsorblock-remove CATS      SponsorBlock categories to be removed from
+                                the video file, separated by commas. If a
+                                category is present in both mark and remove,
+                                remove takes precedence. The syntax and
+                                available categories are the same as for
+                                --sponsorblock-mark except that &quot;default&quot;
+                                refers to &quot;all,-filler&quot; and poi_highlight,
+                                chapter are not available
+--sponsorblock-chapter-title TEMPLATE
+                                An output template for the title of the
+                                SponsorBlock chapters created by
+                                --sponsorblock-mark. The only available
+                                fields are start_time, end_time, category,
+                                categories, name, category_names. Defaults
+                                to &quot;[SponsorBlock]: %(category_names)l&quot;
+--no-sponsorblock               Disable both --sponsorblock-mark and
+                                --sponsorblock-remove
+--sponsorblock-api URL          SponsorBlock API location, defaults to
+                                https://sponsor.ajay.app
+</code></pre>
+<h2 id="Extractor-Options"><a href="#Extractor-Options" class="headerlink" title="Extractor Options:"></a>Extractor Options:</h2><pre><code>--extractor-retries RETRIES     Number of retries for known extractor errors
+                                (default is 3), or &quot;infinite&quot;
+--allow-dynamic-mpd             Process dynamic DASH manifests (default)
+                                (Alias: --no-ignore-dynamic-mpd)
+--ignore-dynamic-mpd            Do not process dynamic DASH manifests
+                                (Alias: --no-allow-dynamic-mpd)
+--hls-split-discontinuity       Split HLS playlists to different formats at
+                                discontinuities such as ad breaks
+--no-hls-split-discontinuity    Do not split HLS playlists to different
+                                formats at discontinuities such as ad breaks
+                                (default)
+--extractor-args IE_KEY:ARGS    Pass ARGS arguments to the IE_KEY extractor.
+                                See &quot;EXTRACTOR ARGUMENTS&quot; for details. You
+                                can use this option multiple times to give
+                                arguments for different extractors
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 910009183@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '0d19446c27fd076b906b',
+            clientSecret: 'b6f0fb5c86fbb82dcb8756e043dc1e759e320b93',
+            repo: 'coolxy.github.io',
+            owner: 'coolxy',
+            admin: ['coolxy'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2006-2022 coolxy
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
