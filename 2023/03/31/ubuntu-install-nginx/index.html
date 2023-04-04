@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>长鸿的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="长鸿的博客">
+  <title>chatgpt：ubuntu server安装nginx | 长鸿的博客</title>
+  <meta name="keywords" content=" nginx , chatgpt ">
+  <meta name="description" content="chatgpt：ubuntu server安装nginx | 长鸿的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="auto-blogThis is a blog of Hexo!The theme is 3-hexo Visit:https:&#x2F;&#x2F;coolxy.cn">
 <meta property="og:type" content="website">
@@ -236,7 +236,7 @@
                     <div data-rel="前沿科技">
                         
                         前沿科技
-                        <small>(2)</small>
+                        <small>(4)</small>
                         
                     </div>
                     
@@ -964,6 +964,24 @@
         
         
         <a id="top" class="全部文章 前沿科技 "
+           href="/2023/03/31/ubuntu-install-nginx/"
+           data-tag="nginx,chatgpt"
+           data-author="" >
+            <span class="post-title" title="chatgpt：ubuntu server安装nginx">chatgpt：ubuntu server安装nginx</span>
+            <span class="post-date" title="2023-03-31 22:22:22">2023/03/31</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 前沿科技 "
+           href="/2023/03/31/chatgpt-install-use-mariadb/"
+           data-tag="mariadb,chatgpt"
+           data-author="" >
+            <span class="post-title" title="chatgpt-安装mariadb数据库">chatgpt-安装mariadb数据库</span>
+            <span class="post-date" title="2023-03-31 22:22:22">2023/03/31</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 前沿科技 "
            href="/2023/03/28/deploy-chatgpt/"
            data-tag="chatgpt"
            data-author="" >
@@ -987,24 +1005,6 @@
            data-author="" >
             <span class="post-title" title="必备电脑软件，提高工作效率">必备电脑软件，提高工作效率</span>
             <span class="post-date" title="2021-03-22 14:15:46">2021/03/22</span>
-        </a>
-        
-        
-        <a  class="全部文章 "
-           href="/2023/04/01/chatgpt-install-use-mariadb/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2023-04-01 00:00:00">2023/04/01</span>
-        </a>
-        
-        
-        <a  class="全部文章 "
-           href="/2023/03/31/ubuntu-install-nginx/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2023-03-31 00:00:00">2023/03/31</span>
         </a>
         
         
@@ -1804,15 +1804,36 @@
     <div class="pjax">
         <article id="post-ubuntu-install-nginx" class="article article-type-post" itemscope itemprop="blogPost">
     
+        <h1 class="article-title">chatgpt：ubuntu server安装nginx</h1>
+    
     <div class="article-meta">
         
+        <span class="top"><a>置顶</a></span>
         
         
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前沿科技">前沿科技</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">nginx</a>
+            
+            <a class="color3">chatgpt</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-04-03 01:59:19'>2023-03-31 00:00</time>
+            发布时间 : <time class="date" title='最后更新: 2023-04-04 01:45:11'>2023-03-31 22:22</time>
         
     </div>
     <div class="article-meta">
@@ -1845,7 +1866,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ubuntu-server%E5%AE%89%E8%A3%85nginx"><span class="toc-text">ubuntu server安装nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu-server%E5%AE%89%E8%A3%85nginx-1"><span class="toc-text">ubuntu server安装nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="toc-text">通过源码编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sysgemd%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">sysgemd配置自动启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEroot%E7%9B%AE%E5%BD%95"><span class="toc-text">设置root目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A3%E7%90%86"><span class="toc-text">配置域名代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6"><span class="toc-text">配置ssl证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEphp%E8%A7%A3%E6%9E%90"><span class="toc-text">配置php解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87php-fpm-sock%E8%A7%A3%E6%9E%90"><span class="toc-text">通过php-fpm.sock解析</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#chatgpt%EF%BC%9Aubuntu-server%E5%AE%89%E8%A3%85nginx"><span class="toc-text">chatgpt：ubuntu server安装nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu-server%E5%AE%89%E8%A3%85nginx"><span class="toc-text">ubuntu server安装nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="toc-text">通过源码编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sysgemd%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">sysgemd配置自动启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEroot%E7%9B%AE%E5%BD%95"><span class="toc-text">设置root目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%BB%A3%E7%90%86"><span class="toc-text">配置域名代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssl%E8%AF%81%E4%B9%A6"><span class="toc-text">配置ssl证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEphp%E8%A7%A3%E6%9E%90"><span class="toc-text">配置php解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87php-fpm-sock%E8%A7%A3%E6%9E%90"><span class="toc-text">通过php-fpm.sock解析</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1861,8 +1882,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ubuntu-server安装nginx"><a href="#ubuntu-server安装nginx" class="headerlink" title="ubuntu server安装nginx"></a>ubuntu server安装nginx</h1><p>以下都是ChatGPT的回答，发现可以用来写博客了！<br>有什么可以帮你的吗</p>
-<h2 id="ubuntu-server安装nginx-1"><a href="#ubuntu-server安装nginx-1" class="headerlink" title="ubuntu server安装nginx"></a>ubuntu server安装nginx</h2><p>以下是在Ubuntu Server上安装Nginx的步骤：</p>
+        <h1 id="chatgpt：ubuntu-server安装nginx"><a href="#chatgpt：ubuntu-server安装nginx" class="headerlink" title="chatgpt：ubuntu server安装nginx"></a>chatgpt：ubuntu server安装nginx</h1><p>以下都是ChatGPT的回答，发现可以用来写博客了！<br>有什么可以帮你的吗</p>
+<h2 id="ubuntu-server安装nginx"><a href="#ubuntu-server安装nginx" class="headerlink" title="ubuntu server安装nginx"></a>ubuntu server安装nginx</h2><p>以下是在Ubuntu Server上安装Nginx的步骤：</p>
 <ol>
 <li><p>更新apt或aptitude的软件包索引：</p>
 <pre><code>sudo apt-get update
