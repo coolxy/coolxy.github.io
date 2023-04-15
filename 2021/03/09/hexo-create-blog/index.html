@@ -390,10 +390,6 @@
     <div class="menus">
         
             
-                <a class="dynamic-menu site_url"
-                   
-                   href="/photo">相册</a>
-        
             
             
                 <a class="dynamic-menu "
@@ -415,7 +411,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="98">
-
+<input type="hidden" id="yelog_site_word_count" value="193k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -443,11 +439,15 @@
             
             <li><a target="_blank" href="https://ai.oaiai.top">BetterChat</a></li>
             
+            <li><a target="_blank" href="https://chatgpt.oaiai.top">ChatGPT-vercel</a></li>
+            
             <li><a target="_blank" href="https://regex.coolxy.top">在线正则学习</a></li>
             
             <li><a target="_blank" href="https://music.coolxy.top">长鸿音乐</a></li>
             
             <li><a target="_blank" href="https://hellogithub.com/">Hello Github</a></li>
+            
+            <li><a target="_blank" href="https://lzw.me/x/chatgpt-sites/">chatgpt列表</a></li>
             
         </ul>
     </div>
@@ -976,6 +976,10 @@
 
 </div>
 
+    
+    <div id="local-search-result">
+
+    </div>
     
     <nav id="title-list-nav">
         
@@ -1887,6 +1891,8 @@
     </div>
     <div class="article-meta">
         
+        <span>字数:3.5k</span>
+        
         
         <span id="busuanzi_container_page_pv">
             阅读 :<span id="busuanzi_value_page_pv">
@@ -2175,6 +2181,10 @@ description: 附加一段文章摘要，字数最好在140字以内，会出现�
 </article>
 
 
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
 
 
 
@@ -2221,6 +2231,24 @@ description: 附加一段文章摘要，字数最好在140字以内，会出现�
     </div>
 </div>
 
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
@@ -2234,6 +2262,14 @@ description: 附加一段文章摘要，字数最好在140字以内，会出现�
         
 
         /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
         
 
         /*高亮代码块行号*/
@@ -2266,6 +2302,11 @@ description: 附加一段文章摘要，字数最好在140字以内，会出现�
     }
 
     /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
     
 
 </script>
@@ -2424,8 +2465,6 @@ description: 附加一段文章摘要，字数最好在140字以内，会出现�
 </div>
 <div class="mobile-menus">
     
-    
-    <a class="dynamic-menu site_url"   href="/photo">相册</a>
     
     
     
