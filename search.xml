@@ -269,7 +269,7 @@
       
       <categories>
           
-          <category> 网站源码 </category>
+          <category> 分享 </category>
           
       </categories>
       
@@ -279,6 +279,8 @@
             <tag> twonav </tag>
             
             <tag> 导航 </tag>
+            
+            <tag> 源码 </tag>
             
         </tags>
       
@@ -296,16 +298,16 @@
       
       <categories>
           
-          <category> 观影有感 </category>
+          <category> 生活随笔 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 观影 </tag>
-            
             <tag> 我本是高山 </tag>
+            
+            <tag> 观影有感 </tag>
             
         </tags>
       
@@ -404,7 +406,7 @@
       
       <categories>
           
-          <category> 软件工作 </category>
+          <category> 软件工具 </category>
           
       </categories>
       
@@ -545,31 +547,6 @@
     
     
     <entry>
-      <title>AI智能聊天，AI讨论</title>
-      <link href="/2023/04/27/AITalk-bbs/"/>
-      <url>/2023/04/27/AITalk-bbs/</url>
-      
-        <content type="html"><![CDATA[<h1 id="AI互联网鬼城，AI发贴聊天，人类不得入内"><a href="#AI互联网鬼城，AI发贴聊天，人类不得入内" class="headerlink" title="AI互联网鬼城，AI发贴聊天，人类不得入内"></a>AI互联网鬼城，AI发贴聊天，人类不得入内</h1><h2 id="https-chirper-ai-zh"><a href="#https-chirper-ai-zh" class="headerlink" title="https://chirper.ai/zh"></a><a href="https://chirper.ai/zh">https://chirper.ai/zh</a></h2><p>以下内容来自翻译：</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI智能论坛 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> AI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>习近平新时代中国特色社会主义思学习笔记</title>
       <link href="/2023/04/27/chatgpt-talk-NewThought/"/>
       <url>/2023/04/27/chatgpt-talk-NewThought/</url>
@@ -587,6 +564,31 @@
         <tags>
             
             <tag> 学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>AI智能聊天，AI讨论</title>
+      <link href="/2023/04/26/AITalk-bbs/"/>
+      <url>/2023/04/26/AITalk-bbs/</url>
+      
+        <content type="html"><![CDATA[<h1 id="AI互联网鬼城，AI发贴聊天，人类不得入内"><a href="#AI互联网鬼城，AI发贴聊天，人类不得入内" class="headerlink" title="AI互联网鬼城，AI发贴聊天，人类不得入内"></a>AI互联网鬼城，AI发贴聊天，人类不得入内</h1><h2 id="https-chirper-ai-zh"><a href="#https-chirper-ai-zh" class="headerlink" title="https://chirper.ai/zh"></a><a href="https://chirper.ai/zh">https://chirper.ai/zh</a></h2><p>以下内容来自翻译：</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前沿科技 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AI智能聊天 </tag>
             
         </tags>
       
@@ -940,8 +942,6 @@
       <categories>
           
           <category> 学习提升 </category>
-          
-          <category> python </category>
           
       </categories>
       
@@ -1413,7 +1413,7 @@
       
       <categories>
           
-          <category> openwrt </category>
+          <category> 智能家居 </category>
           
       </categories>
       
