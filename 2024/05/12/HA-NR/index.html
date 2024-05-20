@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>长鸿的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="长鸿的博客">
+  <title>HomeAssistant和NodeRed的安装和使用 | 长鸿的博客</title>
+  <meta name="keywords" content=" 智能家居 , HomeAssistant , NodeRed ">
+  <meta name="description" content="HomeAssistant和NodeRed的安装和使用 | 长鸿的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="auto-blogThis is a blog of Hexo!The theme is 3-hexo Visit:https:&#x2F;&#x2F;coolxy.cn">
 <meta property="og:type" content="website">
@@ -179,7 +179,7 @@
                     <div data-rel="教程技巧">
                         
                         教程技巧
-                        <small>(2)</small>
+                        <small>(3)</small>
                         
                     </div>
                     
@@ -868,6 +868,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HomeAssistant</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>HTML</a>
             </li>
         
@@ -961,6 +965,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>Node-red</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NodeRed</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -1151,12 +1159,12 @@
         </a>
         
         
-        <a  class="全部文章 "
+        <a  class="全部文章 教程技巧 "
            href="/2024/05/12/HA-NR/"
-           data-tag=""
+           data-tag="智能家居,HomeAssistant,NodeRed"
            data-author="" >
-            <span class="post-title" title=""></span>
-            <span class="post-date" title="2024-05-12 00:00:00">2024/05/12</span>
+            <span class="post-title" title="HomeAssistant和NodeRed的安装和使用">HomeAssistant和NodeRed的安装和使用</span>
+            <span class="post-date" title="2024-05-12 22:22:22">2024/05/12</span>
         </a>
         
         
@@ -2254,20 +2262,41 @@
     <div class="pjax">
         <article id="post-HA-NR" class="article article-type-post" itemscope itemprop="blogPost">
     
+        <h1 class="article-title">HomeAssistant和NodeRed的安装和使用</h1>
+    
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="教程技巧">教程技巧</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">智能家居</a>
+            
+            <a class="color4">HomeAssistant</a>
+            
+            <a class="color3">NodeRed</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-05-14 17:49:23'>2024-05-12 00:00</time>
+            发布时间 : <time class="date" title='最后更新: 2024-05-20 11:24:52'>2024-05-12 22:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:669</span>
+        <span>字数:677</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -2297,7 +2326,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85HA%E5%92%8CNodeRed"><span class="toc-text">一、安装HA和NodeRed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-red%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%88%B0home-assiant"><span class="toc-text">安装node-red后，如何添加到home assiant</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HomeAssistant%E5%92%8CNodeRed%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">HomeAssistant和NodeRed的安装和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85HA%E5%92%8CNodeRed"><span class="toc-text">一、安装HA和NodeRed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-red%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%88%B0home-assiant"><span class="toc-text">安装node-red后，如何添加到home assiant</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -2313,7 +2342,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、安装HA和NodeRed"><a href="#一、安装HA和NodeRed" class="headerlink" title="一、安装HA和NodeRed"></a>一、安装HA和NodeRed</h2><h2 id="安装node-red后，如何添加到home-assiant"><a href="#安装node-red后，如何添加到home-assiant" class="headerlink" title="安装node-red后，如何添加到home assiant"></a>安装node-red后，如何添加到home assiant</h2><p>  按照萝卜的<a target="_blank" rel="noopener" href="https://bbs.hassbian.com/thread-4676-1-2.html">教程</a>，安装node-red并能成功打开web端后，很多人想添加到HA，统一管理，但具体怎样做呢？请看以下操作。<br>  1、我们需要在HA的配置文件configuration.yaml添加代码<br>panel_iframe:<br>nodered:<br>  title: ‘Node-Red’<br>  icon: ‘mdi:shuffle-variant’<br>  url: ‘http:&#x2F;&#x2F;你的本地ID:1880&#x2F;‘</p>
+        <h1 id="HomeAssistant和NodeRed的安装和使用"><a href="#HomeAssistant和NodeRed的安装和使用" class="headerlink" title="HomeAssistant和NodeRed的安装和使用"></a>HomeAssistant和NodeRed的安装和使用</h1><h2 id="一、安装HA和NodeRed"><a href="#一、安装HA和NodeRed" class="headerlink" title="一、安装HA和NodeRed"></a>一、安装HA和NodeRed</h2><h2 id="安装node-red后，如何添加到home-assiant"><a href="#安装node-red后，如何添加到home-assiant" class="headerlink" title="安装node-red后，如何添加到home assiant"></a>安装node-red后，如何添加到home assiant</h2><p>  按照萝卜的<a target="_blank" rel="noopener" href="https://bbs.hassbian.com/thread-4676-1-2.html">教程</a>，安装node-red并能成功打开web端后，很多人想添加到HA，统一管理，但具体怎样做呢？请看以下操作。<br>  1、我们需要在HA的配置文件configuration.yaml添加代码<br>panel_iframe:<br>nodered:<br>  title: ‘Node-Red’<br>  icon: ‘mdi:shuffle-variant’<br>  url: ‘http:&#x2F;&#x2F;你的本地ID:1880&#x2F;‘</p>
 <p>  注：你的本地ID填的是HA的ID地址，例如<a target="_blank" rel="noopener" href="http://192.168.31.21:1880/">http://192.168.31.21:1880/</a><br>  2、重启树莓派或者HA，得到以下的界面</p>
 <p><img src="https://attachment.hasstatic.com/forum/201901/25/100250c5wkxn0n91uurogs.png" alt="img"></p>
 <p>  二、node-red与HA的API连接问题</p>
