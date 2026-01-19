@@ -1,0 +1,2858 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>在Docker中安装Windows系统，远程控制 | 长鸿的博客</title>
+  <meta name="keywords" content=" windows , docker ">
+  <meta name="description" content="在Docker中安装Windows系统，远程控制 | 长鸿的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://coolxy.top/about/index.html">
+<meta property="og:site_name" content="长鸿的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-18T08:18:27.000Z">
+<meta property="article:modified_time" content="2026-01-19T03:05:49.742Z">
+<meta property="article:author" content="coolxy">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>coolxy</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/coolxy"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:admin@coolxy.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=910009183&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(147)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="生活随笔">
+            
+            生活随笔
+            <small>(30)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="教程技巧">
+            
+            教程技巧
+            <small>(7)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="智能家居">
+            
+            智能家居
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="读书">
+            
+            读书
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="分享">
+            
+            分享
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="科技前沿">
+            
+            科技前沿
+            <small>(27)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软件工具">
+            
+            软件工具
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="学习提升">
+            
+            学习提升
+            <small>(23)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="游戏人生">
+            
+            游戏人生
+            <small>(5)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="docker">
+            
+            docker
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="linux">
+            
+            linux
+            <small>(18)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="147">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>10年</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2021</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>2022</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>3-hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爱快</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>备份</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>传奇私服</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>导航</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>电子书下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>读书分享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>短信</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>反向代理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>分享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>服务器环境</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>父亲老了</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工作效率</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>共享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>挂载webdav</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>观剧笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>观影有感</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>激活密钥</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>考试成功</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>老照片修复</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>练字修心</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>领风引擎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>路由固件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>梅林</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>密码管理</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令大全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>纳兰容若</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>企业邮箱</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>全景制作</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>群晖</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>人生</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>人生感悟</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>人生与哲学</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软路由</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>生活随笔</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>生活随想</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>诗词</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>时钟代码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>视频下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>数据库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>天龙八部</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>同步</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图书管理系统</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网盘</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>我本是高山</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>我哭了</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统服务</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>相册</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>新冠肺炎</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>修改时间</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>虚拟机</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>序列号</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>学习笔记</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>音乐</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>游戏分享</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>源码</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>远程桌面</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>阅读</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>正则表达式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>致秋</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能家居</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>自动启动</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>actions</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AdGuardHome</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AI</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AI智能聊天</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>airplay</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>airplay2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alist</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>alltube</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>aria2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>armbian</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>bitwarden</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>cctv视频下载</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>chatgpt</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>clash</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>codingbat</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>deepin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Emby</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>fileshare</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>frp内网穿透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HA</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HelloGitHub</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hide</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>home-assistant</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Home-Assistant</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HomeAssistant</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>HTML</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>iStore</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>js</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>juicessh</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>keys</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kms</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mariadb</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>md语法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>memos</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>merlin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mir2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>music</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mylove</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>navidrome</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nemo</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nginx</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NGrok</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>node</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node-red</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>NodeRed</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>npm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openwrt</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>password</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>php-fpm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>player</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pm2</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>portainer</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PVE</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rc.local</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rclone</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>reader</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rsync</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>rustdesk</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>samba</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shairport</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shairport-sync</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>shell</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>soft</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>source</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>systemd</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>teamspeak</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>twonav</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ubuntu</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>user-agent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>v2ray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>video download</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webdav</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>wikijs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>windows</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>x-ui</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>xray</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>you-get</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>yt-dlp</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a id="top" class="全部文章 linux "
+           href="/2021/01/01/2021-01-01-study-linux/"
+           data-tag="deepin,linux"
+           data-author="" >
+            <span class="post-title" title="Linux 学习笔记-以deepin为例(持续更新)">Linux 学习笔记-以deepin为例(持续更新)</span>
+            <span class="post-date" title="2021-01-01 14:18:45">2021/01/01</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 软件工具 "
+           href="/2021/03/22/2021-03-22-pc-soft/"
+           data-tag="soft,工作效率"
+           data-author="" >
+            <span class="post-title" title="必备电脑软件，提高工作效率">必备电脑软件，提高工作效率</span>
+            <span class="post-date" title="2021-03-22 22:15:46">2021/03/22</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 分享 "
+           href="/2024/07/23/2024-07-23-HelloGithub/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Github优秀开源项目整理">Github优秀开源项目整理</span>
+            <span class="post-date" title="2024-07-23 22:22:22">2024/07/23</span>
+        </a>
+        
+        
+        <a id="top" class="全部文章 生活随笔 "
+           href="/2023/04/22/2023-04-22-father-is-60/"
+           data-tag="父亲老了"
+           data-author="" >
+            <span class="post-title" title="无意识间，父亲已老了">无意识间，父亲已老了</span>
+            <span class="post-date" title="2023-04-22 22:22:22">2023/04/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2026/01/10/2026-01-10-AdGuardHome/"
+           data-tag="openwrt,AdGuardHome,爱快"
+           data-author="" >
+            <span class="post-title" title="爱快+openwrt使用AdGuardHome让你家的网络无广告&amp;无跟踪">爱快+openwrt使用AdGuardHome让你家的网络无广告&amp;无跟踪</span>
+            <span class="post-date" title="2026-01-10 22:55:55">2026/01/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2025/12/24/2025-12-24-install_DSM7.2.2/"
+           data-tag="群晖"
+           data-author="" >
+            <span class="post-title" title="旧电脑发光发热，安装群晖7.2.2">旧电脑发光发热，安装群晖7.2.2</span>
+            <span class="post-date" title="2025-12-24 22:55:55">2025/12/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2025/12/12/2025-12-12-install_emby_crack/"
+           data-tag="Emby"
+           data-author="" >
+            <span class="post-title" title="双12安装最新Emby开心版">双12安装最新Emby开心版</span>
+            <span class="post-date" title="2025-12-12 22:55:55">2025/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2025/12/08/2025-12-22-Use_HomeAssistant/"
+           data-tag="智能家居"
+           data-author="" >
+            <span class="post-title" title="「HA」HomeAssistant安装使用">「HA」HomeAssistant安装使用</span>
+            <span class="post-date" title="2025-12-08 22:55:55">2025/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2025/12/08/2025-12-08-HomeAssistant/"
+           data-tag="智能家居"
+           data-author="" >
+            <span class="post-title" title="「HA」HomeAssistant 主题美化 - 侧边栏篇">「HA」HomeAssistant 主题美化 - 侧边栏篇</span>
+            <span class="post-date" title="2025-12-08 22:55:55">2025/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2025/09/18/2025-09-18-cctv-video-jiemi/"
+           data-tag="分享"
+           data-author="" >
+            <span class="post-title" title="cctv视频下载解密，解决花屏问题">cctv视频下载解密，解决花屏问题</span>
+            <span class="post-date" title="2025-09-18 22:55:55">2025/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2025/09/18/2025-09-18-from-small-big-bb/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="越是来自小地方，越喜欢攀比和炫耀">越是来自小地方，越喜欢攀比和炫耀</span>
+            <span class="post-date" title="2025-09-18 07:55:55">2025/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2025/09/17/2025-09-17-USA-Ideological-colonization/"
+           data-tag="分享"
+           data-author="" >
+            <span class="post-title" title="思想殖民——美国认知战的手段、根源及国际危害">思想殖民——美国认知战的手段、根源及国际危害</span>
+            <span class="post-date" title="2025-09-17 07:55:55">2025/09/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2025/09/09/2025-09-09-tvbox_source/"
+           data-tag="分享"
+           data-author="" >
+            <span class="post-title" title="tvbox下载&amp;使用教程和最全配置源">tvbox下载&amp;使用教程和最全配置源</span>
+            <span class="post-date" title="2025-09-09 22:22:22">2025/09/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2025/06/30/2025-06-30-mylive_and_myheart/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="微信改名侧记">微信改名侧记</span>
+            <span class="post-date" title="2025-06-30 22:22:22">2025/06/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2025/05/29/2025-05-29-life_is_yanhuo/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="刹那间的烟火">刹那间的烟火</span>
+            <span class="post-date" title="2025-05-29 22:22:22">2025/05/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2025/02/18/2025-02-18-for_my_fourty_age/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="不惑之年，贵在烟火清欢">不惑之年，贵在烟火清欢</span>
+            <span class="post-date" title="2025-02-18 22:22:22">2025/02/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2024/12/12/2024-12-12-install-php74/"
+           data-tag="分享"
+           data-author="" >
+            <span class="post-title" title="buntu安装PHP7.4">buntu安装PHP7.4</span>
+            <span class="post-date" title="2024-12-12 22:22:22">2024/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/12/12/2024-12-12-install_use_PVE/"
+           data-tag="PVE,虚拟机"
+           data-author="" >
+            <span class="post-title" title="PVE安装以及简单设置教程(个人记录)">PVE安装以及简单设置教程(个人记录)</span>
+            <span class="post-date" title="2024-12-12 22:22:22">2024/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2024/11/30/2024-11-30-HA_CTL_win/"
+           data-tag="windows,home-assistant"
+           data-author="" >
+            <span class="post-title" title="通过Home Assistant 远程唤醒和关闭家中电脑">通过Home Assistant 远程唤醒和关闭家中电脑</span>
+            <span class="post-date" title="2024-11-30 22:22:22">2024/11/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2024/11/26/2024-11-26-windows_in_docker/"
+           data-tag="windows,docker"
+           data-author="" >
+            <span class="post-title" title="在Docker中安装Windows系统，远程控制">在Docker中安装Windows系统，远程控制</span>
+            <span class="post-date" title="2024-11-26 22:22:22">2024/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/11/21/2024-11-21-linux_wellcome/"
+           data-tag="linux,ssh"
+           data-author="" >
+            <span class="post-title" title="linux ssh 登陆后欢迎界面 banner 设置">linux ssh 登陆后欢迎界面 banner 设置</span>
+            <span class="post-date" title="2024-11-21 23:13:33">2024/11/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2024/11/14/2024-11-14-home-assistant/"
+           data-tag="Home-Assistant,HA"
+           data-author="" >
+            <span class="post-title" title="开源智能家居控制系统Home-Assistant">开源智能家居控制系统Home-Assistant</span>
+            <span class="post-date" title="2024-11-14 19:58:58">2024/11/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/11/05/2024-11-05-No_contest_no_gain./"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="在体制之内，静默与呐喊的边界">在体制之内，静默与呐喊的边界</span>
+            <span class="post-date" title="2024-11-05 22:55:55">2024/11/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/11/04/2024-11-04-rclone_backups/"
+           data-tag="rclone,备份"
+           data-author="" >
+            <span class="post-title" title="Rclone作为备份和同步的基本用法">Rclone作为备份和同步的基本用法</span>
+            <span class="post-date" title="2024-11-04 22:22:22">2024/11/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/10/22/2024-10-22-yunzhan_down/"
+           data-tag="电子书下载"
+           data-author="" >
+            <span class="post-title" title="云展电子书下载">云展电子书下载</span>
+            <span class="post-date" title="2024-10-22 22:23:22">2024/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/10/22/2024-10-22-Video_Doanload_New/"
+           data-tag="视频下载"
+           data-author="" >
+            <span class="post-title" title="最新视频下载方法（综合）">最新视频下载方法（综合）</span>
+            <span class="post-date" title="2024-10-22 22:22:22">2024/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/07/23/2024-07-23-The_Price_of_Maturation/"
+           data-tag="人生感悟"
+           data-author="" >
+            <span class="post-title" title="成长的代价">成长的代价</span>
+            <span class="post-date" title="2024-07-23 23:23:23">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/07/22/2024-07-22-Keeping_a_low_profile/"
+           data-tag="人生感悟"
+           data-author="" >
+            <span class="post-title" title="看透人生本质，所以不再瞎出头">看透人生本质，所以不再瞎出头</span>
+            <span class="post-date" title="2024-07-22 22:32:32">2024/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/07/02/2024-07-02-my_book/"
+           data-tag="AI"
+           data-author="" >
+            <span class="post-title" title="用AI写小说，如何？">用AI写小说，如何？</span>
+            <span class="post-date" title="2024-07-02 22:32:32">2024/07/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/07/01/2024-07-01-to_qiyi/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="展望未来，共贺党的生日">展望未来，共贺党的生日</span>
+            <span class="post-date" title="2024-07-01 22:22:22">2024/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2024/06/20/2024-06-20-docker_projects/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="超级好用的Docker项目收藏">超级好用的Docker项目收藏</span>
+            <span class="post-date" title="2024-06-20 22:22:22">2024/06/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/06/16/2024-06-16-shairport_sync-media_center/"
+           data-tag="音乐,airplay,shairport-sync"
+           data-author="" >
+            <span class="post-title" title="用shairport-sync搭建属于自己的airplay点唱机">用shairport-sync搭建属于自己的airplay点唱机</span>
+            <span class="post-date" title="2024-06-16 22:22:22">2024/06/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/06/08/2024-06-08-chatgpt_jailbroken/"
+           data-tag="生活随笔,chatgpt,AI"
+           data-author="" >
+            <span class="post-title" title="ChatGPT 开启越狱模式">ChatGPT 开启越狱模式</span>
+            <span class="post-date" title="2024-06-08 22:22:22">2024/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/06/01/2024-06-01-AI_music_xin/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="AI音乐">AI音乐</span>
+            <span class="post-date" title="2024-06-01 22:22:22">2024/06/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2024/06/01/2024-06-02-AI_music_in1/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="AI生成歌曲合集">AI生成歌曲合集</span>
+            <span class="post-date" title="2024-06-01 22:22:22">2024/06/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/05/28/2024-05-28-xinanlide/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="志闲而少欲，心安而不惧">志闲而少欲，心安而不惧</span>
+            <span class="post-date" title="2024-05-28 22:22:22">2024/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/05/12/2024-05-12-HA-NR/"
+           data-tag="智能家居,HomeAssistant,NodeRed"
+           data-author="" >
+            <span class="post-title" title="HomeAssistant和NodeRed的安装和使用">HomeAssistant和NodeRed的安装和使用</span>
+            <span class="post-date" title="2024-05-12 22:22:22">2024/05/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2024/05/10/2024-05-10-install_node/"
+           data-tag="node,pm2"
+           data-author="" >
+            <span class="post-title" title="node+pm2手动安装部署">node+pm2手动安装部署</span>
+            <span class="post-date" title="2024-05-10 22:22:22">2024/05/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/04/26/2024-04-26-love-my-life/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="保持阳光心态，享受平静生活">保持阳光心态，享受平静生活</span>
+            <span class="post-date" title="2024-04-26 22:22:22">2024/04/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/04/24/2024-04-24-xieziyangxing/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="墨香静心，笔韵养性">墨香静心，笔韵养性</span>
+            <span class="post-date" title="2024-04-24 22:22:22">2024/04/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/04/21/2024-04-21-fangxiaGLX/"
+           data-tag="生活随笔"
+           data-author="" >
+            <span class="post-title" title="放下功利心，拥有平常心">放下功利心，拥有平常心</span>
+            <span class="post-date" title="2024-04-21 22:22:22">2024/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 "
+           href="/2024/04/21/2024-04-22-liangjiahe/"
+           data-tag="读书分享"
+           data-author="" >
+            <span class="post-title" title="放下功利心，拥有平常心">放下功利心，拥有平常心</span>
+            <span class="post-date" title="2024-04-21 22:22:22">2024/04/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2024/04/20/2024-04-20-xiezijingxin/"
+           data-tag="练字修心"
+           data-author="" >
+            <span class="post-title" title="墨香中的宁静与成长：写字修身养性">墨香中的宁静与成长：写字修身养性</span>
+            <span class="post-date" title="2024-04-20 22:22:22">2024/04/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2024/02/18/2024-02-18-H5_clock_code/"
+           data-tag="时钟代码,HTML"
+           data-author="" >
+            <span class="post-title" title="Html时钟代码">Html时钟代码</span>
+            <span class="post-date" title="2024-02-18 21:22:22">2024/02/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2024/01/30/2024-01-30-mir_haom2_install/"
+           data-tag="传奇私服,领风引擎"
+           data-author="" >
+            <span class="post-title" title="传奇私服领风引擎使用手记">传奇私服领风引擎使用手记</span>
+            <span class="post-date" title="2024-01-30 21:22:22">2024/01/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2024/01/28/2024-01-28-mir_game_install/"
+           data-tag="传奇私服"
+           data-author="" >
+            <span class="post-title" title="传奇私服服务端架设">传奇私服服务端架设</span>
+            <span class="post-date" title="2024-01-28 21:22:22">2024/01/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2023/12/28/2023-12-28-tlbb_game_install-ubuntu/"
+           data-tag="天龙八部,服务器环境"
+           data-author="" >
+            <span class="post-title" title="天龙八部私服环境配置（Ubuntu）">天龙八部私服环境配置（Ubuntu）</span>
+            <span class="post-date" title="2023-12-28 22:03:25">2023/12/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2023/12/26/2023-12-26-remove_mariadb/"
+           data-tag="mariadb,ubuntu"
+           data-author="" >
+            <span class="post-title" title="在Ubuntu 22.04中完全删除MariaDB-10.06">在Ubuntu 22.04中完全删除MariaDB-10.06</span>
+            <span class="post-date" title="2023-12-26 22:03:25">2023/12/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/12/25/2023-12-25-use_memos/"
+           data-tag="memos"
+           data-author="" >
+            <span class="post-title" title="Memos API 非官方不完全说明">Memos API 非官方不完全说明</span>
+            <span class="post-date" title="2023-12-25 22:22:22">2023/12/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/12/22/2023-12-22-airplay2-shairport/"
+           data-tag="airplay2,shairport"
+           data-author="" >
+            <span class="post-title" title="将软路由、服务器、NAS等搭建airplayer">将软路由、服务器、NAS等搭建airplayer</span>
+            <span class="post-date" title="2023-12-22 22:22:22">2023/12/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2023/12/18/2023-12-18-backdoor-juicessh/"
+           data-tag="linux,juicessh"
+           data-author="" >
+            <span class="post-title" title="记一次个人服务器被侵的排查过程">记一次个人服务器被侵的排查过程</span>
+            <span class="post-date" title="2023-12-18 22:22:22">2023/12/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2023/12/02/2023-12-02-twonav_pro/"
+           data-tag="twonav,导航,源码"
+           data-author="" >
+            <span class="post-title" title="2023全新TwoNav开源网址破解版导航系统源码 | 去授权版">2023全新TwoNav开源网址破解版导航系统源码 | 去授权版</span>
+            <span class="post-date" title="2023-12-02 22:22:22">2023/12/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2023/11/28/2023-11-28-Beyond_the_Clouds/"
+           data-tag="观影有感,我本是高山"
+           data-author="" >
+            <span class="post-title" title="《我本是高山》看哭了我">《我本是高山》看哭了我</span>
+            <span class="post-date" title="2023-11-28 22:22:22">2023/11/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/11/22/2023-11-22-files-photo-gallery8/"
+           data-tag="php,相册"
+           data-author="" >
+            <span class="post-title" title="files.photo.gallery8.0破解手记">files.photo.gallery8.0破解手记</span>
+            <span class="post-date" title="2023-11-22 22:22:22">2023/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/11/12/2023-11-12-ubuntu23-aptsource/"
+           data-tag="linux,source"
+           data-author="" >
+            <span class="post-title" title="Ubuntu 23.04、22.04、18.04国内源">Ubuntu 23.04、22.04、18.04国内源</span>
+            <span class="post-date" title="2023-11-12 22:22:22">2023/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/11/12/2023-11-12-new-shell-fish/"
+           data-tag="linux,shell"
+           data-author="" >
+            <span class="post-title" title="专为 90 后定制的 Shell">专为 90 后定制的 Shell</span>
+            <span class="post-date" title="2023-11-12 22:22:22">2023/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2023/09/05/2023-09-05-wechat-videodownload/"
+           data-tag="视频下载"
+           data-author="" >
+            <span class="post-title" title="微信视频号视频下载">微信视频号视频下载</span>
+            <span class="post-date" title="2023-09-05 20:13:33">2023/09/05</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2023/06/10/2023-06-10-HowToGet-MyLive/"
+           data-tag="生活随想"
+           data-author="" >
+            <span class="post-title" title="工作与生活，我们该如何选？">工作与生活，我们该如何选？</span>
+            <span class="post-date" title="2023-06-10 20:13:33">2023/06/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/05/28/2023-05-28-HelloGitHub/"
+           data-tag="HelloGitHub"
+           data-author="" >
+            <span class="post-title" title="《HelloGitHub》第 86 期">《HelloGitHub》第 86 期</span>
+            <span class="post-date" title="2023-05-28 22:22:22">2023/05/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/05/15/2023-05-15-Business-Email/"
+           data-tag="企业邮箱"
+           data-author="" >
+            <span class="post-title" title="个人也能白嫖！几大免费企业邮箱服务商对比 (免费开通阿里云域名邮箱教程)">个人也能白嫖！几大免费企业邮箱服务商对比 (免费开通阿里云域名邮箱教程)</span>
+            <span class="post-date" title="2023-05-15 22:22:22">2023/05/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/05/08/2023-05-08-old-photo-repair/"
+           data-tag="老照片修复"
+           data-author="" >
+            <span class="post-title" title="5款AI老照片修复工具的横向比较">5款AI老照片修复工具的横向比较</span>
+            <span class="post-date" title="2023-05-08 22:22:22">2023/05/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/04/26/2023-04-26-AITalk-bbs/"
+           data-tag="AI智能聊天"
+           data-author="" >
+            <span class="post-title" title="AI智能聊天，AI讨论">AI智能聊天，AI讨论</span>
+            <span class="post-date" title="2023-04-26 22:22:22">2023/04/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 "
+           href="/2023/04/26/2023-04-26-chatgpt-talk-NewThought/"
+           data-tag="学习笔记"
+           data-author="" >
+            <span class="post-title" title="习近平新时代中国特色社会主义思学习笔记">习近平新时代中国特色社会主义思学习笔记</span>
+            <span class="post-date" title="2023-04-26 22:22:22">2023/04/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/04/22/2023-04-22-npm-node/"
+           data-tag="npm"
+           data-author="" >
+            <span class="post-title" title="让npm run dev在Linux后台持久运行">让npm run dev在Linux后台持久运行</span>
+            <span class="post-date" title="2023-04-22 22:22:22">2023/04/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 读书 "
+           href="/2023/04/20/2023-04-20-watching-TV-notes/"
+           data-tag="观剧笔记"
+           data-author="" >
+            <span class="post-title" title="观影观剧笔记">观影观剧笔记</span>
+            <span class="post-date" title="2023-04-20 22:22:22">2023/04/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/04/17/2023-04-17-sms-code/"
+           data-tag="短信"
+           data-author="" >
+            <span class="post-title" title="在线接收短信">在线接收短信</span>
+            <span class="post-date" title="2023-04-17 22:22:22">2023/04/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2023/04/04/2023-04-04-github-action-hexo/"
+           data-tag="Github,actions"
+           data-author="" >
+            <span class="post-title" title="利用 Github Actions 自动部署 Hexo 博客">利用 Github Actions 自动部署 Hexo 博客</span>
+            <span class="post-date" title="2023-04-04 22:22:22">2023/04/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/04/01/2023-04-03-git-github/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="git-github错误解决方法">git-github错误解决方法</span>
+            <span class="post-date" title="2023-04-01 22:22:22">2023/04/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2023/03/31/2023-03-31-chatgpt-ubuntu-frp/"
+           data-tag="chatgpt,frp内网穿透"
+           data-author="" >
+            <span class="post-title" title="chatgpt-ubuntu中通过二进制安装frpc，实现内网穿透">chatgpt-ubuntu中通过二进制安装frpc，实现内网穿透</span>
+            <span class="post-date" title="2023-03-31 22:22:22">2023/03/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/03/31/2023-04-01-chatgpt-install-use-mariadb/"
+           data-tag="mariadb,chatgpt"
+           data-author="" >
+            <span class="post-title" title="chatgpt-安装mariadb数据库">chatgpt-安装mariadb数据库</span>
+            <span class="post-date" title="2023-03-31 22:22:22">2023/03/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2023/03/31/2023-03-31-ubuntu-install-nginx/"
+           data-tag="nginx,chatgpt"
+           data-author="" >
+            <span class="post-title" title="chatgpt：ubuntu server安装nginx">chatgpt：ubuntu server安装nginx</span>
+            <span class="post-date" title="2023-03-31 22:22:22">2023/03/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2023/03/28/2023-03-28-deploy-chatgpt/"
+           data-tag="chatgpt"
+           data-author="" >
+            <span class="post-title" title="通过github和vercel部署ChatGPT">通过github和vercel部署ChatGPT</span>
+            <span class="post-date" title="2023-03-28 22:22:22">2023/03/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2023/03/22/2023-03-22-ToMySelf-10YearsLater/"
+           data-tag="10年"
+           data-author="" >
+            <span class="post-title" title="写给10年后的自己">写给10年后的自己</span>
+            <span class="post-date" title="2023-03-22 22:22:22">2023/03/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2023/03/20/2023-02-20-Panorama/"
+           data-tag="全景制作"
+           data-author="" >
+            <span class="post-title" title="6年不可錯過的ArcSoft Panorama Maker 2023及其最佳替代品">6年不可錯過的ArcSoft Panorama Maker 2023及其最佳替代品</span>
+            <span class="post-date" title="2023-03-20 19:58:58">2023/03/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2023/03/20/2023-03-20-install-python3/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="linux下安装python3.10">linux下安装python3.10</span>
+            <span class="post-date" title="2023-03-20 19:58:58">2023/03/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2023/02/15/2023-02-15-nodered/"
+           data-tag="智能家居,Node-red"
+           data-author="" >
+            <span class="post-title" title="自动化系统NodeRed安装使用">自动化系统NodeRed安装使用</span>
+            <span class="post-date" title="2023-02-15 19:58:58">2023/02/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2023/02/09/2023-02-09-mir-setup/"
+           data-tag="mir2,传奇私服"
+           data-author="" >
+            <span class="post-title" title="传奇私服架设教程（自用，缅怀青春）">传奇私服架设教程（自用，缅怀青春）</span>
+            <span class="post-date" title="2023-02-09 19:58:58">2023/02/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2023/01/28/2023-01-28-download-cctv-video/"
+           data-tag="cctv视频下载"
+           data-author="" >
+            <span class="post-title" title="CCTV视频下载方法">CCTV视频下载方法</span>
+            <span class="post-date" title="2023-01-28 19:58:58">2023/01/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2023/01/15/2023-01-15-talebook/"
+           data-tag="docker,图书管理系统"
+           data-author="" >
+            <span class="post-title" title="简单好用的图书管理系统">简单好用的图书管理系统</span>
+            <span class="post-date" title="2023-01-15 19:58:58">2023/01/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2023/01/09/2023-01-09-use-nemo/"
+           data-tag="nemo"
+           data-author="" >
+            <span class="post-title" title="linux下安装使用Nemo文件管理器">linux下安装使用Nemo文件管理器</span>
+            <span class="post-date" title="2023-01-09 19:58:58">2023/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2022/11/22/2022-11-22-docker-install-openwrt/"
+           data-tag="openwrt"
+           data-author="" >
+            <span class="post-title" title="Docker版OpenWrt旁路由安装设置教程">Docker版OpenWrt旁路由安装设置教程</span>
+            <span class="post-date" title="2022-11-22 22:33:55">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/11/11/2022-11-11-ngrok/"
+           data-tag="NGrok"
+           data-author="" >
+            <span class="post-title" title="NGrok服务器搭建IT TUN">NGrok服务器搭建IT TUN</span>
+            <span class="post-date" title="2022-11-11 22:33:55">2022/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/10/15/2022-10-15-rustdesk/"
+           data-tag="rustdesk,远程桌面"
+           data-author="" >
+            <span class="post-title" title="docker搭建远程桌面控制中继rustdesk">docker搭建远程桌面控制中继rustdesk</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/10/15/2022-10-20-alltube-4kdownlowd/"
+           data-tag="alltube"
+           data-author="" >
+            <span class="post-title" title="视频下载服务搭建—AllTube">视频下载服务搭建—AllTube</span>
+            <span class="post-date" title="2022-10-15 22:33:55">2022/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/09/15/2022-09-15-kms-server/"
+           data-tag="kms,激活"
+           data-author="" >
+            <span class="post-title" title="OpenWrt 搭建 KMS 服务器激活windows、Office">OpenWrt 搭建 KMS 服务器激活windows、Office</span>
+            <span class="post-date" title="2022-09-15 22:33:55">2022/09/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/09/12/2022-09-12-linux-systemd-service/"
+           data-tag="systemd,系统服务"
+           data-author="" >
+            <span class="post-title" title="linux中系统服务管理学习手记">linux中系统服务管理学习手记</span>
+            <span class="post-date" title="2022-09-12 22:33:55">2022/09/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2022/09/10/2022-09-10-my-teamspeek/"
+           data-tag="teamspeak"
+           data-author="" >
+            <span class="post-title" title="语音服务器搭建,教你自建团队语音服务器">语音服务器搭建,教你自建团队语音服务器</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/09/10/2022-09-10-rsync-no-password-sync/"
+           data-tag="rsync,同步"
+           data-author="" >
+            <span class="post-title" title="简单两步实现 RSYNC 自动同步文件免密">简单两步实现 RSYNC 自动同步文件免密</span>
+            <span class="post-date" title="2022-09-10 22:33:55">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/09/01/2022-09-01-armbian-update-time/"
+           data-tag="armbian,修改时间"
+           data-author="" >
+            <span class="post-title" title="armbian修改时间和时区">armbian修改时间和时区</span>
+            <span class="post-date" title="2022-09-01 22:33:55">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 智能家居 "
+           href="/2022/08/29/2022-08-29-install-openwrt-istore/"
+           data-tag="openwrt,软路由,iStore"
+           data-author="" >
+            <span class="post-title" title="openwrt软路由iStore的安装使用手记">openwrt软路由iStore的安装使用手记</span>
+            <span class="post-date" title="2022-08-29 22:33:55">2022/08/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 科技前沿 "
+           href="/2022/08/23/2022-08-23-alist/"
+           data-tag="alist,网盘"
+           data-author="" >
+            <span class="post-title" title="网盘直链程序—AList，支持市面上几乎所有网盘">网盘直链程序—AList，支持市面上几乎所有网盘</span>
+            <span class="post-date" title="2022-08-23 22:33:55">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/08/08/2022-08-08-pichome/"
+           data-tag="相册"
+           data-author="" >
+            <span class="post-title" title="PicHome开源炫酷相册系统">PicHome开源炫酷相册系统</span>
+            <span class="post-date" title="2022-08-08 21:33:55">2022/08/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2022/08/07/2022-08-07-file_photo_video-share/"
+           data-tag="网盘,相册,fileshare"
+           data-author="" >
+            <span class="post-title" title="Files—单文件 PHP文件、相册管理器files.photo.gallery">Files—单文件 PHP文件、相册管理器files.photo.gallery</span>
+            <span class="post-date" title="2022-08-07 00:33:55">2022/08/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 教程技巧 "
+           href="/2022/08/04/2022-08-04-creat-wikijs/"
+           data-tag="wikijs"
+           data-author="" >
+            <span class="post-title" title="基于 Wiki.js 搭建知识库系统">基于 Wiki.js 搭建知识库系统</span>
+            <span class="post-date" title="2022-08-04 00:33:55">2022/08/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2022/07/31/2022-07-31-free-music-/"
+           data-tag="docker,music,navidrome,音乐"
+           data-author="" >
+            <span class="post-title" title="Docker搭建自由音乐播放软件—Navidrome">Docker搭建自由音乐播放软件—Navidrome</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2022/07/31/2022-07-31-use-docker-portainer/"
+           data-tag="docker,portainer"
+           data-author="" >
+            <span class="post-title" title="安装使用Docker和portainer面板">安装使用Docker和portainer面板</span>
+            <span class="post-date" title="2022-07-31 00:33:55">2022/07/31</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/07/26/2022-07-26-ubuntu-rc.local/"
+           data-tag="linux,rc.local,自动启动"
+           data-author="" >
+            <span class="post-title" title="Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)">Ubuntu22.04 解决开机无法自动启动服务(/ETC/RC.LOCAL)</span>
+            <span class="post-date" title="2022-07-26 20:22:33">2022/07/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/07/25/2022-07-25-linux-aria2/"
+           data-tag="linux,aria2,下载"
+           data-author="" >
+            <span class="post-title" title="ubuntu服务器下安装使用aria2下载器">ubuntu服务器下安装使用aria2下载器</span>
+            <span class="post-date" title="2022-07-25 20:22:33">2022/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/07/17/2022-07-18-shi-nalanrongro/"
+           data-tag="纳兰容若,诗词"
+           data-author="" >
+            <span class="post-title" title="纳兰容若典藏诗词">纳兰容若典藏诗词</span>
+            <span class="post-date" title="2022-07-17 20:22:22">2022/07/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/07/16/2022-07-16-mount-webdav/"
+           data-tag="webdav,挂载webdav"
+           data-author="" >
+            <span class="post-title" title="Linux和windows系统挂载 WebDAV 为本地磁盘">Linux和windows系统挂载 WebDAV 为本地磁盘</span>
+            <span class="post-date" title="2022-07-16 20:22:22">2022/07/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/07/11/2022-07-11-ubuntu-install-nginx/"
+           data-tag="nginx,反向代理"
+           data-author="" >
+            <span class="post-title" title="ubuntu 源码编译安装nginx">ubuntu 源码编译安装nginx</span>
+            <span class="post-date" title="2022-07-11 20:22:22">2022/07/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/07/05/2022-07-05-webdav/"
+           data-tag="linux,webdav"
+           data-author="" >
+            <span class="post-title" title="Linux文件共享服务之webdav服务器">Linux文件共享服务之webdav服务器</span>
+            <span class="post-date" title="2022-07-05 20:22:33">2022/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/06/28/2022-06-28-study-php/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="业余学习PHP手记">业余学习PHP手记</span>
+            <span class="post-date" title="2022-06-28 20:13:33">2022/06/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2022/06/15/2022-06-15-docker-bitwarden/"
+           data-tag="docker,bitwarden,密码管理"
+           data-author="" >
+            <span class="post-title" title="Docker中部署bitwarden服务器">Docker中部署bitwarden服务器</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/06/15/2022-06-19-script-getdomain/"
+           data-tag="js,javascript"
+           data-author="" >
+            <span class="post-title" title="html中用JS获取页面域名、端口等信息">html中用JS获取页面域名、端口等信息</span>
+            <span class="post-date" title="2022-06-15 20:22:22">2022/06/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/06/12/2022-06-12-use-nginx/"
+           data-tag="nginx,php-fpm,php"
+           data-author="" >
+            <span class="post-title" title="Ubuntu-中安装Nginx+php-fpm填坑日记">Ubuntu-中安装Nginx+php-fpm填坑日记</span>
+            <span class="post-date" title="2022-06-12 20:22:22">2022/06/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 docker "
+           href="/2022/06/10/2022-06-10-web-reader/"
+           data-tag="docker,reader,阅读"
+           data-author="" >
+            <span class="post-title" title="自己的网文阅读器 安卓的“阅读”APP网页版">自己的网文阅读器 安卓的“阅读”APP网页版</span>
+            <span class="post-date" title="2022-06-10 20:22:33">2022/06/10</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/06/05/2022-06-05-python-def/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python各个库的使用方法">Python各个库的使用方法</span>
+            <span class="post-date" title="2022-06-05 20:22:33">2022/06/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/05/31/2022-05-31-system-down/"
+           data-tag="linux,windows,系统下载"
+           data-author="" >
+            <span class="post-title" title="PC系统（windows、Linux）下载地址收集">PC系统（windows、Linux）下载地址收集</span>
+            <span class="post-date" title="2022-05-31 20:13:33">2022/05/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/05/26/2022-05-26-hexo-password/"
+           data-tag="hexo,password"
+           data-author="" >
+            <span class="post-title" title="Hexo博客中给文章加密码访问">Hexo博客中给文章加密码访问</span>
+            <span class="post-date" title="2022-05-26 20:13:33">2022/05/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2022/05/22/2022-05-22-linux-video-players/"
+           data-tag="linux,video,player"
+           data-author="" >
+            <span class="post-title" title="16个Linux最佳开源视频播放器">16个Linux最佳开源视频播放器</span>
+            <span class="post-date" title="2022-05-22 22:13:33">2022/05/22</span>
+        </a>
+        
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2022/01/09/2022-01-09-mariadb-use/"
+           data-tag="mariadb,mysql,数据库"
+           data-author="" >
+            <span class="post-title" title="MySQL[mariadb]数据库入门知识">MySQL[mariadb]数据库入门知识</span>
+            <span class="post-date" title="2022-01-09 22:13:33">2022/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/12/12/2021-12-12-download-web-video/"
+           data-tag="视频下载,video download"
+           data-author="" >
+            <span class="post-title" title="web在线视频下载方法">web在线视频下载方法</span>
+            <span class="post-date" title="2021-12-12 22:13:33">2021/12/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/12/09/2021-12-09-linux-hexo-github-blog/"
+           data-tag="hexo,github,linux"
+           data-author="" >
+            <span class="post-title" title="Linux下Hexo+GitHub搭建个人博客">Linux下Hexo+GitHub搭建个人博客</span>
+            <span class="post-date" title="2021-12-09 18:25:36">2021/12/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2021/11/26/2021-11-27-to-2022-year/"
+           data-tag="2022"
+           data-author="" >
+            <span class="post-title" title="致即将到来的2022年">致即将到来的2022年</span>
+            <span class="post-date" title="2021-11-26 21:13:33">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/11/25/2021-11-27-openwrt-router/"
+           data-tag="openwrt,软路由"
+           data-author="" >
+            <span class="post-title" title="软路由openwrt使用基本教程">软路由openwrt使用基本教程</span>
+            <span class="post-date" title="2021-11-25 21:13:33">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/11/24/2021-11-23-merlin-router/"
+           data-tag="路由固件,merlin,梅林"
+           data-author="" >
+            <span class="post-title" title="梅林固件使用手记">梅林固件使用手记</span>
+            <span class="post-date" title="2021-11-24 23:13:33">2021/11/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2021/11/22/2021-11-22-linux-shell-all/"
+           data-tag="linux,shell,命令大全"
+           data-author="" >
+            <span class="post-title" title="Linux 命令大全">Linux 命令大全</span>
+            <span class="post-date" title="2021-11-22 22:15:46">2021/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/18/2021-03-18-md-blog-grammar/"
+           data-tag="markdown,md博客,md语法"
+           data-author="" >
+            <span class="post-title" title="md博客文章用到的markdown语法">md博客文章用到的markdown语法</span>
+            <span class="post-date" title="2021-03-18 22:11:02">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/18/2021-03-19-aria2-linux/"
+           data-tag="aria2,下载"
+           data-author="" >
+            <span class="post-title" title="Linux下Aria2完整安装及使用教程">Linux下Aria2完整安装及使用教程</span>
+            <span class="post-date" title="2021-03-18 21:22:23">2021/03/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/15/2021-03-15-regex/"
+           data-tag="正则表达式"
+           data-author="" >
+            <span class="post-title" title="超级强大且好用的正则表达式">超级强大且好用的正则表达式</span>
+            <span class="post-date" title="2021-03-15 14:18:45">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 linux "
+           href="/2021/03/15/2021-03-15-win-linux-share/"
+           data-tag="samba,共享,deepin"
+           data-author="" >
+            <span class="post-title" title="Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）">Linux桌面环境与Win10之间共享文件夹的互相访问（基于Samba，以Deepin为例）</span>
+            <span class="post-date" title="2021-03-15 01:30:25">2021/03/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 游戏人生 "
+           href="/2021/03/12/2021-03-12-2000games-source/"
+           data-tag="游戏分享"
+           data-author="" >
+            <span class="post-title" title="2000套游戏私服源码分享">2000套游戏私服源码分享</span>
+            <span class="post-date" title="2021-03-12 14:18:45">2021/03/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/11/2021-03-12-git-err/"
+           data-tag="git,github"
+           data-author="" >
+            <span class="post-title" title="git 使用错误解决办法汇总">git 使用错误解决办法汇总</span>
+            <span class="post-date" title="2021-03-11 22:03:25">2021/03/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/09/2021-03-09-hexo-create-blog/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="使用hexo+github搭建免费个人博客详细教程">使用hexo+github搭建免费个人博客详细教程</span>
+            <span class="post-date" title="2021-03-09 19:58:58">2021/03/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2021/03/03/2021-03-03-3-hexo-used/"
+           data-tag="3-hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo主题使用说明">3-hexo主题使用说明</span>
+            <span class="post-date" title="2021-03-03 19:25:36">2021/03/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/03/03/about/index/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于博主长鸿">关于博主长鸿</span>
+            <span class="post-date" title="2021-03-03 18:35:27">2021/03/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/26/2020-11-26-love-live/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="热爱生活，抛弃过去">热爱生活，抛弃过去</span>
+            <span class="post-date" title="2020-11-26 19:58:58">2020/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/11/05/2020-11-06-to-2021/"
+           data-tag="2021"
+           data-author="" >
+            <span class="post-title" title="致2021年">致2021年</span>
+            <span class="post-date" title="2020-11-05 18:58:58">2020/11/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软件工具 "
+           href="/2020/07/28/2020-07-28-soft-Keys/"
+           data-tag="keys,激活密钥,序列号,激活码"
+           data-author="" >
+            <span class="post-title" title="精心收集的软件激活密钥(序列号、激活码、SN、KEY)">精心收集的软件激活密钥(序列号、激活码、SN、KEY)</span>
+            <span class="post-date" title="2020-07-28 08:08:38">2020/07/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2020/07/05/2020-07-05-coding-logic/"
+           data-tag="python,codingbat"
+           data-author="" >
+            <span class="post-title" title="python练习园地（三）——Logic篇">python练习园地（三）——Logic篇</span>
+            <span class="post-date" title="2020-07-05 19:03:25">2020/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2020/07/01/2020-07-01-codingbat-string/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（二）——string篇">python练习园地（二）——string篇</span>
+            <span class="post-date" title="2020-07-01 21:03:25">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/07/01/2020-07-01-to-latter-half-year/"
+           data-tag="新冠肺炎,我哭了"
+           data-author="" >
+            <span class="post-title" title="致2020年下半年">致2020年下半年</span>
+            <span class="post-date" title="2020-07-01 08:08:28">2020/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2020/06/21/2020-06-21-codingbat-warmup/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python练习园地（一）——Warmup篇">python练习园地（一）——Warmup篇</span>
+            <span class="post-date" title="2020-06-21 22:03:25">2020/06/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 分享 "
+           href="/2020/06/19/2020-06-19-user-agent/"
+           data-tag="user-agent"
+           data-author="" >
+            <span class="post-title" title="浏览器user-agent大全">浏览器user-agent大全</span>
+            <span class="post-date" title="2020-06-19 21:03:25">2020/06/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2020/06/18/2020-06-18-python-exercise/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python经典习题代码">Python经典习题代码</span>
+            <span class="post-date" title="2020-06-18 13:03:25">2020/06/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 学习提升 "
+           href="/2020/06/17/2020-06-17-markdown-usage/"
+           data-tag="markdown"
+           data-author="" >
+            <span class="post-title" title="Markdown使用方法">Markdown使用方法</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/2020-06-20-one/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="保持童心">保持童心</span>
+            <span class="post-date" title="2020-06-17 22:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2020/06/17/2020-06-17-restart-blog/"
+           data-tag="人生与哲学"
+           data-author="" >
+            <span class="post-title" title="重开博客，重启人生">重开博客，重启人生</span>
+            <span class="post-date" title="2020-06-17 15:03:25">2020/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2011/11/11/2011-11-11-find-four-peple/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人生要找到的四个人">人生要找到的四个人</span>
+            <span class="post-date" title="2011-11-11 20:20:20">2011/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2009/11/11/2009-11-11-test-access/"
+           data-tag="考试成功"
+           data-author="" >
+            <span class="post-title" title="考试成功以后">考试成功以后</span>
+            <span class="post-date" title="2009-11-11 20:20:20">2009/11/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/02/12/2008-02-12-life-like-travel/"
+           data-tag="人生"
+           data-author="" >
+            <span class="post-title" title="人生就像一次旅行">人生就像一次旅行</span>
+            <span class="post-date" title="2008-02-12 22:03:25">2008/02/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 生活随笔 "
+           href="/2008/01/12/2008-01-12-to-mylove/"
+           data-tag="mylove,致秋"
+           data-author="" >
+            <span class="post-title" title="致秋">致秋</span>
+            <span class="post-date" title="2008-01-12 13:03:25">2008/01/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-2024-11-26-windows_in_docker" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">在Docker中安装Windows系统，远程控制</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="docker">docker</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">windows</a>
+            
+            <a class="color2">docker</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2026-01-19 03:05:50'>2024-11-26 22:22</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Docker%E4%B8%AD%E5%AE%89%E8%A3%85Windows%E7%B3%BB%E7%BB%9F%EF%BC%8C%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-text">在Docker中安装Windows系统，远程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%83%EF%BC%9F"><span class="toc-text">如何使用它？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9Windows%E7%89%88%E6%9C%AC%EF%BC%9F"><span class="toc-text">我如何选择Windows版本？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE%EF%BC%9F"><span class="toc-text">如何更改存储位置？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-change-the-size-of-the-disk-%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9%E7%A3%81%E7%9B%98%E7%9A%84%E5%A4%A7%E5%B0%8F%EF%BC%9F"><span class="toc-text">How do I change the size of the disk? 如何更改磁盘的大小？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-share-files-with-the-host-%E5%A6%82%E4%BD%95%E4%B8%8E%E4%B8%BB%E6%9C%BA%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-text">How do I share files with the host? 如何与主机共享文件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-install-a-custom-image-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F%EF%BC%9F"><span class="toc-text">How do I install a custom image? 如何安装自定义镜像？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-run-a-script-after-installation-%E5%AE%89%E8%A3%85%E5%90%8E%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="toc-text">How do I run a script after installation? 安装后如何运行脚本？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-perform-a-manual-installation-%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%EF%BC%9F"><span class="toc-text">How do I perform a manual installation? 如何执行手动安装？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-change-the-amount-of-CPU-or-RAM-%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9-CPU-%E6%88%96-RAM-%E7%9A%84%E6%95%B0%E9%87%8F%EF%BC%9F"><span class="toc-text">How do I change the amount of CPU or RAM? 如何更改 CPU 或 RAM 的数量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-configure-the-username-and-password-%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%EF%BC%9F"><span class="toc-text">How do I configure the username and password? 如何配置用户名和密码？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-select-the-Windows-language-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9-Windows-%E8%AF%AD%E8%A8%80%EF%BC%9F"><span class="toc-text">How do I select the Windows language? 如何选择 Windows 语言？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-select-the-keyboard-layout-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80%EF%BC%9F"><span class="toc-text">How do I select the keyboard layout? 如何选择键盘布局？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-connect-using-RDP-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-RDP-%E8%BF%9B%E8%A1%8C%E8%BF%9E%E6%8E%A5%EF%BC%9F"><span class="toc-text">How do I connect using RDP? 如何使用 RDP 进行连接？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-assign-an-individual-IP-address-to-the-container-%E5%A6%82%E4%BD%95%E4%B8%BA%E5%AE%B9%E5%99%A8%E5%88%86%E9%85%8D%E5%8D%95%E4%B8%AA-IP-%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-text">How do I assign an individual IP address to the container? 如何为容器分配单个 IP 地址？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-can-Windows-acquire-an-IP-address-from-my-router-Windows-%E5%A6%82%E4%BD%95%E4%BB%8E%E6%88%91%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%E8%8E%B7%E5%8F%96-IP-%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-text">How can Windows acquire an IP address from my router? Windows 如何从我的路由器获取 IP 地址？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-add-multiple-disks-%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E7%A3%81%E7%9B%98%EF%BC%9F"><span class="toc-text">How do I add multiple disks? 如何添加多个磁盘？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-pass-through-a-disk-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E7%A3%81%E7%9B%98%EF%BC%9F"><span class="toc-text">How do I pass-through a disk? 如何通过磁盘？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#How-do-I-pass-through-a-USB-device-%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87-USB-%E8%AE%BE%E5%A4%87%EF%BC%9F"><span class="toc-text">How do I pass-through a USB device? 如何通过 USB 设备？</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="在Docker中安装Windows系统，远程控制"><a href="#在Docker中安装Windows系统，远程控制" class="headerlink" title="在Docker中安装Windows系统，远程控制"></a>在Docker中安装Windows系统，远程控制</h2><blockquote>
+<p>经常挂一些辅助软件，基本都是Windows的，然而电脑功耗太大，一天开不起，但有一个Ubuntu 服务器，心想能不能在服务器上安装Windows来挂载呢？经过研究找到方法，其实早已有了，是GITHUB上的开源项目，利用万能的Docker来安装Windows </p>
+</blockquote>
+<ul>
+<li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/dockur/windows">https://github.com/dockur/windows</a></li>
+</ul>
+<p>项目中已有安装方法，但是是英文的，勉强可读。</p>
+<p>通过Docker compose 来安装</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">windows:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">dockurr/windows</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">winxp</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="comment">#VERSION: &quot;xp&quot;</span></span><br><span class="line">      <span class="attr">DISK_SIZE:</span> <span class="string">&quot;32G&quot;</span></span><br><span class="line">      <span class="attr">RAM_SIZE:</span> <span class="string">&quot;2G&quot;</span></span><br><span class="line">      <span class="attr">USERNAME:</span> <span class="string">&quot;admin&quot;</span></span><br><span class="line">      <span class="attr">PASSWORD:</span> <span class="string">&quot;1&quot;</span></span><br><span class="line">      <span class="attr">LANGUAGE:</span> <span class="string">&quot;cn&quot;</span></span><br><span class="line">      <span class="attr">VERSION:</span> <span class="string">&quot;https://qqai.ren:8443/xunlei/en_win_xp_pro_x64_with_sp2_vl_x13-41611.iso&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">devices:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/dev/kvm</span></span><br><span class="line">    <span class="attr">cap_add:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">NET_ADMIN</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28006</span><span class="string">:8006</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">23389</span><span class="string">:3389/tcp</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">23389</span><span class="string">:3389/udp</span></span><br><span class="line">    <span class="attr">stop_grace_period:</span> <span class="string">2m</span></span><br></pre></td></tr></table></figure>
+
+<p>命令安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker run -it --<span class="built_in">rm</span> -p 8006:8006 --device=/dev/kvm --cap-add NET_ADMIN --stop-timeout 120 dockurr/windows</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何使用它？"><a href="#如何使用它？" class="headerlink" title="如何使用它？"></a>如何使用它？</h3><p>非常简单！以下是步骤：  </p>
+<ul>
+<li><p>启动容器，并使用您的网络浏览器连接到8006端口。  </p>
+</li>
+<li><p>坐下来放松，让奇迹发生，整个安装过程将全自动完成。  </p>
+</li>
+<li><p>一旦您看到桌面，您的Windows安装就准备好使用了。  </p>
+</li>
+<li><p>享受您的全新机器，别忘了给这个仓库点赞！</p>
+</li>
+</ul>
+<h4 id="我如何选择Windows版本？"><a href="#我如何选择Windows版本？" class="headerlink" title="我如何选择Windows版本？"></a>我如何选择Windows版本？</h4><p>默认情况下，将安装Windows 11专业版。但您可以在compose文件中添加VERSION环境变量，以指定要下载的替代Windows版本：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  VERSION: &quot;11&quot;</span><br></pre></td></tr></table></figure>
+
+<p>从以下值中选择：</p>
+<table>
+<thead>
+<tr>
+<th>**Value 价值</th>
+<th><strong>Version 版本</strong></th>
+<th><strong>Size 大小</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>11</code></td>
+<td>Windows 11 Pro Windows 11 专业版</td>
+<td>5.4 GB 5.4 吉字节</td>
+</tr>
+<tr>
+<td><code>11l</code></td>
+<td>Windows 11 LTSC</td>
+<td>4.2 GB 4.2 吉字节</td>
+</tr>
+<tr>
+<td><code>11e</code></td>
+<td>Windows 11 Enterprise Windows 11 企业版</td>
+<td>5.8 GB 5.8 吉字节</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>Windows 10 Pro Windows 10 专业版</td>
+<td>5.7 GB 5.7 吉字节</td>
+</tr>
+<tr>
+<td><code>10l</code></td>
+<td>Windows 10 LTSC</td>
+<td>4.6 GB 4.6 吉字节</td>
+</tr>
+<tr>
+<td><code>10e</code></td>
+<td>Windows 10 Enterprise Windows 10 企业版</td>
+<td>5.2 GB 5.2 吉字节</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>8e</code></td>
+<td>Windows 8.1 Enterprise Windows 8.1 企业版</td>
+<td>3.7 GB 3.7 吉字节</td>
+</tr>
+<tr>
+<td><code>7e</code></td>
+<td>Windows 7 Enterprise Windows 7 企业版</td>
+<td>3.0 GB 3.0 吉字节</td>
+</tr>
+<tr>
+<td><code>ve</code></td>
+<td>Windows Vista Enterprise Windows Vista 企业版</td>
+<td>3.0 GB 3.0 吉字节</td>
+</tr>
+<tr>
+<td><code>xp</code></td>
+<td>Windows XP Professional Windows XP 专业版</td>
+<td>0.6 GB 0.6 吉字节</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>2025</code></td>
+<td>Windows Server 2025 Windows 服务器 2025</td>
+<td>5.0 GB 5.0 吉字节</td>
+</tr>
+<tr>
+<td><code>2022</code></td>
+<td>Windows Server 2022 Windows 服务器 2022</td>
+<td>4.7 GB 4.7 吉字节</td>
+</tr>
+<tr>
+<td><code>2019</code></td>
+<td>Windows Server 2019 Windows 服务器 2019</td>
+<td>5.3 GB 5.3 吉字节</td>
+</tr>
+<tr>
+<td><code>2016</code></td>
+<td>Windows Server 2016 Windows 服务器 2016</td>
+<td>6.5 GB 6.5 吉字节</td>
+</tr>
+<tr>
+<td><code>2012</code></td>
+<td>Windows Server 2012 Windows 服务器 2012</td>
+<td>4.3 GB 4.3 吉字节</td>
+</tr>
+<tr>
+<td><code>2008</code></td>
+<td>Windows Server 2008 Windows 服务器 2008</td>
+<td>3.0 GB 3.0 吉字节</td>
+</tr>
+<tr>
+<td><code>2003</code></td>
+<td>Windows Server 2003 Windows 服务器 2003</td>
+<td>0.6 GB 0.6 吉字节</td>
+</tr>
+</tbody></table>
+<h3 id="如何更改存储位置？"><a href="#如何更改存储位置？" class="headerlink" title="如何更改存储位置？"></a>如何更改存储位置？</h3><p>To change the storage location, include the following bind mount in your compose file:<br>要更改存储位置，请在 compose 文件中包含以下绑定挂载：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  - /var/win:/storage</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Replace the example path <code>/var/win</code> with the desired storage folder.<br>将示例路径 <code>/var/win</code> 替换为所需的存储文件夹。</p>
+<h3 id="How-do-I-change-the-size-of-the-disk-如何更改磁盘的大小？"><a href="#How-do-I-change-the-size-of-the-disk-如何更改磁盘的大小？" class="headerlink" title="How do I change the size of the disk? 如何更改磁盘的大小？"></a>How do I change the size of the disk? 如何更改磁盘的大小？</h3><p>To expand the default size of 64 GB, add the <code>DISK_SIZE</code> setting to your compose file and set it to your preferred capacity:<br>要扩展默认大小 64 GB，请将 <code>DISK_SIZE</code> 设置添加到编写文件并将其设置为首选容量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  DISK_SIZE: &quot;256G&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Tip 提示</p>
+<p>This can also be used to resize the existing disk to a larger capacity without any data loss.<br>这还可用于将现有磁盘的大小调整为更大的容量，而不会丢失任何数据。</p>
+<h3 id="How-do-I-share-files-with-the-host-如何与主机共享文件？"><a href="#How-do-I-share-files-with-the-host-如何与主机共享文件？" class="headerlink" title="How do I share files with the host? 如何与主机共享文件？"></a>How do I share files with the host? 如何与主机共享文件？</h3><p>Open ‘File Explorer’ and click on the ‘Network’ section, you will see a computer called <code>host.lan</code>. Double-click it and it will show a folder called <code>Data</code>, which can be bound to any folder on your host via the compose file:<br>打开“文件资源管理器”并单击“网络”部分，您将看到一台名为 <code>host.lan</code> 的计算机。双击它，它将显示一个名为 <code>Data</code> 的文件夹，该文件夹可以通过 compose 文件绑定到主机上的任何文件夹：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  -  /home/user/example:/data</span><br></pre></td></tr></table></figure>
+
+
+
+<p>The example folder <code>/home/user/example</code> will be available as <code> \\host.lan\Data</code>.<br>示例文件夹 <code>/home/user/example</code> 将作为 <code> \\host.lan\Data</code> 提供。</p>
+<p>Tip 提示</p>
+<p>You can map this path to a drive letter in Windows, for easier access.<br>您可以将此路径映射到 Windows 中的驱动器号，以便于访问。</p>
+<h3 id="How-do-I-install-a-custom-image-如何安装自定义镜像？"><a href="#How-do-I-install-a-custom-image-如何安装自定义镜像？" class="headerlink" title="How do I install a custom image? 如何安装自定义镜像？"></a>How do I install a custom image? 如何安装自定义镜像？</h3><p>In order to download an unsupported ISO image that is not selectable from the list above, specify the URL of that ISO in the <code>VERSION</code> environment variable, for example:<br>要下载无法从上述列表中选择的不受支持的 ISO 映像，请在 <code>VERSION</code> 环境变量中指定该 ISO 的 URL，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  VERSION: &quot;https://example.com/win.iso&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Alternatively, you can also skip the download and use a local file instead, by binding it in your compose file in this way:<br>或者，您也可以跳过下载并使用本地文件，方法是通过以下方式将其绑定到 compose 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  - /home/user/example.iso:/custom.iso</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Replace the example path <code>/home/user/example.iso</code> with the filename of your desired ISO file, the value of <code>VERSION</code> will be ignored in this case.<br>将示例路径 <code>/home/user/example.iso</code> 替换为所需 ISO 文件的文件名，在这种情况下，<code>VERSION</code> 的值将被忽略。</p>
+<h3 id="How-do-I-run-a-script-after-installation-安装后如何运行脚本？"><a href="#How-do-I-run-a-script-after-installation-安装后如何运行脚本？" class="headerlink" title="How do I run a script after installation? 安装后如何运行脚本？"></a>How do I run a script after installation? 安装后如何运行脚本？</h3><p>To run your own script after installation, you can create a file called <code>install.bat</code> and place it in a folder together with any additional files it needs (software to be installed for example). Then bind that folder in your compose file like this:<br>要在安装后运行自己的脚本，您可以创建一个名为 <code>install.bat</code> 的文件，并将其与它需要的任何其他文件（例如要安装的软件）一起放在一个文件夹中。然后在 compose 文件中绑定该文件夹，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volumes:</span><br><span class="line">  -  /home/user/example:/oem</span><br></pre></td></tr></table></figure>
+
+
+
+<p>The example folder <code>/home/user/example</code> will be copied to <code>C:\OEM</code> during installation and the containing <code>install.bat</code> will be executed during the last step.<br>在安装过程中，示例文件夹 <code>/home/user/example</code> 将被复制到 <code>C：\OEM</code>，而包含<code>install.bat</code>将在最后一步中执行。</p>
+<h3 id="How-do-I-perform-a-manual-installation-如何执行手动安装？"><a href="#How-do-I-perform-a-manual-installation-如何执行手动安装？" class="headerlink" title="How do I perform a manual installation? 如何执行手动安装？"></a>How do I perform a manual installation? 如何执行手动安装？</h3><p>It’s best to stick to the automatic installation, as it adjusts various settings to prevent common issues when running Windows inside a virtual environment.<br>最好坚持自动安装，因为它会调整各种设置以防止在虚拟环境中运行 Windows 时出现常见问题。</p>
+<p>However, if you insist on performing the installation manually, add the following environment variable to your compose file:<br>但是，如果您坚持手动执行安装，请将以下环境变量添加到您的 compose 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  MANUAL: &quot;Y&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="How-do-I-change-the-amount-of-CPU-or-RAM-如何更改-CPU-或-RAM-的数量？"><a href="#How-do-I-change-the-amount-of-CPU-or-RAM-如何更改-CPU-或-RAM-的数量？" class="headerlink" title="How do I change the amount of CPU or RAM? 如何更改 CPU 或 RAM 的数量？"></a>How do I change the amount of CPU or RAM? 如何更改 CPU 或 RAM 的数量？</h3><p>By default, the container will be allowed to use a maximum of 2 CPU cores and 4 GB of RAM.<br>默认情况下，容器最多允许使用 2 个 CPU 内核和 4 GB RAM。</p>
+<p>If you want to adjust this, you can specify the desired amount using the following environment variables:<br>如果要调整此值，可以使用以下环境变量指定所需的数量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  RAM_SIZE: &quot;8G&quot;</span><br><span class="line">  CPU_CORES: &quot;4&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="How-do-I-configure-the-username-and-password-如何配置用户名和密码？"><a href="#How-do-I-configure-the-username-and-password-如何配置用户名和密码？" class="headerlink" title="How do I configure the username and password? 如何配置用户名和密码？"></a>How do I configure the username and password? 如何配置用户名和密码？</h3><p>By default, a user called <code>Docker</code> is created during the installation, with an empty password.<br>默认情况下，在安装过程中会创建一个名为 <code>Docker</code> 的用户，其密码为空。</p>
+<p>If you want to use different credentials, you can change them in your compose file:<br>如果您想使用不同的凭证，可以在 compose 文件中更改它们：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  USERNAME: &quot;bill&quot;</span><br><span class="line">  PASSWORD: &quot;gates&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="How-do-I-select-the-Windows-language-如何选择-Windows-语言？"><a href="#How-do-I-select-the-Windows-language-如何选择-Windows-语言？" class="headerlink" title="How do I select the Windows language? 如何选择 Windows 语言？"></a>How do I select the Windows language? 如何选择 Windows 语言？</h3><p>By default, the English version of Windows will be downloaded. But you can add the <code>LANGUAGE</code> environment variable to your compose file, in order to specify an alternative language:<br>默认情况下，将下载英文版的 Windows。但是你可以将 <code>LANGUAGE</code> 环境变量添加到 compose 文件中，以便指定替代语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  LANGUAGE: &quot;French&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>You can choose between: 🇦🇪 Arabic, 🇧🇬 Bulgarian, 🇨🇳 Chinese, 🇭🇷 Croatian, 🇨🇿 Czech, 🇩🇰 Danish, 🇳🇱 Dutch, 🇬🇧 English, 🇪🇪 Estonian, 🇫🇮 Finnish, 🇫🇷 French, 🇩🇪 German, 🇬🇷 Greek, 🇮🇱 Hebrew, 🇭🇺 Hungarian, 🇮🇹 Italian, 🇯🇵 Japanese, 🇰🇷 Korean, 🇱🇻 Latvian, 🇱🇹 Lithuanian, 🇳🇴 Norwegian, 🇵🇱 Polish, 🇵🇹 Portuguese, 🇷🇴 Romanian, 🇷🇺 Russian, 🇷🇸 Serbian, 🇸🇰 Slovak, 🇸🇮 Slovenian, 🇪🇸 Spanish, 🇸🇪 Swedish, 🇹🇭 Thai, 🇹🇷 Turkish and 🇺🇦 Ukrainian.<br>您可以选择： 🇦🇪 阿拉伯语， 🇧🇬 保加利亚语， 🇨🇳 中文， 🇭🇷 克罗地亚语， 🇨🇿 捷克语， 🇩🇰 丹麦语， 🇳🇱 荷兰语， 🇬🇧 英语， 🇪🇪 爱沙尼亚语， 芬兰语， 🇫🇷 🇫🇮 法语， 🇩🇪 德语， 🇬🇷 希腊语， 🇮🇱 希伯来语， 🇭🇺 匈牙利语， 🇮🇹 意大利语， 🇯🇵 日语， 🇰🇷 韩语， 🇱🇻 拉脱维亚语， 🇱🇹 立陶宛语， 🇳🇴 挪威语， 🇵🇱 波兰语， 🇵🇹 葡萄牙语， 🇷🇴 罗马尼亚语， 🇷🇺 俄语， 🇷🇸 塞尔维亚语， 🇸🇰 斯洛伐克语、🇸🇮斯洛文尼亚语、🇪🇸西班牙语、🇸🇪瑞典语、🇹🇭泰语、🇹🇷土耳其语和🇺🇦乌克兰语。</p>
+<h3 id="How-do-I-select-the-keyboard-layout-如何选择键盘布局？"><a href="#How-do-I-select-the-keyboard-layout-如何选择键盘布局？" class="headerlink" title="How do I select the keyboard layout? 如何选择键盘布局？"></a>How do I select the keyboard layout? 如何选择键盘布局？</h3><p>If you want to use a keyboard layout or locale that is not the default for your selected language, you can add the <code>KEYBOARD</code> and <code>REGION</code> variables with a culture code, like this:<br>如果要使用不是所选语言的默认键盘布局或区域设置，则可以添加带有区域性代码的 <code>KEYBOARD</code> 和 <code>REGION</code> 变量，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  REGION: &quot;en-US&quot;</span><br><span class="line">  KEYBOARD: &quot;en-US&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Note 注意</p>
+<p>Changing these values will have no effect after the installation has been performed already. Use the control panel inside Windows in that case.<br>在执行安装后，更改这些值将不起作用。在这种情况下，请使用 Windows 中的控制面板。</p>
+<h3 id="How-do-I-connect-using-RDP-如何使用-RDP-进行连接？"><a href="#How-do-I-connect-using-RDP-如何使用-RDP-进行连接？" class="headerlink" title="How do I connect using RDP? 如何使用 RDP 进行连接？"></a>How do I connect using RDP? 如何使用 RDP 进行连接？</h3><p>The web-viewer is mainly meant to be used during installation, as its picture quality is low, and it has no audio or clipboard for example.<br>Web 查看器主要用于安装过程中，因为它的图像质量很低，并且没有音频或剪贴板。</p>
+<p>So for a better experience you can connect using any Microsoft Remote Desktop client to the IP of the container, using the username <code>Docker</code> and by leaving the password empty.<br>因此，为了获得更好的体验，您可以使用任何 Microsoft 远程桌面客户端连接到容器的 IP，使用用户名 <code>Docker</code> 并将密码留空。</p>
+<p>There is a RDP client for <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx">Android</a> available from the Play Store and one for <a target="_blank" rel="noopener" href="https://apps.apple.com/nl/app/microsoft-remote-desktop/id714464092?l=en-GB">iOS</a> in the Apple Store. For Linux you can use <a target="_blank" rel="noopener" href="https://www.freerdp.com/">FreeRDP</a> and on Windows just type <code>mstsc</code> in the search box.<br>Play 商店中提供了一个适用于 <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx">Android</a> 的 RDP 客户端，Apple Store 中提供了一个适用于 <a target="_blank" rel="noopener" href="https://apps.apple.com/nl/app/microsoft-remote-desktop/id714464092?l=en-GB">iOS</a> 的 RDP 客户端。对于 Linux<a target="_blank" rel="noopener" href="https://www.freerdp.com/">，您可以使用 FreeRDP</a>，在 Windows 上只需在搜索框中键入 <code>mstsc</code> 即可。</p>
+<h3 id="How-do-I-assign-an-individual-IP-address-to-the-container-如何为容器分配单个-IP-地址？"><a href="#How-do-I-assign-an-individual-IP-address-to-the-container-如何为容器分配单个-IP-地址？" class="headerlink" title="How do I assign an individual IP address to the container? 如何为容器分配单个 IP 地址？"></a>How do I assign an individual IP address to the container? 如何为容器分配单个 IP 地址？</h3><p>By default, the container uses bridge networking, which shares the IP address with the host.<br>默认情况下，容器使用网桥网络，它与主机共享 IP 地址。</p>
+<p>If you want to assign an individual IP address to the container, you can create a macvlan network as follows:<br>如果要为容器分配单个 IP 地址，可以按如下方式创建 macvlan 网络：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d macvlan \</span><br><span class="line">    --subnet=192.168.0.0/24 \</span><br><span class="line">    --gateway=192.168.0.1 \</span><br><span class="line">    --ip-range=192.168.0.100/28 \</span><br><span class="line">    -o parent=eth0 vlan</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Be sure to modify these values to match your local subnet.<br>请务必修改这些值以匹配您的本地子网。</p>
+<p>Once you have created the network, change your compose file to look as follows:<br>创建网络后，将 compose 文件更改为如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  windows:</span><br><span class="line">    container_name: windows</span><br><span class="line">    ..&lt;snip&gt;..</span><br><span class="line">    networks:</span><br><span class="line">      vlan:</span><br><span class="line">        ipv4_address: 192.168.0.100</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  vlan:</span><br><span class="line">    external: true</span><br></pre></td></tr></table></figure>
+
+
+
+<p>An added benefit of this approach is that you won’t have to perform any port mapping anymore, since all ports will be exposed by default.<br>此方法的另一个好处是，您不必再执行任何端口映射，因为默认情况下将公开所有端口。</p>
+<p>Important 重要</p>
+<p>This IP address won’t be accessible from the Docker host due to the design of macvlan, which doesn’t permit communication between the two. If this is a concern, you need to create a <a target="_blank" rel="noopener" href="https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/#host-access">second macvlan</a> as a workaround.<br>由于 macvlan 的设计不允许两者之间通信，因此无法从 Docker 主机访问此 IP 地址。如果这是一个问题，则需要创建<a target="_blank" rel="noopener" href="https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/#host-access">第二个 macvlan</a> 作为解决方法。</p>
+<h3 id="How-can-Windows-acquire-an-IP-address-from-my-router-Windows-如何从我的路由器获取-IP-地址？"><a href="#How-can-Windows-acquire-an-IP-address-from-my-router-Windows-如何从我的路由器获取-IP-地址？" class="headerlink" title="How can Windows acquire an IP address from my router? Windows 如何从我的路由器获取 IP 地址？"></a>How can Windows acquire an IP address from my router? Windows 如何从我的路由器获取 IP 地址？</h3><p>After configuring the container for <a target="_blank" rel="noopener" href="https://github.com/dockur/windows?tab=readme-ov-file#how-do-i-assign-an-individual-ip-address-to-the-container">macvlan</a>, it is possible for Windows to become part of your home network by requesting an IP from your router, just like a real PC.<br>为 <a target="_blank" rel="noopener" href="https://github.com/dockur/windows?tab=readme-ov-file#how-do-i-assign-an-individual-ip-address-to-the-container">macvlan</a> 配置容器后，Windows 可以通过从路由器请求 IP 来成为您家庭网络的一部分，就像真正的 PC 一样。</p>
+<p>To enable this mode, add the following lines to your compose file:<br>要启用此模式，请将以下行添加到您的 compose 文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  DHCP: &quot;Y&quot;</span><br><span class="line">devices:</span><br><span class="line">  - /dev/vhost-net</span><br><span class="line">device_cgroup_rules:</span><br><span class="line">  - &#x27;c *:* rwm&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Note 注意</p>
+<p>In this mode, the container and Windows will each have their own separate IPs.<br>在此模式下，容器和 Windows 将各自拥有自己的单独 IP。</p>
+<h3 id="How-do-I-add-multiple-disks-如何添加多个磁盘？"><a href="#How-do-I-add-multiple-disks-如何添加多个磁盘？" class="headerlink" title="How do I add multiple disks? 如何添加多个磁盘？"></a>How do I add multiple disks? 如何添加多个磁盘？</h3><p>To create additional disks, modify your compose file like this:<br>要创建其他磁盘，请按如下方式修改 compose 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  DISK2_SIZE: &quot;32G&quot;</span><br><span class="line">  DISK3_SIZE: &quot;64G&quot;</span><br><span class="line">volumes:</span><br><span class="line">  - /home/example:/storage2</span><br><span class="line">  - /mnt/data/example:/storage3</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="How-do-I-pass-through-a-disk-如何通过磁盘？"><a href="#How-do-I-pass-through-a-disk-如何通过磁盘？" class="headerlink" title="How do I pass-through a disk? 如何通过磁盘？"></a>How do I pass-through a disk? 如何通过磁盘？</h3><p>It is possible to pass-through disk devices directly by adding them to your compose file in this way:<br>可以通过将磁盘设备添加到你的 compose 文件中来直接传递磁盘设备：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devices:</span><br><span class="line">  - /dev/sdb:/disk1</span><br><span class="line">  - /dev/sdc:/disk2</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Use <code>/disk1</code> if you want it to become your main drive (which will be formatted during installation), and use <code>/disk2</code> and higher to add them as secondary drives (which will stay untouched).<br>如果您希望 <code>/disk1</code> 成为您的主驱动器（将在安装过程中格式化），请使用 <code>/disk2</code> 及更高版本将它们添加为辅助驱动器（将保持不变）。</p>
+<h3 id="How-do-I-pass-through-a-USB-device-如何通过-USB-设备？"><a href="#How-do-I-pass-through-a-USB-device-如何通过-USB-设备？" class="headerlink" title="How do I pass-through a USB device? 如何通过 USB 设备？"></a>How do I pass-through a USB device? 如何通过 USB 设备？</h3><p>To pass-through a USB device, first lookup its vendor and product id via the <code>lsusb</code> command, then add them to your compose file like this:<br>要传递 USB 设备，首先通过 <code>lsusb</code> 命令查找其供应商和产品 ID，然后将它们添加到您的 compose 文件中，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">  ARGUMENTS: &quot;-device usb-host,vendorid=0x1234,productid=0x1234&quot;</span><br><span class="line">devices:</span><br><span class="line">  - /dev/bus/usb</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Important 重要</p>
+<p>If the device is a USB disk drive, please wait until after the installation is completed before connecting it. Otherwise the installation may fail, as the order of the disks can get rearranged.<br>如果设备是 USB 磁盘驱动器，请等到安装完成后再连接。否则，安装可能会失败，因为磁盘的顺序可能会重新排列。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2026 CHlog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 562px;
+    }
+    .nav.fullscreen {
+        margin-left: -562px;
+    }
+    .nav-left {
+        width: 140px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
